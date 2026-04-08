@@ -1,0 +1,180 @@
+% ================================================================
+% MAIN FILE — ARTICLE MODULAR
+% Compatible con tu estructura:
+% sections/, figures/, references.bib, build/
+% ================================================================
+
+\documentclass[10pt,twoside]{article}
+
+% ================================================================
+% ESPACIADO COMPACTO (tu estilo)
+% ================================================================
+
+\linespread{0.95}
+
+\setlength{\abovedisplayskip}{5pt}
+\setlength{\belowdisplayskip}{5pt}
+\setlength{\abovedisplayshortskip}{3pt}
+\setlength{\belowdisplayshortskip}{3pt}
+
+\renewcommand{\arraystretch}{0.85}
+
+\setlength{\textfloatsep}{8pt}
+\setlength{\floatsep}{6pt}
+\setlength{\intextsep}{6pt}
+
+\setlength{\parskip}{2pt}
+\setlength{\parindent}{0pt}
+
+% ================================================================
+% GEOMETRÍA
+% ================================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,
+left=1cm,
+right=1cm,
+top=1.5cm,
+bottom=2cm,
+includefoot]{geometry}
+
+% ================================================================
+% PAQUETES
+% ================================================================
+
+\usepackage{array}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{mathrsfs}
+\usepackage{hyperref}
+
+% ================= NOMENCLATURE (LISTA DE SÍMBOLOS) =================
+\usepackage{nomencl}
+\makenomenclature
+
+% Ejemplos de uso en el texto:
+% \\nomenclature{$T$}{Temperatura del sistema [K]}
+% \\nomenclature{$u$}{Variable manipulada (entrada de control)}
+% \\nomenclature{$y$}{Variable controlada (salida del sistema)}
+\usepackage{tcolorbox}
+\usepackage{xcolor,colortbl}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{dsfont}
+\usepackage{titlesec}
+\usepackage{siunitx}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+% ================================================================
+% BIBLIOGRAFÍA
+% ================================================================
+
+\usepackage[backend=biber,style=ieee]{biblatex}
+\addbibresource{references.bib}
+
+% ================================================================
+% CAPTION
+% ================================================================
+
+\usepackage[labelfont=bf,labelsep=period]{caption}
+\renewcommand{\figurename}{Figure}
+\renewcommand{\tablename}{Table}
+
+% ================================================================
+% HEADER / FOOTER
+% ================================================================
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\rhead{Proyecto}
+\lhead{\includegraphics[width=4cm,keepaspectratio]{figures/Andes.png}}
+
+\cfoot{Page \thepage\ of \pageref{LastPage}}
+
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\setlength\headheight{2.1cm}
+
+% ================================================================
+% HIPERVÍNCULOS
+% ================================================================
+
+\hypersetup{
+colorlinks,
+citecolor=black,
+filecolor=black,
+linkcolor=black,
+urlcolor=black
+}
+
+% ================================================================
+% COMANDOS PERSONALIZADOS
+% ================================================================
+
+\newcommand{\dev}{\dfrac{\text{d}}{\text{dt}}}
+\newcommand{\dep}[1]{\frac{\partial}{\partial #1}}
+
+\definecolor{XCOL}{RGB}{210,250,255}
+\definecolor{bub}{rgb}{0.91,1.0,1.0}
+
+\newcommand{\grad}{$^{\circ}$}
+
+% ================================================================
+% DOCUMENTO
+% ================================================================
+
+\begin{document}
+
+{
+\setlength{\parskip}{0pt}
+\raggedright
+{\Large\bfseries
+\parbox{\linewidth}{%
+Título del Proyecto
+}\par
+}
+\vspace{0.5cm}
+\normalsize
+\textbf{Alvaro Paez} \par
+\vspace{0.15cm}
+\hrule
+}
+
+% ================================================================
+% SECCIONES MODULARES
+% ================================================================
+
+\input{sections/introduccion}
+
+\input{sections/estado_del_arte}
+
+\input{sections/metodologia}
+
+\input{sections/resultados_discusion}
+
+\input{sections/conclusiones}
+
+% ================================================================
+% BIBLIOGRAFÍA
+% ================================================================
+
+\printbibliography
+
+% ================= LISTA DE SÍMBOLOS =================
+% Se imprimirá automáticamente antes de las conclusiones
+\printnomenclature
+
+\end{document}
+
+

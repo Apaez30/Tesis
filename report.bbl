@@ -1,0 +1,339 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{zhang2025explorative}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=5ee5d3d5470ac29a2e7c8df70ed54725}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Z.},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=0ee6724aae227dcac2949962d898b300}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=865de0ad624b442a018417bf6b85083e}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{9d68f9635b7c1db697e909162e2280d3}
+      \strng{fullhash}{1268c67609435e744b5220d1d96dd86f}
+      \strng{fullhashraw}{1268c67609435e744b5220d1d96dd86f}
+      \strng{bibnamehash}{1268c67609435e744b5220d1d96dd86f}
+      \strng{authorbibnamehash}{1268c67609435e744b5220d1d96dd86f}
+      \strng{authornamehash}{9d68f9635b7c1db697e909162e2280d3}
+      \strng{authorfullhash}{1268c67609435e744b5220d1d96dd86f}
+      \strng{authorfullhashraw}{1268c67609435e744b5220d1d96dd86f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Process Control}
+      \field{month}{8}
+      \field{title}{Explorative Policy Optimization for industrial-scale operation of complex process control systems}
+      \field{volume}{152}
+      \field{year}{2025}
+      \verb{doi}
+      \verb 10.1016/j.jprocont.2025.103471
+      \endverb
+    \endentry
+    \entry{zou2025overview}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=b3bc9df69ba93577c1ab68d346a0cf82}{%
+           family={Zou},
+           familyi={Z\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=fb5099420e346e566d6650f9def3512a}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+        {{hash=865de0ad624b442a018417bf6b85083e}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=0ee6724aae227dcac2949962d898b300}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{5e93c6063e500ba10f5bf152d91344e3}
+      \strng{fullhash}{14aa07c130e7f68b3fc55c56728e7f8a}
+      \strng{fullhashraw}{14aa07c130e7f68b3fc55c56728e7f8a}
+      \strng{bibnamehash}{14aa07c130e7f68b3fc55c56728e7f8a}
+      \strng{authorbibnamehash}{14aa07c130e7f68b3fc55c56728e7f8a}
+      \strng{authornamehash}{5e93c6063e500ba10f5bf152d91344e3}
+      \strng{authorfullhash}{14aa07c130e7f68b3fc55c56728e7f8a}
+      \strng{authorfullhashraw}{14aa07c130e7f68b3fc55c56728e7f8a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Digital Chemical Engineering}
+      \field{month}{9}
+      \field{title}{An overview of chemical process operation-optimization under complex operating conditions}
+      \field{year}{2025}
+      \verb{doi}
+      \verb 10.1016/j.dche.2025.100249
+      \endverb
+    \endentry
+    \entry{hu2025limitations}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=2caa1a21151af80deddbffac1ed373ad}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{2caa1a21151af80deddbffac1ed373ad}
+      \strng{fullhash}{2caa1a21151af80deddbffac1ed373ad}
+      \strng{fullhashraw}{2caa1a21151af80deddbffac1ed373ad}
+      \strng{bibnamehash}{2caa1a21151af80deddbffac1ed373ad}
+      \strng{authorbibnamehash}{2caa1a21151af80deddbffac1ed373ad}
+      \strng{authornamehash}{2caa1a21151af80deddbffac1ed373ad}
+      \strng{authorfullhash}{2caa1a21151af80deddbffac1ed373ad}
+      \strng{authorfullhashraw}{2caa1a21151af80deddbffac1ed373ad}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Applied and Computational Engineering}
+      \field{title}{The Limitations of Traditional PID Controllers and Modern Optimization Methods}
+      \field{year}{2025}
+      \verb{doi}
+      \verb 10.54254/2755-2721/147/2025.22912
+      \endverb
+    \endentry
+    \entry{geyer2017mpc}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=80ec0c03767ce92087dc406e234afece}{%
+           family={Geyer},
+           familyi={G\bibinitperiod},
+           given={Tobias},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley \& Sons}%
+      }
+      \strng{namehash}{80ec0c03767ce92087dc406e234afece}
+      \strng{fullhash}{80ec0c03767ce92087dc406e234afece}
+      \strng{fullhashraw}{80ec0c03767ce92087dc406e234afece}
+      \strng{bibnamehash}{80ec0c03767ce92087dc406e234afece}
+      \strng{authorbibnamehash}{80ec0c03767ce92087dc406e234afece}
+      \strng{authornamehash}{80ec0c03767ce92087dc406e234afece}
+      \strng{authorfullhash}{80ec0c03767ce92087dc406e234afece}
+      \strng{authorfullhashraw}{80ec0c03767ce92087dc406e234afece}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Model Predictive Control of High Power Converters and Industrial Drives}
+      \field{year}{2017}
+    \endentry
+    \entry{he2023surrogate}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=c4631c75fd513e16e66190ad6ef02dd7}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=1f26f664835ac6c347db22001b657f1a}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=960fa77dd209a5ed5ebb64cd285003c3}{%
+           family={Gong},
+           familyi={G\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=9e3b28c298e307fd8f4d76888fa15e05}{%
+           family={Ji},
+           familyi={J\bibinitperiod},
+           given={X.},
+           giveni={X\bibinitperiod}}}%
+      }
+      \strng{namehash}{572ae7c826ca6086dc0db8dd3e300885}
+      \strng{fullhash}{dfcd66b962a347a31fa7e3efcaa11897}
+      \strng{fullhashraw}{dfcd66b962a347a31fa7e3efcaa11897}
+      \strng{bibnamehash}{dfcd66b962a347a31fa7e3efcaa11897}
+      \strng{authorbibnamehash}{dfcd66b962a347a31fa7e3efcaa11897}
+      \strng{authornamehash}{572ae7c826ca6086dc0db8dd3e300885}
+      \strng{authorfullhash}{dfcd66b962a347a31fa7e3efcaa11897}
+      \strng{authorfullhashraw}{dfcd66b962a347a31fa7e3efcaa11897}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Expert Systems with Applications}
+      \field{month}{5}
+      \field{title}{A review of surrogate-assisted evolutionary algorithms for expensive optimization problems}
+      \field{year}{2023}
+      \verb{doi}
+      \verb 10.1016/j.eswa.2022.119495
+      \endverb
+    \endentry
+    \entry{sturek2025surrogate}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=df9733d07562ad8605f2268fef3fafda}{%
+           family={Šturek},
+           familyi={Š\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=5891b745a263d335e56cebc98fa2576f}{%
+           family={Lazarova-Molnar},
+           familyi={L\bibinithyphendelim M\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{c8fcfc6940088e153b40699461781c2a}
+      \strng{fullhash}{c8fcfc6940088e153b40699461781c2a}
+      \strng{fullhashraw}{c8fcfc6940088e153b40699461781c2a}
+      \strng{bibnamehash}{c8fcfc6940088e153b40699461781c2a}
+      \strng{authorbibnamehash}{c8fcfc6940088e153b40699461781c2a}
+      \strng{authornamehash}{c8fcfc6940088e153b40699461781c2a}
+      \strng{authorfullhash}{c8fcfc6940088e153b40699461781c2a}
+      \strng{authorfullhashraw}{c8fcfc6940088e153b40699461781c2a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Procedia Computer Science}
+      \field{title}{Surrogate Modeling: Review and Opportunities for Expert Knowledge Integration}
+      \field{year}{2025}
+      \field{pages}{826\bibrangedash 833}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1016/j.procs.2025.03.106
+      \endverb
+    \endentry
+    \entry{wilson2017alamo}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=7c5b49c65cde8e95d2be50dbc199fc1b}{%
+           family={Wilson},
+           familyi={W\bibinitperiod},
+           given={Z.\bibnamedelimi T.},
+           giveni={Z\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=b2ee7d2f9ead5cd2e95ece0b3abcf634}{%
+           family={Sahinidis},
+           familyi={S\bibinitperiod},
+           given={N.\bibnamedelimi V.},
+           giveni={N\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \strng{namehash}{791ffb803055ecb761e67cdaee30ae11}
+      \strng{fullhash}{791ffb803055ecb761e67cdaee30ae11}
+      \strng{fullhashraw}{791ffb803055ecb761e67cdaee30ae11}
+      \strng{bibnamehash}{791ffb803055ecb761e67cdaee30ae11}
+      \strng{authorbibnamehash}{791ffb803055ecb761e67cdaee30ae11}
+      \strng{authornamehash}{791ffb803055ecb761e67cdaee30ae11}
+      \strng{authorfullhash}{791ffb803055ecb761e67cdaee30ae11}
+      \strng{authorfullhashraw}{791ffb803055ecb761e67cdaee30ae11}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computers \& Chemical Engineering}
+      \field{month}{11}
+      \field{title}{The ALAMO approach to machine learning}
+      \field{volume}{106}
+      \field{year}{2017}
+      \field{pages}{785\bibrangedash 795}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1016/j.compchemeng.2017.02.010
+      \endverb
+    \endentry
+    \entry{mcbride2019overview}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=b6f2c8025271441dad93b1780d9b3624}{%
+           family={McBride},
+           familyi={M\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=c3bfc2cad16dea58ee6b69e2178d16e3}{%
+           family={Sundmacher},
+           familyi={S\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{cbc8a25e1759877fb7c63d31158b3197}
+      \strng{fullhash}{cbc8a25e1759877fb7c63d31158b3197}
+      \strng{fullhashraw}{cbc8a25e1759877fb7c63d31158b3197}
+      \strng{bibnamehash}{cbc8a25e1759877fb7c63d31158b3197}
+      \strng{authorbibnamehash}{cbc8a25e1759877fb7c63d31158b3197}
+      \strng{authornamehash}{cbc8a25e1759877fb7c63d31158b3197}
+      \strng{authorfullhash}{cbc8a25e1759877fb7c63d31158b3197}
+      \strng{authorfullhashraw}{cbc8a25e1759877fb7c63d31158b3197}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Chemie Ingenieur Technik}
+      \field{month}{3}
+      \field{title}{Overview of Surrogate Modeling in Chemical Process Engineering}
+      \field{year}{2019}
+      \verb{doi}
+      \verb 10.1002/cite.201800091
+      \endverb
+    \endentry
+    \entry{quintero_surrogacion}{misc}{}{}
+      \name{author}{3}{}{%
+        {{hash=63cffa7668e9132a4b155378ebd7f1dc}{%
+           family={Quintero},
+           familyi={Q\bibinitperiod},
+           given={J.\bibnamedelimi E.},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=8e33eaff8a7d06377e367fe65a65893b}{%
+           family={Botía},
+           familyi={B\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1a09c858534010c5c172967712099eef}{%
+           family={Gómez},
+           familyi={G\bibinitperiod},
+           given={J.\bibnamedelimi M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{f0d850ad9ceb27d4c463e43eaf0451e1}
+      \strng{fullhash}{312f277343b5d3b3e5695cb9213b06fb}
+      \strng{fullhashraw}{312f277343b5d3b3e5695cb9213b06fb}
+      \strng{bibnamehash}{312f277343b5d3b3e5695cb9213b06fb}
+      \strng{authorbibnamehash}{312f277343b5d3b3e5695cb9213b06fb}
+      \strng{authornamehash}{f0d850ad9ceb27d4c463e43eaf0451e1}
+      \strng{authorfullhash}{312f277343b5d3b3e5695cb9213b06fb}
+      \strng{authorfullhashraw}{312f277343b5d3b3e5695cb9213b06fb}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Subrogación de Modelos para Control y Optimización de Procesos}
+      \field{year}{2025}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
