@@ -22,11 +22,13 @@ build/
 *.synctex.gz
 
 # Archivos temporales del sistema
-.DS_Store  # MacOS
-Thumbs.db  # Windows
+**/.DS_Store  # Ignora todos los DS_Store en cualquier subcarpeta
+Thumbs.db     # Windows
+
+# Configuración de VSCode (opcional)
+.vscode/
 
 # Otros archivos que pueden generarse automáticamente
 *.nav      # Beamer navigation
 *.snm      # Beamer
 *.vrb      # Beamer verbatim
-*.toc      # Tabla de contenido (ya mencionado)
