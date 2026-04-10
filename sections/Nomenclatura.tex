@@ -1,0 +1,457 @@
+% ============================================================
+%  NOMENCLATURE — Complete & Cross-Validated
+
+\section*{Nomenclature}
+
+% ── A. Latin Symbols ─────────────────────────────────────────
+\subsection*{A. Latin symbols}
+
+\begin{longtable}{@{} l p{0.65\textwidth} r @{}}
+\toprule
+\textbf{Symbol} & \textbf{Description} & \textbf{Unit} \\
+\midrule
+
+$A$
+  & State matrix of the state-space model (Eqs.~\ref{eq:statespace_state}--\ref{eq:statespace_output})
+  & -- \\
+
+$A(q)$
+  & Autoregressive polynomial in the ARX/ARMAX model (Eqs.~\ref{eq:arx_general}--\ref{eq:arx_A})
+  & -- \\
+
+$a_i$
+  & Coefficients of the autoregressive polynomial $A(q)$, $i=1,\ldots,n_a$
+  & -- \\
+
+$B$
+  & Input matrix of the state-space model (Eq.~\ref{eq:statespace_state})
+  & -- \\
+
+$B(q)$
+  & Input polynomial in the ARX/ARMAX model (Eqs.~\ref{eq:arx_general}, \ref{eq:arx_B})
+  & -- \\
+
+$b_i$
+  & Coefficients of the input polynomial $B(q)$, $i=1,\ldots,n_b$
+  & -- \\
+
+$C$
+  & Output matrix of the state-space model (Eq.~\ref{eq:statespace_output})
+  & -- \\
+
+$C$
+  & Number of chemical components in the MESH distillation model (Eq.~\ref{eq:num_ec})
+  & -- \\
+
+$C(q)$
+  & Noise polynomial in the ARMAX model (Eq.~\ref{eq:armax_C})
+  & -- \\
+
+$c_i$
+  & Coefficients of the noise polynomial $C(q)$, $i=1,\ldots,n_c$
+  & -- \\
+
+$e(k)$
+  & White-noise / unmodeled disturbance term in ARX (discrete time)
+  & -- \\
+
+$\bar{e}(k)$
+  & Discrete-time noise signal in the ARX/ARMAX formulation (Eq.~\ref{eq:arx_general})
+  & -- \\
+
+$e(t)$
+  & Control tracking error (continuous time), used in IAE, ISE, ITAE, ITSE
+  & $^{\circ}$C \\
+
+$e_{rel}(t)$
+  & Relative tracking error between controlled variable and setpoint (Eq.~\ref{eq:ErrorRelativo})
+  & -- \\
+
+$er_1,\,er_2$
+  & Relative steady-state errors after the first and second disturbances (Table~\ref{tab:ControlMetrics})
+  & -- \\
+
+$i$
+  & Prediction-step index within the MPC horizon ($i = 1,\ldots,p$)
+  & -- \\
+
+$j$
+  & Controlled-output or manipulated-variable index
+  & -- \\
+
+$J(z_k)$
+  & Total MPC cost (objective) function (Eq.~\ref{eq:OptimizationProblem})
+  & -- \\
+
+$J_y(z_k)$
+  & Output tracking term of the MPC cost function (Eq.~\ref{eq:Jy})
+  & -- \\
+
+$J_u(z_k)$
+  & Manipulated-variable penalty term of the MPC cost function (Eq.~\ref{eq:Ju})
+  & -- \\
+
+$J_{\Delta u}(z_k)$
+  & Control-move rate-of-change penalty term of the MPC cost function (Eq.~\ref{eq:Jdeltau})
+  & -- \\
+
+$J_{\varepsilon}(z_k)$
+  & Slack-variable penalty term of the MPC cost function (Eq.~\ref{eq:Jepsilon})
+  & -- \\
+
+$k$
+  & Current discrete-time step index
+  & -- \\
+
+$n$
+  & Sample index used in the RECM and $R^2$ summations (Eqs.~\ref{eq:RECM}--\ref{eq:R2})
+  & -- \\
+
+$n_a$
+  & Order of the autoregressive polynomial $A(q)$ (number of poles)
+  & -- \\
+
+$n_b$
+  & Order of the input polynomial $B(q)$ (number of zeros)
+  & -- \\
+
+$n_c$
+  & Order of the noise polynomial $C(q)$ in the ARMAX model
+  & -- \\
+
+$n_k$
+  & Input delay of the ARX/ARMAX model (number of samples) (Eq.~\ref{eq:arx_general})
+  & -- \\
+
+$n_u$
+  & Number of manipulated variables in the MPC formulation
+  & -- \\
+
+$n_y$
+  & Number of controlled output variables in the MPC formulation
+  & -- \\
+
+$N$
+  & Number of data samples used in the RECM and $R^2$ calculations (Eqs.~\ref{eq:RECM}--\ref{eq:R2})
+  & -- \\
+
+$N$
+  & Number of theoretical stages in the distillation column (MESH model, Eq.~\ref{eq:num_ec})
+  & -- \\
+
+$N_{ec}$
+  & Number of algebraic equations describing the column at a given instant (Eq.~\ref{eq:num_ec})
+  & -- \\
+
+$N_{et}$
+  & Total number of equations solved throughout the dynamic simulation (Eq.~\ref{eq:num_et})
+  & -- \\
+
+$N_i$
+  & Number of time intervals in the dynamic simulation (Eq.~\ref{eq:num_et})
+  & -- \\
+
+$p$
+  & MPC prediction horizon length (Eqs.~\ref{eq:Vectorzk}--\ref{eq:Jdeltau})
+  & steps \\
+
+$P_1$
+  & Controlled-variable temperature after the first disturbance (Table~\ref{tab:ControlMetrics})
+  & $^{\circ}$C \\
+
+$P_2$
+  & Controlled-variable temperature after the second disturbance (Table~\ref{tab:ControlMetrics})
+  & $^{\circ}$C \\
+
+$q$
+  & Forward shift operator
+  & -- \\
+
+$q^{-1}$
+  & Backward shift (unit-delay) operator
+  & -- \\
+
+$Q_{R}$
+  & Reboiler heat duty (generic)
+  & kW \\
+
+$Q_{R,T\text{-}101}$
+  & Reboiler heat duty of the extractive column T-101 (manipulated variable)
+  & kW \\
+
+$Q_{R,T\text{-}102}$
+  & Reboiler heat duty of the solvent-recovery column T-102 (manipulated variable)
+  & kW \\
+
+$R^2$
+  & Coefficient of determination (goodness-of-fit metric, Eq.~\ref{eq:R2})
+  & -- \\
+
+$r_j(k{+}i|k)$
+  & Predicted reference (setpoint) for output $j$ at prediction step $i$ (Eq.~\ref{eq:Jy})
+  & -- \\
+
+$RECM$
+  & Root mean square error — Raíz del Error Cuadrático Medio (Eq.~\ref{eq:RECM})
+  & $^{\circ}$C \\
+
+$RR_{T\text{-}101}$
+  & Reflux ratio of column T-101 (manipulated variable)
+  & -- \\
+
+$RR_{T\text{-}102}$
+  & Reflux ratio of column T-102 (manipulated variable)
+  & -- \\
+
+$s_j^u$
+  & Scaling factor for manipulated variable $j$ in the MPC cost (Eqs.~\ref{eq:Ju}--\ref{eq:Jdeltau})
+  & -- \\
+
+$s_j^y$
+  & Scaling factor for output variable $j$ in the MPC cost (Eq.~\ref{eq:Jy})
+  & -- \\
+
+$SP$
+  & Setpoint (reference) temperature (Table~\ref{tab:ControlMetrics})
+  & $^{\circ}$C \\
+
+$t$
+  & Continuous time; also integration variable in IAE, ISE, ITAE, ITSE
+  & h \\
+
+$t_1$
+  & Settling time after the first disturbance (Table~\ref{tab:ControlMetrics})
+  & h \\
+
+$t_2$
+  & Settling time after the second disturbance (Table~\ref{tab:ControlMetrics})
+  & h \\
+
+$T$
+  & Temperature (generic)
+  & $^{\circ}$C \\
+
+$T_{36,T\text{-}101}$
+  & Temperature at stage 36 of column T-101 — controlled variable for T-101
+  & $^{\circ}$C \\
+
+$T_{8,T\text{-}102}$
+  & Temperature at stage 8 of column T-102 — controlled variable for T-102
+  & $^{\circ}$C \\
+
+$u$
+  & Manipulated variable (generic)
+  & -- \\
+
+$u(k)$
+  & Discrete-time manipulated-variable signal
+  & -- \\
+
+$\bar{u}(k)$
+  & Discrete-time input signal in the ARX/ARMAX formulation (Eq.~\ref{eq:arx_general})
+  & -- \\
+
+$u(t)$
+  & Continuous-time input vector (state-space, Eq.~\ref{eq:statespace_state})
+  & -- \\
+
+$u_j(k{+}i|k)$
+  & Predicted manipulated variable $j$ at prediction step $i$ (Eqs.~\ref{eq:Ju}--\ref{eq:Jdeltau})
+  & -- \\
+
+$u_{j,target}(k{+}i|k)$
+  & Target (desired steady-state) value for manipulated variable $j$ (Eq.~\ref{eq:Ju})
+  & -- \\
+
+$w_{i,j}^{y}$
+  & MPC tuning weight for output $j$ at prediction step $i$ (Eq.~\ref{eq:Jy})
+  & -- \\
+
+$w_{i,j}^{u}$
+  & MPC tuning weight for manipulated variable $j$ at prediction step $i$ (Eq.~\ref{eq:Ju})
+  & -- \\
+
+$w_{i,j}^{\Delta u}$
+  & MPC tuning weight for the rate of change of manipulated variable $j$ (Eq.~\ref{eq:Jdeltau})
+  & -- \\
+
+$x(t)$
+  & Continuous-time state vector (Eq.~\ref{eq:statespace_state})
+  & -- \\
+
+$\dot{x}(t)$
+  & Time derivative of the state vector (Eq.~\ref{eq:statespace_state})
+  & -- \\
+
+$X$
+  & Generic process variable used in the deviation normalisation (Eq.~\ref{eq:Desviacion})
+  & -- \\
+
+$X_{desv}$
+  & Relative deviation of variable $X$ from its nominal operating value (Eq.~\ref{eq:Desviacion})
+  & -- \\
+
+$X_{nominal}$
+  & Nominal (steady-state) operating value of variable $X$ (Eq.~\ref{eq:Desviacion})
+  & -- \\
+
+$y$
+  & Controlled output variable (generic)
+  & -- \\
+
+$y(k)$
+  & Discrete-time system output signal (ARX/ARMAX inline description)
+  & -- \\
+
+$\bar{y}(k)$
+  & Discrete-time output signal in the ARX/ARMAX formulation (Eq.~\ref{eq:arx_general})
+  & -- \\
+
+$y(t)$
+  & Continuous-time output vector (state-space, Eq.~\ref{eq:statespace_output})
+  & -- \\
+
+$y_j(k{+}i|k)$
+  & Predicted controlled output $j$ at prediction step $i$ (Eqs.~\ref{eq:Jy})
+  & -- \\
+
+$y_n$
+  & Observed (rigorous-model) output at sample $n$ (Eqs.~\ref{eq:RECM}--\ref{eq:R2})
+  & -- \\
+
+$\hat{y}_n$
+  & Surrogate-model predicted output at sample $n$ (Eqs.~\ref{eq:RECM}--\ref{eq:R2})
+  & -- \\
+
+$\bar{y}$
+  & Mean of the observed output samples; used in $R^2$ denominator (Eq.~\ref{eq:R2})
+  & -- \\
+
+$Y(t)$
+  & Controlled process output in continuous time (Eq.~\ref{eq:ErrorRelativo})
+  & $^{\circ}$C \\
+
+$Y_{ref}(t)$
+  & Reference (setpoint) value of the process output (Eq.~\ref{eq:ErrorRelativo})
+  & $^{\circ}$C \\
+
+$z_k$
+  & MPC decision vector — sequence of future control moves and slack variable (Eq.~\ref{eq:Vectorzk})
+  & -- \\
+
+$z_k^T$
+  & Transpose of the MPC decision vector (Eq.~\ref{eq:Vectorzk})
+  & -- \\
+
+\bottomrule
+\end{longtable}
+
+\bigskip
+
+% ── B. Greek Symbols ──────────────────────────────────────────
+\subsection*{B. Greek symbols}
+
+\begin{tabularx}{\textwidth}{@{} l X r @{}}
+\toprule
+\textbf{Symbol} & \textbf{Description} & \textbf{Unit} \\
+\midrule
+
+$\Delta$
+  & Finite-difference / increment operator (e.g.\ $\Delta u$: change in manipulated variable)
+  & -- \\
+
+$\varepsilon_k$
+  & Slack variable for soft-constraint relaxation at time step $k$
+    (written $\epsilon_k$ in Eq.~\ref{eq:Vectorzk} and $\varepsilon_k$ in Eq.~\ref{eq:Jepsilon};
+    both refer to the same variable)
+  & -- \\
+
+$\rho_{\varepsilon}$
+  & Penalty coefficient on the slack variable in the MPC cost (Eq.~\ref{eq:Jepsilon})
+  & -- \\
+
+\bottomrule
+\end{tabularx}
+
+\bigskip
+
+% ── C. Subscripts ─────────────────────────────────────────────
+\subsection*{C. Subscripts}
+
+\begin{tabularx}{\textwidth}{@{} l X @{}}
+\toprule
+\textbf{Subscript} & \textbf{Description} \\
+\midrule
+$36$            & Stage 36 of column T-101 (temperature measurement location) \\
+$8$             & Stage 8 of column T-102 (temperature measurement location) \\
+$a$             & Autoregressive polynomial order \\
+$b$             & Input polynomial order \\
+$c$             & Noise polynomial order \\
+$desv$          & Relative deviation from the nominal operating point \\
+$ec$            & Algebraic equation count (MESH model) \\
+$et$            & Total equation count in the dynamic simulation \\
+$i$             & Prediction-step index within the MPC horizon \\
+$j$             & Controlled-output or manipulated-variable index \\
+$k$             & Current discrete-time step \\
+$n$             & Sample index in statistical fit metrics (RECM, $R^2$) \\
+$nominal$       & Nominal (steady-state) operating value \\
+$R$             & Reboiler (used in $Q_{R}$, $Q_{R,T\text{-}101}$, etc.) \\
+$ref$           & Reference (setpoint) value \\
+$rel$           & Relative quantity \\
+$target$        & Desired steady-state target for a manipulated variable \\
+$T\text{-}101$  & Extractive distillation column identifier \\
+$T\text{-}102$  & Solvent-recovery distillation column identifier \\
+\bottomrule
+\end{tabularx}
+
+\bigskip
+
+% ── D. Superscripts ───────────────────────────────────────────
+\subsection*{D. Superscripts}
+
+\begin{tabularx}{\textwidth}{@{} l X @{}}
+\toprule
+\textbf{Superscript} & \textbf{Description} \\
+\midrule
+$T$             & Transpose of a matrix or vector \\
+$\hat{\ }$      & Estimated (surrogate-model predicted) value \\
+$\bar{\ }$      & Mean value; also used in ARX/ARMAX overbar signal notation \\
+$\Delta u$      & Rate-of-change of the manipulated variable (as tuning-weight superscript) \\
+$u$             & Manipulated-variable quantity (as scaling or tuning-weight superscript) \\
+$y$             & Controlled-output quantity (as scaling or tuning-weight superscript) \\
+$-1$            & Unit-delay operation on shift operator $q$ \\
+\bottomrule
+\end{tabularx}
+
+\bigskip
+
+% ── E. Abbreviations ──────────────────────────────────────────
+\subsection*{E. Abbreviations}
+
+\begin{tabularx}{\textwidth}{@{} l X @{}}
+\toprule
+\textbf{Abbreviation} & \textbf{Description} \\
+\midrule
+ARMAX       & AutoRegressive Moving Average with eXogenous inputs \\
+ARX         & AutoRegressive with eXogenous inputs \\
+CPU         & Central Processing Unit \\
+DMSO        & Dimethyl sulfoxide (extractive distillation solvent) \\
+IAE         & Integral of Absolute Error (Eq.~\ref{eq:IAE}) \\
+ISE         & Integral of Squared Error (Eq.~\ref{eq:ISE}) \\
+ITAE        & Integral of Time-weighted Absolute Error (Eq.~\ref{eq:ITAE}) \\
+ITSE        & Integral of Time-weighted Squared Error (Eq.~\ref{eq:ITSE}) \\
+MESH        & Mass, Equilibrium, Summation, and Heat (distillation modelling framework) \\
+MPC         & Model Predictive Control \\
+NARX        & Nonlinear AutoRegressive with eXogenous inputs \\
+NLARX-SVM   & Nonlinear ARX model coupled with a Support Vector Machine \\
+PFD         & Process Flow Diagram \\
+PI          & Proportional-Integral controller \\
+PID         & Proportional-Integral-Derivative controller \\
+QP          & Quadratic Programming \\
+RAM         & Random Access Memory \\
+RECM        & Ra\'iz del Error Cuadr\'atico Medio (Spanish equivalent of RMSE, Eq.~\ref{eq:RECM}) \\
+RMSE        & Root Mean Square Error \\
+SS          & State Space \\
+SVM         & Support Vector Machine \\
+\bottomrule
+\end{tabularx}

@@ -1,13 +1,6 @@
 % ================================================================
-% MAIN FILE — ARTICLE MODULAR
-% Compatible con tu estructura:
-% sections/, figures/, references.bib, build/
-% ================================================================
-
+% MAIN FILE 
 \documentclass[10pt,twoside]{article}
-
-% ================================================================
-% ESPACIADO COMPACTO (tu estilo)
 % ================================================================
 
 \linespread{0.95}
@@ -43,6 +36,9 @@ includefoot]{geometry}
 % ================================================================
 
 \usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{placeins} 
 \usepackage{float}
 \usepackage{fancyhdr}
 \usepackage{booktabs}
@@ -50,15 +46,6 @@ includefoot]{geometry}
 \usepackage{subcaption}
 \usepackage{mathrsfs}
 \usepackage{hyperref}
-
-% ================= NOMENCLATURE (LISTA DE SÍMBOLOS) =================
-\usepackage{nomencl}
-\makenomenclature
-
-% Ejemplos de uso en el texto:
-% \\nomenclature{$T$}{Temperatura del sistema [K]}
-% \\nomenclature{$u$}{Variable manipulada (entrada de control)}
-% \\nomenclature{$y$}{Variable controlada (salida del sistema)}
 \usepackage{tcolorbox}
 \usepackage{xcolor,colortbl}
 \usepackage{amsmath}
@@ -74,6 +61,10 @@ includefoot]{geometry}
 \usepackage{algorithm}
 \usepackage{algorithmic}
 
+% ================= NOMENCLATURE (LISTA DE SÍMBOLOS) =================
+\usepackage{nomencl}
+\makenomenclature
+
 % ================================================================
 % BIBLIOGRAFÍA
 % ================================================================
@@ -86,24 +77,35 @@ includefoot]{geometry}
 % ================================================================
 
 \usepackage[labelfont=bf,labelsep=period]{caption}
-\renewcommand{\figurename}{Figure}
-\renewcommand{\tablename}{Table}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabla}
 
 % ================================================================
 % HEADER / FOOTER
 % ================================================================
 
 \pagestyle{fancy}
-\fancyhf{}
+\fancyhf{}  % limpia encabezado y pie
 
-\rhead{Proyecto}
-\lhead{\includegraphics[width=4cm,keepaspectratio]{figures/Andes.png}}
+\fancyhead[L]{%
+  \begin{minipage}[c]{0.55\textwidth}
+    Proyecto de Desarrollo Profesional\\
+    Departamento de Ingeniería Química y de Alimentos
+  \end{minipage}%
+  \begin{minipage}[c]{0.4\textwidth}
+    \raggedleft
+    \includegraphics[height=1.8cm,keepaspectratio]{figures/Andes.png}
+  \end{minipage}
+}
 
+% Pie de página centrado sin línea
 \cfoot{Page \thepage\ of \pageref{LastPage}}
 
-\renewcommand{\headrulewidth}{0.5pt}
-\renewcommand{\footrulewidth}{0.5pt}
+% Desactivar líneas negras
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
+% Altura del encabezado
 \setlength\headheight{2.1cm}
 
 % ================================================================
@@ -136,20 +138,17 @@ urlcolor=black
 
 \begin{document}
 
-{
-\setlength{\parskip}{0pt}
-\raggedright
-{\Large\bfseries
-\parbox{\linewidth}{%
-Título del Proyecto
-}\par
-}
-\vspace{0.5cm}
-\normalsize
-\textbf{Alvaro Paez} \par
-\vspace{0.15cm}
-\hrule
-}
+\begin{center}
+  {\LARGE \bfseries Implementación de Técnicas de Subrogación de Modelos para el Control de Procesos No Lineales \par}
+  \vspace{0.5cm}
+  {\large Álvaro Páez\textsuperscript{1}, Alejandro Ardila\textsuperscript{1}, Jorge M. Gómez\textsuperscript{1} \par}
+  \vspace{0.3cm}
+  {\normalsize Departamento de Ingeniería Química y de Alimentos, Universidad de los Andes \par
+  Edificio Mario Laserna. Cra. 1 Este 19A-40, Bogotá, Colombia \par}
+  \vspace{0.5cm}
+  \hrule
+  \vspace{0.5cm}
+\end{center}
 
 % ================================================================
 % SECCIONES MODULARES
@@ -164,16 +163,19 @@ Título del Proyecto
 \input{sections/resultados_discusion}
 
 \input{sections/conclusiones}
+\clearpage
 
 % ================================================================
 % BIBLIOGRAFÍA
-% ================================================================
-
 \printbibliography
 
 % ================= LISTA DE SÍMBOLOS =================
-% Se imprimirá automáticamente antes de las conclusiones
-\printnomenclature
+\input{sections/Nomenclatura.tex}
+\clearpage
+
+% ================= LISTA DE ANEXOS =================
+\input{sections/ANEXOS.tex}
+
 
 \end{document}
 

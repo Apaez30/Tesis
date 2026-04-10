@@ -1,0 +1,76 @@
+\FloatBarrier
+\section{Anexos}
+
+\subsection{Diagramas}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/PFD.png}
+    \caption{Diagrama del proceso de destilación extractiva.}
+    \label{fig:DiagramaPFD}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/Simulink.png}
+    \caption{Diagrama del control implementado en Simulink.}
+    \label{fig:DiagramaSimulink}
+\end{figure}
+
+\subsection{Parámetros de los metamodelos}
+
+\begin{table}[H]
+\centering
+\caption{Parámetros de modelos de subrogación para T-101}
+\label{tab:T101}
+\footnotesize
+\begin{tabularx}{\textwidth}{l c X}
+\toprule
+\textbf{Modelo} & \textbf{Entrada} & \textbf{Parámetros} \\
+\midrule
+
+SS-T101 & -- &
+$A = [40.8, -41.47, -3.201, -2.235, -3.453, 4.586]$ \\
+& & $B = [0.165, -18.52, -1.84, -11.35, 0.8057, 7.268]$ \\
+& & $C = [10.59, 1.733, -2.845, -9.098, 0.9113, 2.971]$ \\[0.4em]
+
+ARX-T101 & -- &
+$A = [1.000, -1.354, 0.198, -0.003, 0.119, 0.085, 0.011, -0.024, -0.026, -0.036, 0.022, 0.005, -0.002, -0.002, 0.007]$ \\
+& & $B = [0.000, 0.164, -0.158, -0.027, -0.009, 0.012, 0.018, 0.011, 0.003, -0.008, -0.007, 0.002, 0.001, 0.000, -0.002]$ \\[0.4em]
+
+ARMAX-T101 & -- &
+$A = [1.000, -2.486, 2.019, -0.616, 0.179, -0.051, -0.050, -0.013, 0.004, -0.015, 0.054, -0.021, -0.005, 0.002, -0.000]$ \\
+& & $B = [0.000, 0.164, -0.343, 0.199, -0.024, 0.014, 0.002, -0.006, -0.005, -0.008, 0.003, 0.007, -0.001, -0.001, -0.001]$ \\
+& & $C = [1.000, -1.133, 0.288]$ \\
+
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Parámetros de modelos de subrogación para T-102}
+\label{tab:T102}
+\footnotesize
+\begin{tabularx}{\textwidth}{l c X}
+\toprule
+\textbf{Modelo} & \textbf{Entrada} & \textbf{Parámetros} \\
+\midrule
+
+SS-T102 & -- &
+$A = [-12.31, -3.067, 7.829, -8.206, -13.97, -8.776, -6.807, 5.213]$ \\
+& & $B = [-0.7859, -0.3498, 19.37, -3.938, -7.507, -2.394, 1.11, -0.09381]$ \\
+& & $C = [-7.394, -19, 0.3128, 13.91, 22.35, 7.993, 10.39, -5.793]$ \\[0.4em]
+
+ARX-T102 & -- &
+$A = [1.000, -1.756, 0.895, -0.162, 0.208, -0.086, -0.304, 0.270, -0.064, 0.060, -0.093, 0.000, 0.058, -0.039, 0.012]$ \\
+& & $B = [0.000, 0.310, -0.411, 0.085, 0.018, 0.115, -0.002, -0.174, 0.054, 0.016, 0.035, -0.036, -0.024, 0.021, -0.008]$ \\[0.4em]
+
+ARMAX-T102 & -- &
+$A = [1.000, -2.185, 2.223, -1.556, 0.797, -0.272, -0.152, 0.339, -0.321, 0.225, -0.154, 0.061, 0.018, -0.043, 0.021]$ \\
+& & $B = [0.000, 0.310, -0.544, 0.440, -0.255, 0.158, -0.041, -0.109, 0.123, -0.098, 0.058, -0.043, 0.005, 0.014, -0.015]$ \\
+& & $C = [1.000, -0.431, 0.581]$ \\
+
+\bottomrule
+\end{tabularx}
+\end{table}
