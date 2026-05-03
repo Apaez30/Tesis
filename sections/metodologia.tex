@@ -1,161 +1,226 @@
 \section{Metodología}
 
-El presente trabajo se desarrolló como una extensión y comparación del estudio realizado por Quintero y Botía et al. \cite{ref10} sobre la subrogación de modelos para el control predictivo de un proceso de destilación extractiva. La metodología se estructuró en dos fases principales: $(i)$ la replicación y verificación de la base metodológica establecida en dicho trabajo, que incluye el caso de estudio, las simulaciones rigurosas y la generación de datos dinámicos; y $(ii)$ la implementación y evaluación de nuevas estrategias de subrogación orientadas al control. En la primera fase se utilizó el mismo caso de estudio correspondiente a la separación de una mezcla azeotrópica metanol-acetona mediante destilación extractiva con dimetilsulfóxido (DMSO) como agente separador. Inicialmente, se verificó el correcto funcionamiento del modelo del proceso en estado estacionario en Aspen Plus. Posteriormente, el proceso fue llevado a un entorno dinámico mediante Aspen Plus Dynamics, donde se implementó la estructura de control regulatorio necesaria para garantizar la estabilidad hidráulica del sistema durante la operación. 
+El presente trabajo se desarrolló como una extensión y comparación del estudio realizado por Quintero y Botía et al.~\cite{ref10} sobre la subrogación de modelos para el control predictivo de un proceso de destilación extractiva. La metodología se estructuró en dos fases principales: (i) la replicación y verificación de la base metodológica establecida en dicho trabajo, que incluye el caso de estudio, las simulaciones rigurosas y la generación de datos dinámicos; y (ii) la implementación y evaluación de nuevas estrategias de subrogación orientadas al control. En la primera fase se utilizó el mismo caso de estudio correspondiente a la separación de una mezcla azeotrópica metanol-acetona mediante destilación extractiva con dimetilsulfóxido (DMSO) como agente separador. Inicialmente, se verificó el correcto funcionamiento del modelo del proceso en estado estacionario en Aspen Plus. Posteriormente, el proceso fue llevado a un entorno dinámico mediante Aspen Plus Dynamics, donde se implementó la estructura de control regulatorio necesaria para garantizar la estabilidad hidráulica del sistema durante la operación.
 
-Una vez estabilizado el proceso en el entorno dinámico, se realizaron pruebas de escalón en las variables manipuladas del sistema, correspondientes al calor de rehervidor y la relación de reflujo en cada columna ($Q_{R,T-101}$, $Q_{R,T-102}$, $RR_{T-101}$ y $RR_{T-102}$), mientras se monitoreó la respuesta de las variables controladas asociadas a la pureza de los productos, representadas por las temperaturas en etapas específicas de las columnas ($T_{36,T-101}$ y $T_{8,T-102})$, para obtener datos dinámicos representativos del comportamiento del sistema frente a perturbaciones.
+\vspace{0.5cm}
 
-Estos datos fueron posteriormente utilizados para la construcción de modelos subrogados capaces de aproximar el comportamiento dinámico del modelo riguroso. En el trabajo original, la subrogación del sistema se realizó mediante representaciones en espacio de estados (SS). En el presente estudio, este método de subrogación se mantiene como referencia y se implementan adicionalmente modelos ARX y ARMAX con el objetivo de comparar el desempeño de diferentes estrategias de subrogación orientadas al control. Los modelos obtenidos fueron evaluados mediante métricas estadísticas de ajuste y posteriormente integrados en un esquema de control predictivo basado en modelo (MPC) mediante una co-simulación entre Aspen Plus Dynamics y MATLAB®–Simulink®, lo que permitió analizar su desempeño frente a perturbaciones en las corrientes de alimentación del proceso.
+Una vez estabilizado el proceso en el entorno dinámico, se realizaron pruebas de escalón en las variables manipuladas del sistema, correspondientes al calor de rehervidor y la relación de reflujo en cada columna ($Q_{R,T-101}$, $Q_{R,T-102}$, $RR_{T-101}$ y $RR_{T-102}$). Simultáneamente, se monitoreó la respuesta de las variables controladas asociadas a la pureza de los productos, representadas por las temperaturas en etapas específicas de las columnas ($T_{36,T-101}^{\text{Acet}}$ y $T_{8,T-102}^{\text{MetOH}}$), con el fin de obtener datos dinámicos representativos del comportamiento del sistema frente a perturbaciones. Para cada columna (T-101 y T-102), los datos generados se dividieron en dos conjuntos independientes: uno destinado a la identificación (entrenamiento) de los modelos y otro para su validación. Esta estrategia permite evaluar la capacidad de generalización de los modelos y evitar problemas de sobreajuste (\textit{overfitting}).
+
+\vspace{0.5cm}
+
+Estos datos fueron utilizados para la construcción de modelos subrogados capaces de aproximar el comportamiento dinámico del modelo riguroso. En el trabajo original, la subrogación del sistema se realizó mediante representaciones en espacio de estados (SS). En el presente estudio, este enfoque se mantiene como referencia y se implementan adicionalmente modelos ARX y ARMAX con el objetivo de comparar el desempeño de diferentes estrategias de subrogación orientadas al control. Los modelos obtenidos fueron evaluados mediante métricas estadísticas de ajuste y posteriormente integrados en un esquema de control predictivo basado en modelo (MPC), mediante una co-simulación entre Aspen Plus Dynamics y MATLAB\textregistered{}--Simulink\textregistered{}, lo que permitió analizar su desempeño frente a perturbaciones en las corrientes de alimentación del proceso. El flujo general de la metodología se ilustra en la Figura~\ref{fig:ProcesoControl}.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.6\textwidth]{figures/ProcesoControl.png}
-    \caption{Flujo del proceso de subrogación de modelos para el control predictivo}
+    \includegraphics[width=1\textwidth]{figures/ProcesoControl.png}
+    \caption{Flujo del proceso de subrogación de modelos para el control predictivo.}
     \label{fig:ProcesoControl}
 \end{figure}
 
 \subsection{Software empleado}
 
-Para el desarrollo de las simulaciones del proceso se empleó la suite aspenONE® de Aspen Technology Inc. (versión 11), específicamente los programas Aspen Plus V11 y Aspen Plus Dynamics V11, con el objetivo de simular el proceso tanto en estado estacionario como en régimen dinámico. Los datos generados durante la simulación dinámica fueron posteriormente exportados al entorno de MATLAB® y Simulink® R2025b de MathWorks Inc. En este entorno se realizaron las tareas de procesamiento de datos, la identificación de modelos subrogados y la implementación de los esquemas de control predictivo basados en modelo (MPC). Para la identificación de los modelos ARX y ARMAX se empleó el System Identification Toolbox de MATLAB®, el cual permite estimar modelos dinámicos a partir de datos de entrada-salida obtenidos del proceso. Por otra parte, el esquema de control MPC se implementó mediante el Model Predictive Control Toolbox, lo que permitió integrar directamente los modelos identificados en el controlador y evaluar su desempeño en el entorno de co-simulación con Aspen Plus Dynamics.
-
-
+Para el desarrollo de las simulaciones del proceso se empleó la suite
+aspenONE\textregistered{} de Aspen Technology Inc.\ (versión 11), específicamente los
+módulos Aspen Plus V11 y Aspen Plus Dynamics V11, con el objetivo de simular el proceso tanto en estado estacionario como en régimen dinámico. Aspen Plus Dynamics permite exportar modelos en estado estacionario a un entorno dinámico que resuelve las ecuaciones diferenciales algebraicas (DAE) del proceso con paso de tiempo variable, lo que resulta especialmente adecuado para la generación de datos de identificación en procesos altamente no lineales como la destilación extractiva \cite{ref10}. Los datos generados durante la simulación dinámica fueron exportados al entorno de MATLAB\textregistered{} y Simulink\textregistered{} R2025b de MathWorks Inc., donde se realizaron las tareas de procesamiento de datos, la identificación de modelos subrogados y la implementación de los esquemas de control predictivo basados en modelo (MPC). Para la identificación de los modelos ARX y ARMAX se empleó el \textit{System Identification Toolbox} de MATLAB\textregistered{}, el cual permite estimar modelos dinámicos lineales a partir de datos de entrada-salida. El esquema de control MPC se implementó mediante el \textit{Model Predictive Control Toolbox}, lo que permitió integrar directamente los modelos identificados en el controlador y evaluar su desempeño en el entorno de co-simulación con Aspen Plus Dynamics.
 
 \subsection{Caso de estudio y simulación rigurosa}
 
-Con el fin de establecer una base de comparación consistente, se adoptó el mismo caso de estudio y el modelo riguroso desarrollado por Quintero y Botía et al. \cite{ref10} correspondiente a un proceso de destilación extractiva para la separación de una mezcla azeotrópica de metanol y acetona.
+Con el fin de establecer una base de comparación consistente, se adoptó el mismo caso de estudio y modelo riguroso desarrollado por Quintero y Botía et al.\ \cite{ref10},
+correspondiente a un proceso de destilación extractiva para la separación de una mezcla azeotrópica de metanol y acetona.
 
 \subsubsection{Descripción del proceso}
 
-El proceso consiste en la separación de una mezcla azeotrópica de metanol-acetona mediante destilación extractiva utilizando dimetilsulfóxido (DMSO) como agente separador. La configuración del sistema está compuesta por dos columnas de destilación acopladas: una columna extractiva $T-101$ y una columna de recuperación de solvente $T-102$. En la columna extractiva $T-101$ se introduce la mezcla azeotrópica junto con el solvente DMSO, el cual modifica el equilibrio vapor-líquido del sistema y permite romper el azeótropo. Como resultado, la acetona se obtiene en el destilado mientras que la corriente de fondo contiene metanol y solvente. Esta corriente se envía posteriormente a la columna $T-102$, donde se realiza la recuperación del solvente mediante destilación, obteniéndose metanol en el destilado y DMSO en el fondo para su recirculación al proceso. El modelo del proceso se implementó inicialmente en Aspen Plus para verificar la consistencia de las condiciones operativas en estado estacionario antes de su análisis dinámico.
+El proceso consiste en la separación de una mezcla azeotrópica metanol-acetona mediante destilación extractiva utilizando dimetilsulfóxido (DMSO) como agente separador. La configuración del sistema comprende dos columnas de destilación acopladas: una columna extractiva ($T\text{-}101$) y una columna de recuperación de solvente ($T\text{-}102$). En la columna extractiva $T\text{-}101$ se introduce la mezcla azeotrópica junto con el solvente DMSO, el cual modifica la volatilidad relativa de los componentes al alterar el equilibrio vapor-líquido del sistema, permitiendo así romper el azeótropo y obtener acetona de alta pureza en el destilado. La corriente de fondos, compuesta por metanol y DMSO, se envía a la columna $T\text{-}102$, donde se recupera el solvente mediante destilación convencional, obteniéndose metanol en el destilado y DMSO en el fondo para su recirculación al proceso. El modelo del proceso fue implementado inicialmente en Aspen Plus para verificar la consistencia de las condiciones operativas en estado estacionario antes de proceder con el análisis dinámico.
 
 \subsubsection{Esquema de control regulatorio}
 
-Para garantizar la estabilidad hidráulica y operativa del sistema durante las simulaciones dinámicas, se implementó un esquema de control regulatorio basado en controladores de retroalimentación proporcional-integral (PI). 
-El sistema de control incluye lazos de control de nivel en los tanques de condensadores y rehervidores de ambas columnas, así como lazos de control de presión en cada columna de destilación. Estos lazos permiten mantener condiciones de operación estables y evitar problemas operativos tales como sobrellenado de equipos o variaciones de presión dentro del sistema. La sintonización de los controladores PI se realizó mediante el método de Tyreus-Luyben, el cual se basa en la determinación de la ganancia y el período últimos del sistema para establecer los parámetros de control adecuados. Los valores finales de sintonización corresponden a los reportados por Quintero y Botía et al. \cite{ref10}. Una vez implementado el esquema de control, se realizó una prueba de estabilidad del sistema para verificar su correcto funcionamiento. Para esta prueba se aplicó una perturbación tipo escalón correspondiente a un incremento del 15\% en el flujo molar de la corriente de alimentación azeotrópica respecto a su valor nominal. Los resultados obtenidos confirmaron que el sistema de control regulatorio permite mantener la estabilidad hidráulica del proceso, lo que constituye una base adecuada para el análisis dinámico posterior.
+Para garantizar la estabilidad hidráulica y operativa del sistema durante las simulaciones dinámicas, se implementó un esquema de control regulatorio basado en controladores de retroalimentación proporcional-integral (PI). El esquema incluye lazos de control de nivel en los condensadores y rehervidores de ambas columnas, así como lazos de control de presión en cada columna de destilación. Estos lazos permiten mantener condiciones de operación estables y evitar problemas operativos tales como el sobrellenado de equipos o variaciones no deseadas de presión dentro del sistema. La sintonización de los controladores PI se realizó mediante el método de Tyreus-Luyben, el cual determina los parámetros proporcional e integral a partir de la ganancia y el período últimos del sistema \cite{tyreus1992}. Los valores finales de sintonización corresponden a los reportados por Quintero y Botía et al.\ \cite{ref10}. La validación del esquema de control regulatorio se llevó a cabo mediante una prueba de estabilidad consistente en un escalón del 15\,\% en el flujo molar de la corriente de alimentación azeotrópica respecto a su valor nominal. Los resultados confirmaron que el sistema mantiene la estabilidad hidráulica ante esta perturbación, lo que constituye una base adecuada para el análisis dinámico posterior.
 
 \subsubsection{Generación de datos dinámicos mediante pruebas de escalón}
 
-Para obtener los datos necesarios para la identificación de modelos subrogados se realizaron pruebas de escalón (step tests) en la simulación dinámica del proceso utilizando Aspen Plus Dynamics. Estas pruebas consisten en aplicar cambios escalón en las variables manipuladas del proceso y registrar la respuesta dinámica de las variables de interés, con el propósito de excitar la dinámica del sistema y generar información suficiente para la identificación de modelos dinámicos.
+Para obtener los datos necesarios para la identificación de los modelos subrogados se
+realizaron pruebas de escalón (\textit{step tests}) en la simulación dinámica del proceso en Aspen Plus Dynamics. Estas pruebas consisten en aplicar cambios tipo escalón en las variables manipuladas y registrar la respuesta dinámica de las variables de salida de interés, con el propósito de excitar de manera adecuada la dinámica del sistema y garantizar la persistencia de excitación necesaria para la identificación paramétrica de los modelos \cite{ljung1999}. En el contexto de la subrogación orientada al control, las variables manipuladas consideradas fueron la potencia de los rehervidores y la razón de reflujo de cada columna. Dado que la medición directa de fracciones molares en procesos industriales continuos puede resultar costosa o difícil de implementar en línea, se seleccionaron las temperaturas de etapa como variables controladas, en virtud de su fuerte correlación con la pureza de los productos. En particular, se seleccionaron la temperatura de la etapa 36 para la columna $T\text{-}101$ y la temperatura de la etapa 8 para la columna $T\text{-}102$, por presentar la mayor sensibilidad frente a cambios en las condiciones operativas, determinada a través del análisis del perfil de temperatura de cada columna \cite{ref10}. Con el objetivo de disponer de conjuntos independientes para entrenamiento y validación, el procedimiento se realizó para dos \textit{datasets} obtenidos de stepcests distintos.
 
-En el contexto de la subrogación orientada al control, las variables manipuladas consideradas fueron la potencia de los rehervidores y la razón de reflujo de cada columna. Debido a que la medición directa de fracciones molares en procesos industriales continuos puede resultar costosa o difícil de implementar, se seleccionaron las temperaturas de etapa como variables controladas, dado que presentan una fuerte correlación con la pureza de los productos. En particular, se seleccionaron la temperatura de la etapa 36 para la columna $T-101$ y la temperatura de la etapa 8 para la columna $T-102$, debido a su alta sensibilidad frente a cambios en las condiciones operativas.
+\vspace{0.5cm}
 
-Durante el análisis de los datos obtenidos se observó la presencia de pequeñas variaciones residuales en las señales de temperatura que no son completamente explicadas por los cambios escalón aplicados. Estas variaciones pueden interpretarse como ruido en los datos, asociado principalmente aerrores de modelado y a la capacidad limitada de los modelos subrogados para reproducir completamente la dinámica del sistema, así como a efectos numéricos inherentes a la discretización temporal y a los algoritmos de integración empleados en la simulación dinámica. Este comportamiento resulta relevante para la identificación de modelos subrogados, particularmente en estructuras como los modelos ARX y ARMAX, en los cuales el término de ruido representa dinámicas no modeladas y errores de aproximación inherentes al proceso de identificación
+Durante el análisis de los datos se observó la presencia de pequeñas variaciones residuales en las señales de temperatura que no son completamente explicadas por los cambios escalón aplicados. Estas variaciones pueden interpretarse como ruido en los datos, asociado a errores de modelado, a efectos numéricos inherentes a la discretización temporal y a los algoritmos de integración empleados en la simulación dinámica. Este comportamiento resulta especialmente relevante para los modelos ARX y ARMAX, cuya estructura incluye explícitamente un término de ruido que permite capturar dinámicas no modeladas y errores de aproximación inherentes al proceso de identificación \cite{soderstrom1989}.
 
 
 \subsection{Subrogación de modelos}
 
-La subrogación del proceso se realizó con el objetivo de construir modelos dinámicos simplificados capaces de reproducir el comportamiento del modelo riguroso y que puedan ser utilizados dentro de esquemas de control predictivo basado en modelo. En el trabajo original de Quintero y Botía et al. \cite{ref10}, la subrogación se realizó mediante representaciones en espacio de estados. En el presente estudio, dicho modelo se mantiene como referencia o línea base para la comparación, y se implementan adicionalmente modelos de tipo ARX y ARMAX con el fin de evaluar su capacidad para representar la dinámica del proceso.
+La subrogación del proceso se realizó con el objetivo de construir modelos dinámicos
+simplificados capaces de reproducir el comportamiento del modelo riguroso en un rango de operación relevante para el control, de modo que puedan ser integrados eficientemente dentro de esquemas de control predictivo basado en modelo. En el trabajo original de Quintero y Botía et al.\ \cite{ref10}, la subrogación se realizó mediante representaciones en espacio de estados. En el presente estudio, dicho enfoque se mantiene como línea base de comparación, y se implementan adicionalmente modelos de tipo ARX, ARMAX y función de transferencia (TF), con el fin de evaluar su capacidad para representar la dinámica del proceso y su idoneidad dentro del esquema de control.
 
 \subsubsection{Preprocesamiento de datos}
 
-Antes de identificar los modelos, todas las variables de entrada y salida se transformaron en desviaciones respecto a su valor nominal de operación. Esta transformación permite centrar el análisis en la dinámica del proceso alrededor del punto de operación. La desviación de cada variable se calculó mediante:
+Antes de proceder con la identificación de los modelos, todas las variables de entrada y salida se transformaron en desviaciones relativas respecto a su valor nominal de operación. Esta transformación, estándar en la identificación de sistemas para control, permite que los modelos se centren en la dinámica del proceso alrededor del punto de operación, lo que facilita la linealización y mejora el condicionamiento numérico del problema de identificación. La desviación relativa de cada variable se calculó mediante: centra el análisis en la dinámica del proceso alrededor del punto de operación, lo que facilita la linealización y mejora el condicionamiento numérico del problema de identificación. La desviación relativa de cada variable se calculó mediante:
 
 \begin{equation}
-X_{desv} = \frac{(X-X_{nominal})}{X_{nominal}}
-\label{eq:Desviacion}
+    X_{\text{desv}} = \frac{X - X_{\text{nominal}}}{X_{\text{nominal}}}
+    \label{eq:Desviacion}
 \end{equation}
+
+\noindent donde $X$ es el valor medido de la variable y $X_{\text{nominal}}$ es su valor
+en estado estacionario nominal.
+
 
 \subsubsection{Identificación de modelos subrogados}
+\label{subsec:identificacion}
 
-La identificación de los modelos subrogados se realizó en el entorno MATLAB® R2025b, empleando el System Identification Toolbox, a partir de los datos obtenidos de las simulaciones dinámicas del proceso. En primer lugar, se consideró como referencia el modelo en espacio de estados desarrollado en el trabajo previo. Posteriormente, se identificaron modelos de tipo ARX y ARMAX con el objetivo de evaluar su capacidad para aproximar la dinámica del proceso mediante estructuras lineales discretas. Para los modelos ARX se llevó a cabo un barrido sistemático de órdenes utilizando las funciones arxstruc y selstruc del toolbox, las cuales permiten explorar automáticamente distintas combinaciones de parámetros autorregresivos y exógenos. En este contexto, los términos autorregresivos corresponden a valores pasados de la variable de salida del sistema (temperatura de etapa), mientras que los términos exógenos representan la influencia de las variables de entrada del proceso, en este caso la potencia del rehervidor y la razón de reflujo de cada columna. Una vez determinada la estructura ARX más adecuada, esta se utilizó como base para la identificación de modelos ARMAX, variando el orden asociado al polinomio de ruido (nc) y estimando los parámetros del modelo mediante las rutinas de identificación disponibles en el toolbox. Para cada valor de nc, se generó un modelo candidato y se evaluó su desempeño mediante simulación frente a los datos originales. El desempeño de cada modelo, para cada columna del proceso ($T-101$ y $T-102$), se evaluó mediante el coeficiente de determinación (R²) y el error cuadrático medio (RMSE) entre las salidas del modelo y los datos generados por el modelo riguroso. Estos indicadores permitieron seleccionar las estructuras con mejor capacidad predictiva para su posterior implementación en el esquema de control predictivo basado en modelo.
+La identificación de los modelos subrogados se realizó en el entorno MATLAB® R2025b, utilizando el System Identification Toolbox y a partir de los datos obtenidos de las simulaciones dinámicas del proceso. En primer lugar, se consideró como referencia el modelo en espacio de estados desarrollado en el trabajo previo. Posteriormente, se identificaron modelos de tipo ARX y ARMAX con el objetivo de evaluar su capacidad para aproximar la dinámica del proceso mediante estructuras lineales discretas. Para los modelos ARX se realizó un barrido sistemático de órdenes utilizando las funciones \texttt{arxstruc} y \texttt{selstruc}, las cuales permiten explorar distintas combinaciones de parámetros autorregresivos y exógenos. En este contexto, los términos autorregresivos corresponden a valores pasados de la variable de salida del sistema (temperatura de etapa), mientras que los términos exógenos representan la influencia de las variables de entrada del proceso, es decir, la potencia del rehervidor y la razón de reflujo de cada columna.De manera análoga, se realizó un barrido para los modelos ARMAX, variando el orden asociado al polinomio de ruido ($n_c$) y estimando los parámetros del modelo mediante las rutinas de identificación disponibles en el toolbox. Para cada valor de $n_c$ se generó un modelo candidato, cuyo desempeño fue evaluado mediante simulación frente a los datos experimentales.Por otra parte, en los modelos de función de transferencia se seleccionaron los polos y ceros que presentaron el mejor ajuste, junto con el retraso temporal identificado por MATLAB. En el caso de los modelos FOPDT, al tratarse de una estructura predefinida, se utilizó directamente la función correspondiente del toolbox.
 
-\subsubsection{Métricas de evaluación}
+\vspace{0.5cm}
 
-Para evaluar la capacidad de los modelos subrogados de reproducir la dinámica del proceso se emplearon métricas estadísticas de ajuste. En particular, se calcularon el coeficiente de determinación $R^2$ y  la media cuadrática del error (RECM), los cuales permiten cuantificar la calidad del ajuste entre las predicciones del modelo y los datos obtenidos de la simulación rigurosa. Las métricas se calcularon según las ecuaciones \ref{eq:RECM} y \ref{eq:R2}:
+Con el objetivo de evitar el sobreajuste, la validación de los modelos se realizó utilizando un conjunto de datos correspondiente a un segundo \textit{step test}. Para aquellos modelos con mayor flexibilidad estructural, como los de espacio de estados, ARX y ARMAX, se realizó una nueva iteración de los parámetros estructurales con el fin de mejorar el ajuste al conjunto de validación. En cambio, los modelos de función de transferencia y FOPDT se validaron únicamente mediante la comparación entre las salidas reales y las predicciones del modelo ya identificado.El desempeño de la subrogación, para cada columna del proceso (T-101 y T-102), se evaluó mediante el coeficiente de determinación ($R^2$) y el error cuadrático medio (RMSE) entre las salidas del modelo y los datos generados por el modelo riguroso. Estos indicadores permitieron obtener una estimación preliminar del desempeño esperado de los modelos en el esquema de control predictivo.
+
+\subsubsection{Métricas de evaluación de los modelos subrogados}
+
+Para evaluar la capacidad de los modelos subrogados de reproducir la dinámica del proceso se emplearon métricas estadísticas de ajuste. En particular, se calcularon el coeficiente de determinación ($R^2$) y la raíz del error cuadrático medio (RECM), calculados entre las salidas predichas por el modelo y los datos generados por la simulación rigurosa. Estas métricas se calcularon según las Ecs.~\eqref{eq:RECM} y \eqref{eq:R2}:
 
 \begin{equation}
-RECM= \sqrt[2]{\frac{\sum_{n=1}^N (y_n - \hat{y}_n)^2}{N}}
-\label{eq:RECM}
+    \mathrm{RECM} = \sqrt{\frac{\displaystyle\sum_{n=1}^{N}\!\left(\hat{y}_n - y_n\right)^2}{N}}
+    \label{eq:RECM}
 \end{equation}
 
 \begin{equation}
-R^2 = 1 - \frac{\sum_{n=1}^N (y_n - \hat{y}_n)^2}{\sum_{n=1}^N (y_n - \bar{y})^2}
-\label{eq:R2}
+    R^2 = 1 - \frac{\displaystyle\sum_{n=1}^{N}\!\left(y_n - \hat{y}_n\right)^2}
+                   {\displaystyle\sum_{n=1}^{N}\!\left(y_n - \bar{y}\right)^2}
+    \label{eq:R2}
 \end{equation}
+
+\noindent donde $N$ es el número de datos, $y_n$ es el valor real, $\hat{y}_n$ es el
+valor predicho por el modelo para el instante $n$, y $\bar{y}$ es la media de los datos reales. Un valor de $R^2$ cercano a la unidad indica un ajuste adecuado, mientras que valores bajos de RECM señalan errores de predicción pequeños. Estos indicadores proporcionaron una evaluación previa de la capacidad predictiva de cada estructura, como guía para su posterior implementación en el esquema de control.
 
 \subsection{Implementación del control MPC y co-simulación}
 
-Con el fin de evaluar el desempeño de los modelos subrogados dentro de un entorno de control, se implementó un esquema de MPC mediante una co-simulación entre Aspen Plus Dynamics y MATLAB®–Simulink®. En este esquema, la simulación dinámica del proceso se ejecuta en Aspen Plus Dynamics, mientras que el controlador MPC se implementa en Simulink. La comunicación entre ambos entornos permite que el controlador utilice los modelos subrogados para calcular las acciones de control en cada instante.Las variables manipuladas consideradas fueron la potencia de los rehervidores y la razón de reflujo de las columnas, mientras que las variables controladas correspondieron a las temperaturas de etapa seleccionadas para cada columna. Para evaluar el desempeño del controlador se aplicaron perturbaciones de tipo escalón en los flujos de alimentación del proceso durante un horizonte dinámico de simulación de 100 horas. El desempeño del sistema de control se evaluó en términos del error relativo respecto al valor nominal de la variable controlada, del tiempo de estabilización del sistema y del esfuerzo de control requerido para mantener la operación estable.
+Con el fin de evaluar el desempeño de los modelos subrogados en un entorno de control
+real, se implementó un esquema de MPC mediante una co-simulación entre Aspen Plus Dynamics y MATLAB\textregistered{}--Simulink\textregistered{}. En este esquema, la simulación dinámica rigurosa del proceso se ejecuta en Aspen Plus Dynamics, mientras que el controlador MPC opera en Simulink. La comunicación entre ambos entornos se realiza a través de la interfaz ActiveX en cada intervalo de muestreo: Aspen envía a Simulink las mediciones actuales de las variables controladas (temperaturas de etapa), y el controlador calcula las acciones de control que son devueltas a Aspen como consignas de la potencia de los rehervidores y de la razón de reflujo, cerrando así el lazo de control.
+
+\vspace{0.5cm}
+
+Las variables manipuladas consideradas fueron la potencia de los rehervidores
+($Q_{R,T\text{-}101}$, $Q_{R,T\text{-}102}$) y la razón de reflujo de las columnas
+($RR_{T\text{-}101}$, $RR_{T\text{-}102}$), mientras que las variables controladas
+correspondieron a las temperaturas de etapa $T_{36,T\text{-}101}$ y $T_{8,T\text{-}102}$. Para evaluar el desempeño del controlador se aplicaron dos perturbaciones tipo escalón en los flujos de alimentación del proceso (un incremento del 8\,\% respecto al valor nominal en cada caso), sobre un horizonte de simulación de 100 horas. Las perturbaciones se aplicaron en instantes predefinidos dentro del horizonte de simulación con el fin de evaluar la capacidad de rechazo del controlador bajo condiciones reproducibles.
+
 
 \subsubsection{Formulación del problema de optimización MPC}
+\label{subsec:formulacion_mpc}
 
-En cada instante de control k, el controlador MPC resuelve un problema de optimización utilizando un problema de programación cuadrática (QP). Este tiene un vector de decisión $z_k$ que define la secuencia futura de acciones de control frente a las variables manipuladas:
-
-\begin{equation}
-z_k^T=[u(k|k)^T u(k+1|k)^T \cdots u(k+p-1|k)^T, \epsilon_k )]
-\label{eq:Vectorzk}
-\end{equation}
+En cada instante de control $k$, el controlador MPC resuelve un problema de programación cuadrática (QP) sobre un horizonte de predicción $p$. El vector de decisión $z_k$ agrupa las acciones de control futuras y la variable de holgura $\varepsilon_k$:
 
 \begin{equation}
-\min_{z_k} J(z_k) = J_y(z_k) + J_u(z_k) + J_{\Delta u}(z_k) + J_{\epsilon}(z_k)
-\label{eq:OptimizationProblem}
+    z_k^T = \bigl[u(k|k)^T,\; u(k+1|k)^T,\; \ldots,\; u(k+p-1|k)^T,\; \varepsilon_k\bigr]
+    \label{eq:Vectorzk}
 \end{equation}
-    
-Dentro del vector, se optimizan dichas acciones a lo largo del horizonte de predicción p, al mismo tiempo que $\epsilon_k$ penaliza las violaciones de las restricciones. El MPC realiza la acción de la ecuación \ref{eq:OptimizationProblem}, minimizando una función de costo resultante de la suma de cuatro términos. El primer termino $J_y$, formulado en la ecuación \ref{eq:Jy}, compara el error entre las salidas propuestas por los metamodelos con su referencia a lo largo del horizonte, mientras que $J_u$, de la ecuación \ref{eq:Ju}, penaliza las desviaciones de las dos variables manipuladas con respecto al valor en estado estable. Por el otro lado, el término $J_{\Delta u}$, expuesto en la ecuación \ref{eq:Jdeltau}, compara los cambios en las variables manipuladas consecutivas para evitar cambios bruscos. Por último, $J_{\epsilon}$ penaliza la variable de relajación asociada a posibles violaciones de restricciones, garantizando que estas solo ocurran cuando sea estrictamente necesario \cite{ref24}.
+
+El problema de optimización minimiza la función de costo compuesta:
 
 \begin{equation}
-J_y (z_k )=\sum_{j=1}^{n_y}\sum_{i=1}^{p}\left\{\frac{w_{i,j}^y}{s_j^y} [r_j (k+i|k)-y_j (k+i|k)]\right\}^2 
-\label{eq:Jy}
+    \min_{z_k}\; J(z_k) = J_y(z_k) + J_u(z_k) + J_{\Delta u}(z_k) + J_{\varepsilon}(z_k)
+    \label{eq:OptimizationProblem}
 \end{equation}
+
+\noindent donde cada término penaliza un aspecto distinto del desempeño del controlador. El término $J_y$ cuantifica el error entre la trayectoria predicha y la referencia:
 
 \begin{equation}
-J_u (z_k )=\sum_{j=1}^{n_u}\sum_{i=1}^{p-1}\left\{\frac{w_{i,j}^u}{s_j^u} [u_j (k+i|k)-u_{j,target} (k+i|k)]\right\}^2
-\label{eq:Ju}
+    J_y(z_k) = \sum_{j=1}^{n_y}\sum_{i=1}^{p}
+        \left\{\frac{w_{i,j}^{y}}{s_j^{y}}\bigl[r_j(k+i|k) - y_j(k+i|k)\bigr]\right\}^2
+    \label{eq:Jy}
 \end{equation}
+
+El término $J_u$ penaliza las desviaciones de las variables manipuladas respecto a su
+valor objetivo en estado estable:
 
 \begin{equation}
-J_{\Delta u} (z_k )=\sum_{j=1}^{n_u}\sum_{i=1}^{p-1}\left\{\frac{w_{i,j}^{\Delta u}}{s_j^u} [u_j (k+i|k)-u_j (k+i-1|k)]\right\}^2     
-\label{eq:Jdeltau}
+    J_u(z_k) = \sum_{j=1}^{n_u}\sum_{i=1}^{p-1}
+        \left\{\frac{w_{i,j}^{u}}{s_j^{u}}\bigl[u_j(k+i|k) - u_{j,\mathrm{target}}(k+i|k)\bigr]\right\}^2
+    \label{eq:Ju}
 \end{equation}
+
+El término $J_{\Delta u}$ penaliza los cambios bruscos en las acciones de control,
+favoreciendo trayectorias suaves de las variables manipuladas:
 
 \begin{equation}
-J_{\varepsilon} (z_k )=\rho_{\varepsilon} \varepsilon_k^2 
-\label{eq:Jepsilon}
+    J_{\Delta u}(z_k) = \sum_{j=1}^{n_u}\sum_{i=1}^{p-1}
+        \left\{\frac{w_{i,j}^{\Delta u}}{s_j^{u}}\bigl[u_j(k+i|k) - u_j(k+i-1|k)\bigr]\right\}^2
+    \label{eq:Jdeltau}
 \end{equation}
 
-En el contexto del estudio realizado, los modelos subrogados SS, ARX y ARMAX son los responsables del cálculo de las salidas predichas y   $(k+i|k)$, además de proporcionar la relación dinámica entre las variables manipuladas futuras $u(k+i|k)$ y el comportamiento esperado del proceso; permitiendo así que el optimizador evalúe el impacto de cada posible secuencia de control sobre el desempeño futuro del sistema.
+Finalmente, $J_{\varepsilon}$ penaliza la variable de holgura asociada a posibles
+violaciones de restricciones, garantizando la factibilidad del problema de optimización:
+
+\begin{equation}
+    J_{\varepsilon}(z_k) = \rho_{\varepsilon}\,\varepsilon_k^2
+    \label{eq:Jepsilon}
+\end{equation}
+
+\noindent En las expresiones anteriores, $w_{i,j}^{y}$, $w_{i,j}^{u}$ y
+$w_{i,j}^{\Delta u}$ son los pesos de ponderación, $s_j^{y}$ y $s_j^{u}$ son los
+factores de escala, $r_j(k+i|k)$ es la referencia predicha, y $y_j(k+i|k)$ y
+$u_j(k+i|k)$ son las salidas y entradas predichas, respectivamente, para el instante
+$k+i$ calculadas en el instante $k$ \cite{ref24}. En el contexto del presente estudio, los modelos subrogados SS, ARX, ARMAX y TF son los encargados de proporcionar las salidas predichas $y_j(k+i|k)$, es decir, la relación
+dinámica entre las variables manipuladas futuras y el comportamiento esperado del proceso, lo que permite al optimizador evaluar el impacto de cada secuencia de control posible sobre el desempeño futuro del sistema.
 
 \subsubsection{Integración con Aspen Plus Dynamics}
 
-La co-simulación entre Simulink y Aspen Plus Dynamics se realiza mediante el intercambio de señales de entrada y salida en cada intervalo de muestreo, donde Aspen envía a Simulink las mediciones actuales de las variables controladas (temperaturas de etapa) y el controlador MPC calcula las acciones de control, las cuales son enviadas de regreso a Aspen como ajustes en la potencia de los rehervidores y en la razón de reflujo, permitiendo así cerrar el lazo de control y considerar de forma dinámica la influencia de perturbaciones externas en el proceso. 
+La co-simulación entre Simulink y Aspen Plus Dynamics se realiza mediante el intercambio
+de señales de entrada y salida en cada intervalo de muestreo a través de la interfaz
+ActiveX. En cada paso, Aspen Plus Dynamics proporciona a Simulink las mediciones actuales de las temperaturas de etapa de ambas columnas, y el controlador MPC calcula las acciones de control óptimas conforme al problema de la Ec.~\eqref{eq:OptimizationProblem}. Dichas acciones son enviadas de regreso a Aspen Plus Dynamics como consignas de la potencia de los rehervidores y de las razones de reflujo, cerrando el lazo de control y permitiendo evaluar la respuesta del proceso riguroso ante la acción del controlador basado en los modelos subrogados.
+
 
 \subsubsection{Evaluación del desempeño del controlador}
 \label{sec:criterios}
 
-Para cuantificar la efectividad del esquema de control implementado, se evaluó el desempeño del sistema mediante un conjunto de métricas que permiten analizar la calidad del seguimiento de referencia, la rapidez de respuesta del sistema y el esfuerzo requerido por las variables manipuladas. El error relativo de seguimiento permite cuantificar la diferencia entre el valor de la variable controlada y su valor de referencia a lo largo del tiempo. Este indicador se calcula mediante la siguiente expresión:
+Para cuantificar la efectividad del esquema de control implementado, se empleó un
+conjunto de métricas complementarias que permiten analizar la calidad del seguimiento de
+referencia, la rapidez de la respuesta y el esfuerzo de control requerido.
+
+El \textbf{error relativo de seguimiento} cuantifica la diferencia entre la variable
+controlada y su referencia en cada instante:
 
 \begin{equation}
-e_{rel}(t)= \frac{|Y(t)-Y_{ref} (t)|}{Y_{ref} (t)}
-\label{eq:ErrorRelativo}
+    e_{\mathrm{rel}}(t) = \frac{\left|Y(t) - Y_{\mathrm{ref}}(t)\right|}{Y_{\mathrm{ref}}(t)}
+    \label{eq:ErrorRelativo}
 \end{equation}
 
-El tiempo de estabilización se define como el tiempo requerido para que las variables controladas ingresen y permanezcan dentro de una banda de tolerancia de ±2\% respecto a su valor nominal después de la aplicación de una perturbación. Este indicador permite evaluar la rapidez con la que el sistema recupera condiciones estables de operación. Además, para evaluar con mayor precisión la calidad del control, se utilizaron las siguientes métricas de error integral.
+El \textbf{tiempo de estabilización} se define como el tiempo requerido para que la
+variable controlada ingrese y permanezca dentro de una banda de tolerancia de $\pm 2\,\%$
+respecto a su valor nominal tras la aplicación de una perturbación.
 
-El criterio de la integral del valor absoluto del error (IAE) mide el error absoluto acumulado a lo largo del tiempo y se calcula como:
+Las \textbf{métricas de error integral} permiten una evaluación cuantitativa global del
+desempeño del controlador a lo largo de toda la simulación, considerando tanto la
+magnitud de los errores como su persistencia en el tiempo. El criterio
+de la integral del valor absoluto del error (IAE) mide el error absoluto acumulado:
 
 \begin{equation}
-\text{IAE} = \int_0^{\infty} |e(t)| \, dt
-\label{eq:IAE}
+    \mathrm{IAE} = \int_0^{\infty} |e(t)|\, dt
+    \label{eq:IAE}
 \end{equation}
 
-El criterio de la integral del error cuadrático mide el error cuadrático acumulado, penalizando los errores de mayor magnitud:
+El criterio de la integral del error cuadrático (ISE) penaliza con mayor severidad los
+errores de magnitud elevada:
 
 \begin{equation}
-\text{ISE} = \int_0^{\infty} e^2(t) \, dt
-\label{eq:ISE}
+    \mathrm{ISE} = \int_0^{\infty} e^2(t)\, dt
+    \label{eq:ISE}
 \end{equation}
 
-Por otro lado, el criterio de la integral del valor absoluto del error multiplicado por el tiempo (ITAE) pondera los errores con el tiempo, favoreciendo la penalización de los errores que persisten durante períodos prolongados:
+El criterio de la integral del valor absoluto del error ponderado por el tiempo (ITAE)
+penaliza los errores de larga duración, favoreciendo controladores con rechazo rápido de
+perturbaciones:
 
 \begin{equation}
-\text{ITAE} = \int_0^{\infty} t|e(t)| \, dt
-\label{eq:ITAE}
+    \mathrm{ITAE} = \int_0^{\infty} t\,|e(t)|\, dt
+    \label{eq:ITAE}
 \end{equation}
 
-Finalmente, la integral del error cuadrático multiplicado por el tiempo (ITSE) es una métrica análoga a la ITAE, pero incorpora el error al cuadrado, lo que incrementa la penalización de los errores de mayor magnitud y duración:
+Finalmente, la integral del error cuadrático ponderado por el tiempo (ITSE) combina la
+penalización por magnitud y por duración del error:
 
 \begin{equation}
-\text{ITSE} = \int_0^{\infty} t e^2(t) \, dt
-\label{eq:ITSE}
+    \mathrm{ITSE} = \int_0^{\infty} t\, e^2(t)\, dt
+    \label{eq:ITSE}
 \end{equation}
 
-Estas métricas de error integral permiten una evaluación más completa del desempeño del controlador, ya que cuantifican tanto la magnitud de los errores como su persistencia en el tiempo \cite{ref25}. Los resultados obtenidos con estas métricas permitieron comparar la capacidad de los distintos modelos subrogados para mantener la estabilidad del proceso, minimizar el error de seguimiento y reducir el esfuerzo de control requerido, proporcionando así una evaluación cuantitativa del desempeño de cada estrategia de modelado dentro del esquema de control predictivo basado en modelo.
+El uso conjunto de las métricas IAE, ISE, ITAE e ITSE proporciona una perspectiva integral del desempeño del controlador. Mientras que IAE e ISE caracterizan la magnitud global del error, ITAE e ITSE penalizan de manera más severa la persistencia del error en el tiempo. Este último aspecto resulta especialmente relevante en procesos lentos como la destilación, donde los tiempos de estabilización pueden extenderse durante varias horas. Estas métricas de error integral permiten una evaluación más completa del desempeño del controlador, ya que cuantifican tanto la magnitud como la duración de los errores a lo largo del tiempo~\cite{ref25}. Los resultados obtenidos permitieron comparar la capacidad de los distintos modelos subrogados para mantener la estabilidad del proceso, minimizar el error de seguimiento y reducir el esfuerzo de control dentro del esquema de control predictivo basado en modelo (MPC), proporcionando así una evaluación cuantitativa del desempeño de cada estrategia de modelado.

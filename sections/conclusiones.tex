@@ -1,5 +1,87 @@
+% ============================================================
 \section{Conclusiones}
-La subrogación de modelos para el control predictivo en sistemas no lineales como el caso de estudio planteado fue realizada exitosamente con resultados importantes a la hora de escoger un método de subrogación. Los tres modelos lograron estabilizar la variable controlada dentro de un rango de error menor al 1\%. Es por ello que puede concluir que los metamodelos de espacio de estado y los modelos ARX generan respuestas precisas y rápidas frente a perturbaciones en los flujos de entrada; lográndolo por medio del control de las temperaturas de las etapas con mayor sensibilidad del proceso de destilación. Sin embargo, es importante denotar que, según el análisis del control por medio de perturbaciones establecidas, hubo diferencias entre la respuesta del MPC por modelo. A partir de estas diferencias se logró deducir que el mejor entre los tres metamodelos para controlar la $T-101$ fue el de espacio de estados; mientras que el modelo ARX representó un mejor control predictivo para la $T-102$. Estos resultados, al no tener en cuenta la implementación de los dos MPC en un mismo sistema, llevan a la duda de si un control mixto con dos metamodelos diferentes obtendrá resultados favorables o similares.
+% ============================================================
 
-\section{Declaración de uso de inteligencia artificial generativa}
-En el articulo se realizaron revisiones y correcciones generales utilizando el modelo GPT-5.3 de OpenAI LLC. Se compartieron párrafos con el objetivo de corregir errores ortográficos y de redacción básicos. Los autores asumen la responsabilidad del contenido escrito.
+En este trabajo se evaluaron cuatro estructuras de modelos subrogados — ARX, ARMAX,
+espacio de estados (SS) y función de transferencia (TF) — como núcleo de un esquema de
+control predictivo basado en modelo (MPC) aplicado a un sistema de destilación extractiva
+de dos columnas acopladas ($T\text{-}101$ y $T\text{-}102$). La metodología abarcó
+desde la identificación de los modelos a partir de pruebas de escalón en Aspen Plus
+Dynamics hasta la evaluación de su desempeño de control mediante co-simulación con
+MATLAB\textregistered{}--Simulink\textregistered{}, considerando perturbaciones tipo
+escalón consistentes en un incremento del 5\,\% seguido de una reducción del 10\,\% en
+el caudal de alimentación sobre un horizonte total de simulación de 100 horas.
+
+Los resultados de la etapa de subrogación mostraron que el orden de calidad del ajuste
+estadístico difiere entre columnas, lo que evidencia la naturaleza dinámica distinta de
+cada subsistema dentro del proceso de destilación extractiva. Para la columna
+$T\text{-}101$, el modelo de espacio de estados presentó el mejor coeficiente de
+determinación ($R^2 = 0.771$), mientras que para la columna $T\text{-}102$ el modelo
+ARMAX fue el más preciso ($R^2 = 0.645$). No obstante, el análisis posterior del
+desempeño dentro del esquema de control predictivo demostró que el mejor ajuste
+estadístico durante la identificación no garantiza necesariamente el mejor comportamiento
+dinámico del controlador. Este hallazgo confirma que la idoneidad de un modelo en
+aplicaciones de MPC debe evaluarse con base en su capacidad para representar la dinámica
+relevante dentro del horizonte de predicción, y no únicamente por la exactitud global
+sobre los datos de identificación.
+
+En cuanto al desempeño de control, todos los modelos evaluados lograron estabilizar la
+variable controlada después de cada perturbación aplicada, manteniendo errores relativos
+inferiores al 1\,\%, lo que confirma la viabilidad general del uso de modelos subrogados
+lineales dentro de esquemas de control predictivo para sistemas de separación complejos.
+Sin embargo, las diferencias entre modelos son cuantitativamente significativas cuando
+se analizan los criterios integrales de desempeño sobre el horizonte completo de
+simulación.
+
+Para la columna $T\text{-}101$, el modelo ARMAX presentó el mejor desempeño integral,
+minimizando simultáneamente los tres indicadores evaluados (IAE\,=\,26.30\,
+ISE\,=\,18.88\, ITAE\,=\,985.93\,) y ofreciendo los menores tiempos
+de estabilización frente a perturbaciones en la alimentación. Este resultado sugiere que
+la estructura autorregresiva con media móvil proporciona una mayor flexibilidad para
+representar perturbaciones y dinámicas transitorias en la columna extractiva.
+
+Para la columna $T\text{-}102$, el modelo de espacio de estados fue el más robusto desde
+el punto de vista dinámico, con un valor de IAE de 81.71\, y un ITAE de
+3548.22\, valores inferiores a los obtenidos con los demás modelos evaluados.
+Este comportamiento indica que una representación estructurada basada en variables de
+estado permite describir con mayor precisión las dinámicas más lentas y los efectos
+acumulativos característicos de la columna de recuperación de solvente.
+
+En ambas columnas, el modelo basado en función de transferencia presentó el peor
+desempeño integral, con diferencias especialmente pronunciadas en la columna
+$T\text{-}102$, donde los valores de error acumulado fueron significativamente mayores
+que los obtenidos con los modelos ARX, ARMAX y SS. Este resultado sugiere que una
+representación de parámetros reducidos puede ser insuficiente para capturar las dinámicas
+de baja frecuencia y los acoplamientos presentes en sistemas de destilación multietapa
+bajo condiciones de control predictivo.
+
+El análisis de los costos computacionales evidenció que todos los modelos evaluados
+presentan tiempos de simulación y requerimientos de memoria compatibles con aplicaciones
+de control en tiempo real. Aunque el modelo de espacio de estados mostró el mayor tiempo
+total de simulación, también presentó una eficiencia computacional adecuada por paso de
+control. En consecuencia, el desempeño dinámico del controlador se establece como el
+criterio principal para la selección del modelo dentro del contexto de este estudio,
+por encima de las diferencias en costo computacional.
+
+A partir de la evidencia experimental y numérica obtenida, se concluye que la estrategia
+de control más adecuada para el sistema analizado corresponde a un
+esquema de control híbrido descentralizado, en el cual el modelo ARMAX gobierna
+el controlador MPC de la columna $T\text{-}101$, mientras que el modelo de espacio de
+estados gobierna el controlador MPC de la columna $T\text{-}102$. Esta arquitectura
+permite explotar las fortalezas dinámicas específicas de cada estructura de modelo en
+función de las características particulares de cada subsistema, maximizando el desempeño
+global del sistema de destilación.
+
+Los resultados de este trabajo aportan evidencia cuantitativa sobre la importancia de
+evaluar los modelos subrogados directamente dentro del entorno de control, en lugar de
+seleccionarlos exclusivamente con base en métricas de ajuste estadístico. Este principio
+constituye una guía metodológica aplicable a sistemas de separación complejos y a
+procesos multivariables en general, en los cuales la selección del modelo debe basarse en
+criterios integrales de desempeño dinámico bajo condiciones operativas representativas.
+
+Finalmente, el estudio demuestra que la integración de técnicas de identificación de
+sistemas con estrategias de control predictivo permite implementar soluciones de control
+robustas y computacionalmente viables para procesos de destilación extractiva. Los
+resultados obtenidos proporcionan una base sólida para la implementación futura de
+estrategias avanzadas de control en procesos químicos industriales, orientadas a mejorar
+la estabilidad operativa, la eficiencia energética y el desempeño dinámico del sistema.

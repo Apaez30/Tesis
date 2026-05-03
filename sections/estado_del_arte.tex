@@ -1,50 +1,74 @@
 \section{Estado del arte}
 
-La implementación de controles predictivos avanzados como el control predictivo basado en modelos (MPC) se ve 
-limitada por el alto costo computacional asociado a los modelos rigurosos que describen procesos químicos complejos. 
-Al requerir cálculos numéricos intensivos, la subrogación de modelos surge como una técnica eficiente para representar 
-el comportamiento del sistema mediante aproximaciones matemáticas. A través de metamodelos, es posible establecer 
-relaciones entre variables de entrada y salida con el objetivo de mantener la integridad del control mientras se reduce 
-la carga computacional \cite{ref6}. Diversos estudios han explorado la subrogación de modelos con el propósito de 
-integrarlos en sistemas de control predictivo.
+La implementación de controles predictivos avanzados como el control predictivo basado en modelos (Model Predictive Control, MPC) se ve limitada por el alto costo computacional asociado a los modelos rigurosos que describen procesos químicos complejos. Estos modelos requieren la solución numérica de sistemas de ecuaciones diferenciales y algebraicas de gran dimensión, lo que incrementa significativamente el tiempo de cálculo cuando se utilizan dentro de algoritmos de optimización en tiempo real. En este contexto, la subrogación de modelos surge como una técnica eficiente para representar el comportamiento dinámico del sistema mediante aproximaciones matemáticas de menor complejidad. A través de metamodelos, es posible establecer relaciones entre variables de entrada y salida con el objetivo de mantener la integridad del control mientras se reduce la carga computacional \cite{ref6}. Diversos estudios han explorado la subrogación de modelos con el propósito de integrarlos en sistemas de control predictivo aplicados a procesos químicos complejos, incluyendo sistemas de separación por destilación.
 
 \subsection{Modelos ARX y ARMAX}
-Los modelos ARX (AutoRegressive with eXogenous inputs) constituyen una clase de modelos lineales de identificación de 
-sistemas en tiempo discreto que describen la salida actual del sistema como una combinación lineal de sus salidas pasadas
-y de las entradas actuales y pasadas \cite{ref11}. Su estructura general se expresa como:
+
+Los modelos ARX (AutoRegressive with eXogenous inputs) constituyen una clase de modelos lineales de identificación de sistemas en tiempo discreto que describen la salida actual del sistema como una combinación lineal de sus salidas pasadas y de las entradas actuales y pasadas \cite{ref11}. Su estructura general se expresa como:
 
 \begin{equation}
-A(q) \bar{y}(k) = B(q) \bar{u}(k-n_k) + \bar{e}(k)
+A(q) y(k) = B(q) u(k-n_k) + e(k)
 \label{eq:arx_general}
 \end{equation}
 
 \begin{equation}
-A(q) = a_1 + a_2q^{-1} + \cdots + a_{n} q^{-n_a}
+A(q) = 1 + a_1 q^{-1} + a_2 q^{-2} + \cdots + a_{n_a} q^{-n_a}
 \label{eq:arx_A}
 \end{equation}
 
 \begin{equation}
-B(q) = b_1 + b_2q^{-1} + \cdots + b_{n} q^{-n_b+1}
+B(q) = b_1 q^{-1} + b_2 q^{-2} + \cdots + b_{n_b} q^{-n_b}
 \label{eq:arx_B}
 \end{equation}
 
-En las ecuaciones \ref{eq:arx_general} \ref{eq:arx_B}, $y(k)$ representa la salida del sistema en el instante $k$, $u(k)$ 
-la entrada manipulada, $A(q)$ y $B(q)$ los polinomios que contienen los parámetros del modelo, $n_a$ y $n_b$ el número de 
-polos y ceros del sistema, respectivamente, y $n_k$ el retraso del modelo. El término $e(k)$ corresponde al ruido blanco 
-que captura las perturbaciones no modeladas y $q^{-1}$ es el operador de retraso. Los parámetros del modelo se estiman típicamente mediante el método de mínimos cuadrados ordinarios, lo que garantiza una 
-solución analítica cerrada \cite{ref11}. Una ventaja importante de los modelos ARX en el contexto del control MPC es su 
-compatibilidad directa con herramientas computacionales de identificación de sistemas, lo que permite su integración 
-inmediata en esquemas de control sin necesidad de transformaciones adicionales. Estudios recientes han aplicado modelos ARX en la identificación y control de columnas de destilación, reportando  desempeños adecuados incluso cuando el proceso presenta comportamientos ligeramente no lineales \cite{ref12}. Sin embargo,  su desempeño puede verse limitado en presencia de fuertes no linealidades, situación en la que estructuras como los modelos NARX o modelos de mayor complejidad pueden ofrecer mejores resultados \cite{ref13}. No obstante, cuando el sistema presenta un nivel de ruido significativo, resulta conveniente utilizar modelos ARMAX, los
-cuales incorporan un término adicional que modela explícitamente la dinámica del error:
+donde $y(k)$ representa la salida del sistema en el instante discreto $k$, $u(k)$ corresponde a la entrada manipulada, $A(q)$ y $B(q)$ son los polinomios que contienen los parámetros del modelo, $n_a$ y $n_b$ representan el número de polos y ceros del sistema, respectivamente, y $n_k$ es el retraso del modelo. El término $e(k)$ corresponde al ruido blanco que captura perturbaciones no modeladas, mientras que $q^{-1}$ representa el operador de retraso temporal. Los parámetros del modelo se estiman típicamente mediante el método de mínimos cuadrados ordinarios, lo que permite obtener una solución analítica cerrada y computacionalmente eficiente \cite{ref11}. Una ventaja particular de los modelos ARX en el contexto del control predictivo es su compatibilidad directa con herramientas de identificación de sistemas utilizadas en la industria, lo que facilita su integración en esquemas de control sin necesidad de conversiones adicionales y reduce el riesgo de inconsistencias en la discretización del modelo. El término de ruido en los modelos ARX tiene una interpretación física relevante en el contexto de simulaciones dinámicas de procesos químicos, ya que puede representar perturbaciones no medidas, incertidumbre en los parámetros termodinámicos del simulador o errores asociados a la discretización temporal del modelo.Estudios recientes han aplicado modelos ARX para la identificación y control de columnas de destilación, reportando desempeños adecuados incluso cuando el proceso presenta comportamientos dinámicos ligeramente no lineales. Sin embargo, su desempeño puede verse limitado en presencia de no linealidades significativas o altos niveles de ruido en los datos.Cuando el sistema presenta perturbaciones importantes o dinámicas de error más complejas, resulta conveniente utilizar modelos ARMAX (AutoRegressive Moving Average with eXogenous inputs), los cuales incorporan un término adicional que modela explícitamente la dinámica del error:
 
 \begin{equation}
-C(q) = c_1 + c_2q^{-1} + \cdots + c_{n_c} q^{-n_c}
+C(q) = 1 + c_1 q^{-1} + c_2 q^{-2} + \cdots + c_{n_c} q^{-n_c}
 \label{eq:armax_C}
 \end{equation}
 
+Esta extensión permite mejorar la capacidad predictiva del modelo al capturar correlaciones temporales en el ruido del sistema, lo que resulta especialmente útil en aplicaciones de control predictivo donde la precisión del modelo influye directamente en el desempeño del controlador. Sin embargo, la inclusión del término de media móvil también incrementa la complejidad del proceso de identificación y puede requerir un mayor volumen de datos para obtener estimaciones confiables de los parámetros del modelo. En general, los modelos ARMAX pueden ofrecer un mejor desempeño en términos de precisión de predicción y robustez frente a perturbaciones, aunque su implementación puede ser más compleja en comparación con los modelos ARX, lo que debe ser considerado al seleccionar la estrategia de modelado para su integración en esquemas de control predictivo.
+
+\subsection{Modelo de primer orden con tiempo muerto (FOPDT)}
+
+Los modelos de tipo FOPDT representan dinámicamente un sistema por medio de parámetros identificables como la ganancia $K_p$, la constante de tiempo $\tau$ y el tiempo muerto $\theta$. Las ganancias proporcionales tienen una interpretación física directa al relacionar las unidades de cambio entre variables. Conjuntamente, la constante de tiempo se interpreta como la velocidad de respuesta del sistema; la cual, a su vez, se complementa con el tiempo muerto al ser el tiempo antes de que el sistema reaccione frente a un cambio. Estos parámetros juntos son una representación comúnmente utilizada en procesos de control por su interpretabilidad y simpleza, subrogando en diferentes casos problemas SISO (Single Input, Single Output) \cite{ref16}. La fórmula general del modelo es la siguiente:
+
+\begin{equation}
+y(s) =
+\sum_{i=1}^{n}
+\left(
+\frac{K_{p,i}}{1 + \tau_i s}
+e^{-\theta_i s}
+\right)
+u_i(s)
+\label{eq:fopdt}
+\end{equation}
+
+Para el caso de estudio proporcionado por Quintero y Botía et al.~\cite{ref10}, que plantea un problema de control MISO, es importante notar que los parámetros del modelo se representan como una matriz de valores, uno para cada variable manipulada $u_i$ \cite{ref17}. Se han realizado diversos trabajos con modelos FOPDT en el contexto de control predictivo, tanto en procesos de producción de hidrógeno como en sistemas de destilación. Adjisetya y Wahid et al.~\cite{ref18} compararon estrategias de control predictivo basadas en modelos FOPDT formulados desde enfoques SISO y MIMO, desarrollando controladores MPC para cuatro compresores en un proceso de generación de biogás a partir de biomasa. Al comparar los resultados experimentales, los autores reportan un mejor desempeño en los modelos MIMO más robustos; sin embargo, también señalan que en algunos casos la mejora no es significativa, e incluso que modelos con menor número de variables pueden presentar mejores respuestas. En un caso más cercano al presente estudio, Setiawan y Alifah et al.~\cite{ref19} realizaron una comparación entre un MPC no lineal basado en redes neuronales y un MPC lineal basado en modelos FOPDT, aplicado a un proceso de destilación criogénica de gas natural licuado. Los autores identificaron dificultades en el modelo no lineal debido a discrepancias entre los valores de planta y del modelo. Solo tras modificar la función de costo del MPC, el modelo basado en redes neuronales logró superar el desempeño del modelo FOPDT.Estos resultados sugieren que, aunque los modelos FOPDT pueden ser adecuados para representar sistemas con comportamiento predominantemente lineal o con dinámicas moderadamente complejas, su desempeño puede verse limitado en presencia de no linealidades significativas o fuertes interacciones entre variables. Por lo tanto, es fundamental evaluar cuidadosamente la aplicabilidad de estos modelos en función de las características dinámicas del proceso y de los requerimientos específicos del esquema de control predictivo a implementar.
+
+\subsection{Modelo de función de transferencia identificable}
+
+Una representación del control mediante funciones de transferencia es una opción clásica en el desarrollo de lazos de control. Estas pueden derivarse a partir de un análisis riguroso del sistema o bien identificarse a partir de datos, reduciendo así la complejidad del modelado. Los modelos de función de transferencia poseen parámetros identificables en el denominador, $a_p$, y en el numerador, $b_z$, además de un posible retraso temporal $\tau$. Este tipo de modelo es similar a los modelos FOPDT, con la diferencia de que sus parámetros no tienen un significado físico directo.
+
+\begin{equation}
+y(s) =
+\sum_{i=1}^{n}
+e^{-\tau s}
+\frac{
+b_z s^z + b_{z-1} s^{z-1} + \cdots + b_0
+}{
+a_p s^p + a_{p-1} s^{p-1} + \cdots + a_0
+}
+u_i(s)
+\label{eq:transfer_function}
+\end{equation}
+
+La estructura general del modelo para un problema MISO se presenta a continuación~\cite{ref20}. En esta, $n$ representa el número de variables de entrada, $p$ el número de polos y $z$ el número de ceros, siendo estos los parámetros estructurales que definen el modelo final en tiempo continuo $s$. De esta forma, se logra relacionar la variable controlada $y$ con las variables manipuladas $u$ y modelar la dinámica del sistema. Este enfoque lineal ha sido utilizado en diversos estudios de control predictivo, tanto en generadores eléctricos como en procesos químicos complejos. Al-Khamis y Gumis et al.~\cite{ref21} presentan un estudio comparativo entre un modelo en espacio de estados y un modelo basado en funciones de transferencia para el control predictivo de un generador de inducción. Sus resultados indican que el modelo de función de transferencia reduce el esfuerzo matemático, alcanza el estado estacionario más rápidamente y, en general, presenta un mejor desempeño que el modelo en espacio de estados. Por otro lado, Zhou y Zhu et al.~\cite{ref22} proponen un método de aislamiento de fallos en procesos químicos complejos, como el \textit{Tennessee Eastman Process}. Los resultados obtenidos son prometedores, ya que logran implementar un algoritmo MPC basado en un modelo identificado mediante funciones de transferencia. Sin embargo, no se encontraron estudios que utilicen este tipo de modelo con el objetivo específico de rechazo de perturbaciones.
+
 \subsection{Representación en espacio de estados}
 
-La representación en espacio de estados describe la dinámica de un sistema mediante un conjunto de ecuaciones diferenciales de primer orden que capturan su evolución temporal a través de un conjunto de variables internas. Estas variables se agrupan en el vector de estados, el cual contiene la información mínima necesaria para caracterizar el comportamiento dinámico del proceso y establecer la relación entre las entradas y las salidas del sistema. De manera general, esta representación se expresa mediante las ecuaciones \ref{eq:statespace_state} y \ref{eq:statespace_output}
+La representación en espacio de estados describe la dinámica de un sistema mediante un conjunto de ecuaciones diferenciales de primer orden que capturan su evolución temporal a través de variables internas denominadas estados. Esta formulación es particularmente adecuada para sistemas multivariables y para el diseño de estrategias de control avanzadas.
 
 \begin{equation}
 \dot{x}(t) = A x(t) + B u(t)
@@ -56,58 +80,93 @@ y(t) = C x(t)
 \label{eq:statespace_output}
 \end{equation}
 
-Donde $x(t)$ representa un vector con las derivadas de primer orden de las variables de estado, $x(t)$ es el vector de variables de estado, $u(t)$ es el vector con las variables de entrada, $y(t)$ es el vector con las variables de salida y $A$, $B$, y $C$ son las matrices de estado, entrada y salida respectivamente. Diversos estudios han aplicado esta formulación para modelar y controlar sistemas dinámicos complejos. Por ejemplo, utiliznado una representación en espacio de estados para convertir una simulación dinámica rigurosa en un modelo matemático simplificado se puede obtener la matriz de transferencia del sistema\cite{ref20}, lo que permite diseñar un controlador óptimo mediante la técnica de realimentación de ganancia, facilitando el diseño del esquema de control y mejorando el desempeño dinámico del proceso. En otra investigación se empleo el espacio de estados en la identificación de sistemas dinámicos no lineales basada en datos mediante autocodificadores profundos, un tipo de redes neuronales\cite{ref21}. En este enfoque, el autocodificador aprende una representación latente del sistema, es decir, un conjunto de variables internas no observables directamente, pero capaces de capturar la dinámica del proceso, que actúan como vectores de estado. Los autores validaron esta aproximación mediante simulaciones en lazo abierto y posteriormente evaluaron su desempeño dentro de un esquema de control predictivo basado en modelos (MPC) en lazo cerrado. Otros estudios han desarrollado un esquema de MPC para el control de procesos por lotes afectados por perturbaciones desconocidas y fallas en actuadores. En este trabajo emplearon una representación no mínima del espacio de estados, es decir, una formulación que incorpora más estados de los estrictamente necesarios para describir la dinámica de entrada–salida del proceso \cite{ref22}. Esta ampliación permitió mejorar el desempeño en el lazo cerrado, ya que el sistema logró compensar simultáneamente las variaciones en las entradas y los errores de seguimiento.
+donde $x(t)$ representa el vector de variables de estado, $u(t)$ corresponde al vector de entradas manipuladas, $y(t)$ representa el vector de salidas del sistema y $A$, $B$ y $C$ son las matrices que describen la dinámica del proceso. La representación en espacio de estados resulta especialmente útil en el diseño de controladores predictivos debido a su capacidad para manejar sistemas multivariables y restricciones operativas. No obstante, el incremento en la dimensión del vector de estados puede aumentar la complejidad computacional del problema de optimización, lo que motiva la búsqueda de modelos subrogados más simples para su implementación en tiempo real. Diversos estudios han aplicado la representación en espacio de estados para el diseño de controladores predictivos en procesos químicos complejos, reportando que esta formulación puede mejorar el desempeño del controlador al capturar dinámicas multivariables y no lineales de manera más precisa. Sin embargo, la implementación de esta representación puede requerir un mayor esfuerzo computacional, lo que debe ser considerado al seleccionar la estrategia de modelado para su integración en esquemas de control predictivo.
 
 \subsection{Modelo Hammerstein--Wiener}
 
-Los modelos Hammerstein–Wiener constituyen una estructura ampliamente utilizada para la identificación de sistemas no lineales. En este enfoque, la dinámica del proceso se describe mediante un bloque lineal formulado en espacio de estados, mientras que las variables de entrada y/o salida se transforman mediante funciones no lineales estáticas, es decir, funciones sin dinámica ni memoria. En particular, el bloque Hammerstein introduce una no linealidad estática en la entrada antes del sistema lineal, mientras que el bloque Wiener aplica una transformación no lineal a la salida del sistema lineal. Esta arquitectura permite representar comportamientos no lineales al combinar un modelo dinámico lineal, responsable de describir la evolución temporal del sistema, con transformaciones estáticas que pueden capturar fenómenos como saturaciones, zonas muertas o ganancias dependientes del estado \cite{ref23}. Debido a esta estructura híbrida, los modelos Hammerstein–Wiener resultan especialmente adecuados para procesos químicos, ya que mejoran la capacidad de representar relaciones no lineales entre las variables de entrada y salida del sistema.
+Los modelos Hammerstein–Wiener constituyen una estructura ampliamente utilizada para la identificación de sistemas no lineales. En este enfoque, la dinámica del proceso se describe mediante un bloque lineal combinado con funciones no lineales estáticas aplicadas a la entrada y/o a la salida del sistema. Esta arquitectura permite representar comportamientos no lineales al combinar un modelo dinámico lineal con transformaciones estáticas capaces de capturar fenómenos como saturaciones, zonas muertas o ganancias dependientes del estado. Debido a esta estructura híbrida, los modelos Hammerstein–Wiener resultan adecuados para procesos químicos en los que las relaciones entre variables presentan no linealidades moderadas. A pesar de su capacidad para representar no linealidades, la identificación y validación de estos modelos puede requerir un mayor volumen de datos y un proceso de ajuste más complejo, lo que puede limitar su aplicación en entornos donde se requiere implementación en tiempo real o integración directa con algoritmos de control predictivo.
 
 \subsection{Resumen de las estrategias de subrogación}
 
-La elección de la técnica de subrogación de modelos para el control y la optimización de procesos químicos no lineales debe basarse en las características específicas del sistema que se desea modelar. Los modelos ARX y ARMAX son adecuados cuando el proceso presenta una dinámica lineal o ligeramente no lineal, lo que permite una representación eficiente con un costo computacional bajo. Sin embargo, su aplicabilidad se ve limitada cuando el sistema presenta no linealidades complejas o perturbaciones significativas. En estos casos, las máquinas de soporte vectorial (SVM) ofrecen una mayor robustez, ya que son capaces de manejar relaciones no lineales más complejas y de generalizar bien a partir de conjuntos de datos limitados. Las SVM se convierten en una opción poderosa para sistemas con alta incertidumbre y variabilidad en sus dinámicas. A pesar de sus ventajas, su integración en esquemas de control predictivo, como el MPC, presenta desafíos debido a que los modelos no son directamente lineales y requieren técnicas adicionales para su implementación en tiempo real. Por último, la representación en espacio de estados es una opción más robusta para procesos con dinámicas altamente no lineales o para sistemas que involucran interacciones complejas entre múltiples variables. Esta técnica permite capturar de manera precisa las interacciones internas y externas del sistema, pero a costa de un mayor costo computacional, debido a la necesidad de resolver sistemas de ecuaciones diferenciales. Por todo lo anterior, se busca comparar los diferentes métodos para determinar sus diferencias en el caso propuesto. 
-En la Tabla \ref{tab:comparacion_modelos} se presenta una comparación general entre las principales estrategias de modelado utilizadas en 
-procesos químicos.
+La elección de la técnica de subrogación debe basarse en las características dinámicas del proceso, el nivel de no linealidad presente en el sistema y los requerimientos computacionales del esquema de control. Los modelos ARX y ARMAX representan alternativas eficientes para sistemas con dinámicas predominantemente lineales o ligeramente no lineales, mientras que los modelos FOPDT y las funciones de transferencia proporcionan estructuras simples y de fácil interpretación que facilitan su implementación en aplicaciones industriales. Por su parte, la representación en espacio de estados permite describir sistemas multivariables complejos y constituye la base de muchas formulaciones de control predictivo. Sin embargo, esta formulación puede implicar un mayor costo computacional debido al incremento en el número de variables del sistema. En este contexto, el presente trabajo evalúa diferentes estrategias de modelado dinámico con el objetivo de determinar sus diferencias y su desempeño en un problema de control predictivo aplicado a una columna de destilación extractiva bajo condiciones de perturbación. El análisis se centra en la comparación de modelos ARX, ARMAX, FOPDT, función de transferencia y espacio de estados, considerando tanto criterios computacionales como indicadores de desempeño dinámico para determinar la estrategia de modelado más adecuada para su integración en un esquema de control predictivo en tiempo real. 
 
-\begin{table}[ht]
+\begin{table}[H]
 \centering
 \small
 \caption{Comparación de estrategias de subrogación para control de procesos}
 \label{tab:comparacion_modelos}
-\renewcommand{\arraystretch}{1.3}
-\setlength{\tabcolsep}{6pt}
-\begin{tabularx}{\textwidth}{l l l l l X}
+
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{
+p{2.8cm}
+p{2.6cm}
+p{2.8cm}
+p{2.8cm}
+p{2.6cm}
+p{3.0cm}
+}
 \hline
-Modelo & Tipo & No linealidad & Complejidad & Integración MPC & Aplicaciones \\
+\textbf{Modelo} &
+\textbf{Tipo} &
+\textbf{Capacidad para no linealidades} &
+\textbf{Complejidad computacional} &
+\textbf{Integración con MPC} &
+\textbf{Aplicaciones típicas}
+\\
 \hline
-Espacio de estados & Lineal dinámico & Baja--media & Media & Directa & Control multivariable \\
+Espacio de estados &
+Lineal dinámico &
+Baja--media &
+Media &
+Directa &
+Control multivariable
+\\
+ARX y ARMAX &
+Lineal dinámico &
+Media &
+Media &
+Directa &
+Identificación de sistemas y control multivariable
+\\
+FOPDT (First Order Plus Dead Time) &
+Lineal dinámico con parámetros físicos &
+Baja &
+Baja &
+Directa &
+Procesos térmicos, destilación, sistemas SISO/MISO
+\\
+Función de transferencia identificable &
+Lineal dinámico &
+Baja--media &
+Baja--media &
+Directa &
+Modelado empírico del proceso
+\\
+Hammerstein--Wiener &
+Híbrido lineal--no lineal &
+Media--alta &
+Media &
+Compatible con MPC no lineal &
+Procesos químicos no lineales
+\\
 \hline
-ARX / ARMAX & Lineal dinámico & Media & Media & Directa & Identificación de sistemas \\
-\hline
-SVM & No lineal & Alta & Alta & Requiere MPC no lineal & Sistemas no lineales \\
-\hline
-Hammerstein--Wiener & Híbrido & Media--alta & Media & Compatible & Procesos químicos \\
-\hline
-\end{tabularx}
+\end{tabular}
 \end{table}
-
-
 
 \subsection{Métodos de modelamiento de columnas de destilación}
 
-El modelamiento de columnas de destilación se basa comúnmente en el modelo MESH (Mass, Equilibrium, Summation and Heat), el cual asume 
-equilibrio termodinámico entre las fases vapor y líquido en cada etapa de la columna \cite{ref10}. El número total de ecuaciones algebraicas que describen una columna de destilación en un instante dado puede calcularse mediante:
+El modelamiento de columnas de destilación se basa comúnmente en el modelo MESH (Mass, Equilibrium, Summation and Heat), el cual asume equilibrio termodinámico entre las fases vapor y líquido en cada etapa de la columna. Este enfoque constituye la base de la mayoría de los simuladores comerciales de procesos químicos. Debido al elevado número de ecuaciones que deben resolverse en cada instante de tiempo, los modelos dinámicos rigurosos presentan una alta carga computacional, especialmente cuando se utilizan dentro de algoritmos de optimización en tiempo real. Esta característica justifica el uso de modelos subrogados que permitan representar la dinámica del sistema con un menor costo computacional. El número total de ecuaciones algebraicas que describen una columna de destilación en un instante dado puede calcularse mediante:
 
 \begin{equation}
 N_{ec} = N (2C + 3)
 \label{eq:num_ec}
 \end{equation}
 
-donde $N$ representa el número de etapas teóricas de la columna y $C$ el número de componentes químicos presentes en el sistema. En simulaciones dinámicas, este sistema de ecuaciones se resuelve para cada intervalo de tiempo considerado en la discretización del 
-proceso. Por lo tanto, el número total de ecuaciones que debe resolver el simulador se expresa como:
+donde: $N$ corresponde al número de etapas y $C$ al número de componentes. En simulaciones dinámicas, este sistema de ecuaciones se resuelve para cada intervalo de tiempo considerado en la discretización del proceso. Por lo tanto, el número total de ecuaciones que debe resolver el simulador se expresa como:
 
 \begin{equation}
 N_{et} = N_{ec} \times N_{i}
 \label{eq:num_et}
 \end{equation}
 
-donde $N_i$ representa el número de intervalos de tiempo utilizados en la simulación dinámica. El esquema general del proceso de destilación considerado en este trabajo se presenta en el Anexo correspondiente.
+donde: $N_i$ corresponde al número de intervalos de tiempo utilizados en la simulación dinámica del proceso. El esquema general del proceso de destilación extractiva considerado en este trabajo se presenta en el Anexo correspondiente.

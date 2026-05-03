@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  10 APR 2026 07:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.22)  28 APR 2026 11:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1155,90 +1155,183 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 144.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (./sections/introduccion.tex) (./sections/estado_del_arte.tex
-<figures/Andes.png, id=135, 612.03656pt x 235.37938pt>
+Underfull \vbox (badness 2111) has occurred while \output is active []
+
+<figures/Andes.png, id=151, 612.03656pt x 235.37938pt>
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 24.
+Package pdftex.def Info: figures/Andes.png  used on input line 8.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
  [1{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
  <./figures/Andes.png>]
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 70.
+Package pdftex.def Info: figures/Andes.png  used on input line 49.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
- [2]) (./sections/metodologia.tex
+ [2]
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 8.
+Package pdftex.def Info: figures/Andes.png  used on input line 88.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
  [3]
-<figures/ProcesoControl.png, id=208, 454.69875pt x 221.32687pt>
-File: figures/ProcesoControl.png Graphic file (type png)
-<use figures/ProcesoControl.png>
-Package pdftex.def Info: figures/ProcesoControl.png  used on input line 11.
-(pdftex.def)             Requested size: 324.36473pt x 157.88951pt.
-File: figures/Andes.png Graphic file (type png)
-<use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 34.
-(pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
- [4{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./figures/ProcesoControl.png>]
-File: figures/Andes.png Graphic file (type png)
-<use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 60.
-(pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
- [5]
-File: figures/Andes.png Graphic file (type png)
-<use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 113.
-(pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
- [6]) (./sections/resultados_discusion.tex
+Underfull \hbox (badness 5592) in paragraph at lines 111--111
+[]|\OT1/cmr/bx/n/9 Capacidad para
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--112
+[]|\OT1/cmr/bx/n/9 Complejidad
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--116
+[]|\OT1/cmr/bx/n/9 Aplicaciones
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--124
+[]|\OT1/cmr/m/n/9 Control mul-ti-vari-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--131
+[]|\OT1/cmr/m/n/9 FOPDT (First
+ []
+
+
+Underfull \hbox (badness 4819) in paragraph at lines 131--131
+\OT1/cmr/m/n/9 Or-der Plus Dead
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--132
+[]|\OT1/cmr/m/n/9 Lineal din^^Samico
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--132
+\OT1/cmr/m/n/9 con par^^Sametros
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--138
+[]|\OT1/cmr/m/n/9 Procesos t^^Sermicos,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--145
+[]|\OT1/cmr/m/n/9 Modelado emp^^S^^Prico
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--145
+[]|\OT1/cmr/m/n/9 Hammerstein--
+ []
+
+
+Underfull \hbox (badness 2197) in paragraph at lines 146--146
+[]|\OT1/cmr/m/n/9 H^^S^^Pbrido lineal--no
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--149
+[]|\OT1/cmr/m/n/9 Compatible con
+ []
+
+
+Overfull \hbox (3.71393pt too wide) in paragraph at lines 100--154
+ [][] 
+ []
+
+) (./sections/metodologia.tex
+Underfull \vbox (badness 1226) has occurred while \output is active []
+
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
 Package pdftex.def Info: figures/Andes.png  used on input line 4.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
+ [4]
+<figures/ProcesoControl.png, id=232, 454.69875pt x 221.32687pt>
+File: figures/ProcesoControl.png Graphic file (type png)
+<use figures/ProcesoControl.png>
+Package pdftex.def Info: figures/ProcesoControl.png  used on input line 15.
+(pdftex.def)             Requested size: 540.60239pt x 263.14581pt.
+File: figures/Andes.png Graphic file (type png)
+<use figures/Andes.png>
+Package pdftex.def Info: figures/Andes.png  used on input line 25.
+(pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
+ [5{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./figures/ProcesoControl.png>]
+File: figures/Andes.png Graphic file (type png)
+<use figures/Andes.png>
+Package pdftex.def Info: figures/Andes.png  used on input line 49.
+(pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
+ [6]
+File: figures/Andes.png Graphic file (type png)
+<use figures/Andes.png>
+Package pdftex.def Info: figures/Andes.png  used on input line 83.
+(pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
  [7]
-<figures/ModelosT101.png, id=263, 454.5783pt x 227.6505pt>
+File: figures/Andes.png Graphic file (type png)
+<use figures/Andes.png>
+Package pdftex.def Info: figures/Andes.png  used on input line 152.
+(pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
+ [8])
+File: figures/Andes.png Graphic file (type png)
+<use figures/Andes.png>
+Package pdftex.def Info: figures/Andes.png  used on input line 162.
+(pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
+ [9] (./sections/resultados_discusion.tex
+<figures/ModelosT101.png, id=298, 867.24pt x 433.62pt>
 File: figures/ModelosT101.png Graphic file (type png)
 <use figures/ModelosT101.png>
-Package pdftex.def Info: figures/ModelosT101.png  used on input line 11.
-(pdftex.def)             Requested size: 324.36473pt x 162.44234pt.
-<figures/ModelosT102.png, id=264, 454.5783pt x 227.6505pt>
+Package pdftex.def Info: figures/ModelosT101.png  used on input line 37.
+(pdftex.def)             Requested size: 540.60239pt x 270.31049pt.
+<figures/ModelosT102.png, id=299, 867.24pt x 433.62pt>
 File: figures/ModelosT102.png Graphic file (type png)
 <use figures/ModelosT102.png>
-Package pdftex.def Info: figures/ModelosT102.png  used on input line 18.
-(pdftex.def)             Requested size: 324.36473pt x 162.44234pt.
+Package pdftex.def Info: figures/ModelosT102.png  used on input line 45.
+(pdftex.def)             Requested size: 540.60239pt x 270.31049pt.
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 43.
+Package pdftex.def Info: figures/Andes.png  used on input line 76.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
- [8 <./figures/ModelosT101.png> <./figures/ModelosT102.png>]
-<figures/ControlT101.png, id=274, 352.152pt x 173.448pt>
+ [10 <./figures/ModelosT101.png>]
+File: figures/Andes.png Graphic file (type png)
+<use figures/Andes.png>
+Package pdftex.def Info: figures/Andes.png  used on input line 76.
+(pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
+ [11 <./figures/ModelosT102.png>]
+<figures/ControlT101.png, id=319, 570.4512pt x 280.6485pt>
 File: figures/ControlT101.png Graphic file (type png)
 <use figures/ControlT101.png>
-Package pdftex.def Info: figures/ControlT101.png  used on input line 51.
-(pdftex.def)             Requested size: 324.36473pt x 159.77258pt.
-<figures/ControlT102.png, id=275, 365.292pt x 180.675pt>
+Package pdftex.def Info: figures/ControlT101.png  used on input line 103.
+(pdftex.def)             Requested size: 324.36473pt x 159.5816pt.
+<figures/ControlT102.png, id=320, 570.4512pt x 280.6485pt>
 File: figures/ControlT102.png Graphic file (type png)
 <use figures/ControlT102.png>
-Package pdftex.def Info: figures/ControlT102.png  used on input line 58.
-(pdftex.def)             Requested size: 324.36473pt x 160.43633pt.
+Package pdftex.def Info: figures/ControlT102.png  used on input line 112.
+(pdftex.def)             Requested size: 324.36473pt x 159.5816pt.
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 64.
+Package pdftex.def Info: figures/Andes.png  used on input line 147.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
- [9 <./figures/ControlT101.png> <./figures/ControlT102.png>]) (./sections/conclusiones.tex)
+ [12 <./figures/ControlT101.png> <./figures/ControlT102.png>]) (./sections/conclusiones.tex
+File: figures/Andes.png Graphic file (type png)
+<use figures/Andes.png>
+Package pdftex.def Info: figures/Andes.png  used on input line 58.
+(pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
+ [13])
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
 Package pdftex.def Info: figures/Andes.png  used on input line 166.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
- [10] (./sections/Nomenclatura.tex
-ignored: Infinite glue shrinkage found in box being split
+ [14] (./sections/Nomenclatura.tex
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
 Package pdftex.def Info: figures/Andes.png  used on input line 347.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
- [11
+ [15
 
 ]
 ignored: Infinite glue shrinkage found in box being split
@@ -1246,8 +1339,15 @@ File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
 Package pdftex.def Info: figures/Andes.png  used on input line 347.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
- [12])
-Underfull \hbox (badness 10000) in paragraph at lines 457--174
+ [16]
+Underfull \vbox (badness 6675) has occurred while \output is active []
+
+File: figures/Andes.png Graphic file (type png)
+<use figures/Andes.png>
+Package pdftex.def Info: figures/Andes.png  used on input line 427.
+(pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
+ [17])
+Underfull \hbox (badness 10000) in paragraph at lines 456--174
 
  []
 
@@ -1255,18 +1355,13 @@ File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
 Package pdftex.def Info: figures/Andes.png  used on input line 174.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
-[13]
-File: figures/Andes.png Graphic file (type png)
-<use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 174.
-(pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
- [14] (./sections/ANEXOS.tex
-<figures/PFD.png, id=432, 394.47375pt x 307.1475pt>
+[18] (./sections/ANEXOS.tex
+<figures/PFD.png, id=475, 394.47375pt x 307.1475pt>
 File: figures/PFD.png Graphic file (type png)
 <use figures/PFD.png>
 Package pdftex.def Info: figures/PFD.png  used on input line 8.
 (pdftex.def)             Requested size: 324.36473pt x 252.56088pt.
-<figures/Simulink.png, id=433, 454.69875pt x 335.75438pt>
+<figures/Simulink.png, id=476, 454.69875pt x 335.75438pt>
 File: figures/Simulink.png Graphic file (type png)
 <use figures/Simulink.png>
 Package pdftex.def Info: figures/Simulink.png  used on input line 15.
@@ -1288,14 +1383,14 @@ File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
 Package pdftex.def Info: figures/Andes.png  used on input line 49.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
- [15
+ [19
 
  <./figures/PFD.png> <./figures/Simulink.png>])
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
 Package pdftex.def Info: figures/Andes.png  used on input line 180.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
- [16] 
+ [20] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (./report.aux)
  ***********
@@ -1303,24 +1398,24 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: BA0B014AA526BDE028AD64B4934F1F4B;6200.
+(rerunfilecheck)             Checksum: 038CF8AEC3143319F635ADC25B280835;7384.
 Package logreq Info: Writing requests to 'report.run.xml'.
 \openout1 = `report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 40259 strings out of 467525
- 821598 string characters out of 5418982
- 1693347 words of memory out of 5000000
- 68492 multiletter control sequences out of 15000+600000
- 640388 words of font info for 91 fonts, out of 8000000 for 9000
+ 40289 strings out of 467525
+ 822393 string characters out of 5418982
+ 1686136 words of memory out of 5000000
+ 68509 multiletter control sequences out of 15000+600000
+ 640357 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 110i,18n,118p,3018b,1519s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on report.pdf (16 pages, 963256 bytes).
+ 110i,18n,118p,3951b,1522s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on report.pdf (20 pages, 1085652 bytes).
 PDF statistics:
- 568 PDF objects out of 1000 (max. 8388607)
- 469 compressed objects within 5 object streams
- 102 named destinations out of 1000 (max. 500000)
- 285 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 613 PDF objects out of 1000 (max. 8388607)
+ 511 compressed objects within 6 object streams
+ 115 named destinations out of 1000 (max. 500000)
+ 317 words of extra memory for PDF output out of 10000 (max. 10000000)
 
