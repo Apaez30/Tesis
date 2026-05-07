@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.5)  6 MAY 2026 00:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.5)  7 MAY 2026 00:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1259,7 +1259,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 25.
+Package pdftex.def Info: figures/Andes.png  used on input line 24.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
  [5 <./figures/ProcesoControl.png>]
 File: figures/Andes.png Graphic file (type png)
@@ -1269,12 +1269,12 @@ Package pdftex.def Info: figures/Andes.png  used on input line 47.
  [6]
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 79.
+Package pdftex.def Info: figures/Andes.png  used on input line 80.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
  [7]
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 148.
+Package pdftex.def Info: figures/Andes.png  used on input line 149.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
  [8])
 File: figures/Andes.png Graphic file (type png)
@@ -1319,7 +1319,7 @@ Package pdftex.def Info: figures/Andes.png  used on input line 147.
  [12 <./figures/ControlT101.png> <./figures/ControlT102.png>]) (sections/conclusiones.tex
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 58.
+Package pdftex.def Info: figures/Andes.png  used on input line 57.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
  [13])
 File: figures/Andes.png Graphic file (type png)
@@ -1356,11 +1356,11 @@ File: figures/Andes.png Graphic file (type png)
 Package pdftex.def Info: figures/Andes.png  used on input line 175.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
 [18] (sections/ANEXOS.tex
-<figures/PFD.png, id=470, 394.47375pt x 307.1475pt>
-File: figures/PFD.png Graphic file (type png)
-<use figures/PFD.png>
-Package pdftex.def Info: figures/PFD.png  used on input line 8.
-(pdftex.def)             Requested size: 324.36473pt x 252.56088pt.
+<figures/PFD_Tesis_2.jpg, id=470, 790.51335pt x 558.6471pt>
+File: figures/PFD_Tesis_2.jpg Graphic file (type jpg)
+<use figures/PFD_Tesis_2.jpg>
+Package pdftex.def Info: figures/PFD_Tesis_2.jpg  used on input line 8.
+(pdftex.def)             Requested size: 324.36473pt x 229.2258pt.
 <figures/Simulink.png, id=471, 454.69875pt x 335.75438pt>
 File: figures/Simulink.png Graphic file (type png)
 <use figures/Simulink.png>
@@ -1385,7 +1385,7 @@ Package pdftex.def Info: figures/Andes.png  used on input line 49.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
  [19
 
- <./figures/PFD.png> <./figures/Simulink.png>])
+ <./figures/PFD_Tesis_2.jpg> <./figures/Simulink.png>])
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
 Package pdftex.def Info: figures/Andes.png  used on input line 181.
@@ -1398,23 +1398,23 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-03-20>
  ***********
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: D800887758305C2282682BE1C8E4DAEA;7381.
+(rerunfilecheck)             Checksum: F9F9DCFB88E7AC32E11418D864E81C8A;7381.
 Package logreq Info: Writing requests to 'report.run.xml'.
 \openout1 = `report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
  40462 strings out of 467691
- 834912 string characters out of 5414020
+ 834968 string characters out of 5414020
  1692327 words of memory out of 5000000
  68827 multiletter control sequences out of 15000+600000
  640357 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  110i,18n,118p,3591b,1522s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Usuario\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Usuario/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on report.pdf (20 pages, 1143506 bytes).
+Output written on report.pdf (20 pages, 2736282 bytes).
 PDF statistics:
- 604 PDF objects out of 1000 (max. 8388607)
+ 603 PDF objects out of 1000 (max. 8388607)
  115 named destinations out of 1000 (max. 500000)
  317 words of extra memory for PDF output out of 10000 (max. 10000000)
 
