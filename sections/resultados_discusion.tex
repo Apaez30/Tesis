@@ -2,39 +2,16 @@
 \section{Resultados y Discusión}
 % ============================================================
 
-En primer lugar, vamos a hablar sobre la capacidad de cada estructura de modelo para
-representar la dinámica del proceso a partir de los datos de identificación y a
-continuación, se analiza el desempeño de cada modelo como controlador MPC
-frente a perturbaciones en la alimentación, considerando los costos computacionales, las
-métricas básicas de control y los criterios integrales de desempeño. Finalmente, se
-discute la selección del modelo más adecuado para cada columna y se propone la estrategia
-de control resultante.
+En primer lugar, vamos a hablar sobre la capacidad de cada estructura de modelo para representar la dinámica del proceso a partir de los datos de identificación y a continuación, se analiza el desempeño de cada modelo como controlador MPC frente a perturbaciones en la alimentación, considerando los costos computacionales, las métricas básicas de control y los criterios integrales de desempeño. Finalmente, se discute la selección del modelo más adecuado para cada columna y se propone la estrategia de control resultante.
 
 %% ─────────────────────────────────────────────────────────────
 \subsection{Subrogación de modelos}
 
-Los modelos subrogados se desarrollaron considerando dos variables manipuladas la
-potencia del rehervidor y la relación de reflujo — con una salida correspondiente a la
-temperatura de una etapa representativa de cada columna. Para la columna
-$T\text{-}101$ se seleccionó la temperatura de la etapa 36, y para la columna
-$T\text{-}102$ la temperatura de la etapa 8. Estas etapas fueron escogidas por
-presentar la mayor sensibilidad ante cambios en las variables manipuladas, conforme al
-análisis del perfil de temperatura reportado por Quintero y Botía et al.\ \cite{ref10}.
-
-De este modo se obtuvieron cinco estructuras de modelo para cada columna: ARX, ARMAX,
-espacio de estados (SS), función de transferencia (TF) y modelo de primer orden con
-tiempo muerto (FOPDT).
-
-En la Tabla~\ref{tab:ModelosR2} se presentan el RECM y el coeficiente de determinación
-($R^2$) obtenidos durante la validación de cada modelo frente al segundo conjunto de
-datos de \textit{steptest}. Las Figuras
-\ref{fig:ModelosSubrogadosT101} y
-\ref{fig:ModelosSubrogadosT102} ilustran la comparación entre las respuestas predichas y
-los datos reales para ambas columnas.
+Los modelos subrogados se desarrollaron considerando dos variables manipuladas la potencia del rehervidor y la relación de reflujo — con una salida correspondiente a la temperatura de una etapa representativa de cada columna. Para la columna $T\text{-}101$ se seleccionó la temperatura de la etapa 36, y para la columna $T\text{-}102$ la temperatura de la etapa 8. Estas etapas fueron escogidas por presentar la mayor sensibilidad ante cambios en las variables manipuladas, conforme al análisis del perfil de temperatura reportado por Quintero y Botía et al.\ \cite{ref10}.De este modo se obtuvieron cinco estructuras de modelo para cada columna: ARX, ARMAX, espacio de estados (SS), función de transferencia (TF) y modelo de primer orden con tiempo muerto (FOPDT). En la Tabla~\ref{tab:ModelosR2} se presentan el RECM y el coeficiente de determinación ($R^2$) obtenidos durante la validación de cada modelo frente al segundo conjunto de datos de \textit{steptest}. Las Figuras \ref{fig:ModelosSubrogadosT101} y \ref{fig:ModelosSubrogadosT102} ilustran la comparación entre las respuestas predichas y los datos reales para ambas columnas.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=1\textwidth]{figures/ModelosT101.png}
+\includegraphics[width=0.5\textwidth]{figures/ModelosT101.png}
 \caption{Comparación de los modelos subrogados respecto a los datos de validación para
 la columna $T\text{-}101$.}
 \label{fig:ModelosSubrogadosT101}
@@ -42,7 +19,7 @@ la columna $T\text{-}101$.}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=1\textwidth]{figures/ModelosT102.png}
+\includegraphics[width=0.5\textwidth]{figures/ModelosT102.png}
 \caption{Comparación de los modelos subrogados respecto a los datos de validación para
 la columna $T\text{-}102$.}
 \label{fig:ModelosSubrogadosT102}
@@ -75,52 +52,36 @@ T-102 & TF    & 7.1117 & 0.5320 \\
 
 \FloatBarrier
 
-Los resultados evidencian que ambas columnas presentan dinámicas diferenciadas que
-requieren estructuras de modelado distintas. Asimismo, se confirma que un mejor ajuste
-estadístico no garantiza necesariamente un mejor desempeño en un esquema de
-control predictivo, lo que motiva la evaluación directa del desempeño dinámico del
-controlador.
+Los resultados evidencian que ambas columnas presentan dinámicas diferenciadas que requieren estructuras de modelado distintas. Asimismo, se confirma que un mejor ajuste estadístico no garantiza necesariamente un mejor desempeño en un esquema de control predictivo, lo que motiva la evaluación directa del desempeño dinámico del controlador.
 
 %% ─────────────────────────────────────────────────────────────
 \subsection{Control predictivo frente a perturbaciones}
 
-Una vez obtenidos los modelos subrogados, se implementó el esquema MPC y se evaluó su
-desempeño frente a dos perturbaciones tipo escalón consistentes en una perturbación
-positiva del 5\,\% en el caudal de alimentación seguida de una perturbación negativa del
-10\,\%, aplicadas en instantes predefinidos dentro de un horizonte de simulación total de
-100\,h.
-
-La inclusión de perturbaciones de signo opuesto permite evaluar la capacidad del
-controlador para mantener la estabilidad y el seguimiento del valor de referencia bajo
-condiciones dinámicas asimétricas, representativas de variaciones reales en la operación
-industrial.
-
-Las Figuras \ref{fig:ControlT101} y \ref{fig:ControlT102} presentan la evolución temporal
-de las variables controladas en ambas columnas.
+Una vez obtenidos los modelos subrogados, se implementó el esquema MPC y se evaluó su desempeño frente a dos perturbaciones tipo escalón consistentes en una perturbación positiva del 10\,\% en el caudal de alimentación seguida de una perturbación negativa del 10\,\% en el caudal del solvente, aplicadas en instantes predefinidos dentro de un horizonte de simulación total de 100\,h. La inclusión de perturbaciones de signo opuesto permite evaluar la capacidad del controlador para mantener la estabilidad y el seguimiento del valor de referencia bajo condiciones dinámicas asimétricas, representativas de variaciones reales en la operación
+industrial.Las Figuras \ref{fig:ControlT101} y \ref{fig:ControlT102} presentan la evolución temporal de las variables controladas en ambas columnas.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.6\textwidth]{figures/ControlT101.png}
+\includegraphics[width=1\textwidth]{figures/ControlT101.png}
 \caption{Evolución temporal de la variable controlada de $T\text{-}101$
-bajo una perturbación del 5\,\% seguida de una perturbación del -10\,\%
-en el caudal de alimentación.}
+bajo una perturbación del 10\,\% seguida de una perturbación del -10\,\%.}
 \label{fig:ControlT101}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.6\textwidth]{figures/ControlT102.png}
+\includegraphics[width=1\textwidth]{figures/ControlT102.png}
 \caption{Evolución temporal de la variable controlada de $T\text{-}102$
-bajo una perturbación del 5\,\% seguida de una perturbación del -10\,\%
-en el caudal de alimentación.}
+bajo una perturbación del 10\,\% seguida de una perturbación del -10\,\%.}
 \label{fig:ControlT102}
 \end{figure}
 
+\FloatBarrier
 %% ─────────────────────────────────────────────────────────────
 \subsection{Costos computacionales}
 
 La Tabla~\ref{tab:CostosComputacionales} presenta los costos computacionales medidos
-durante la co-simulación.
+durante la co-simulación: 
 
 \begin{table}[htbp]
 \centering
@@ -131,54 +92,91 @@ durante la co-simulación.
 \toprule
 Modelo & T.\ Simulink (s) & CPU/paso (ms) & RAM total (MB) \\
 \midrule
-SS    & 2252.852 & 1125.863 & 8.716 \\
-ARX   & 1474.331 & 1227.586 & 5.985 \\
-ARMAX & 1467.311 & 1221.741 & 5.920 \\
-TF    & 1495.474 & 1245.191 & 6.017 \\
+SS    & 2360.028 & 1179.424 & 8.716 \\
+ARX   & 1310.123 & 1089.742 & 5.985 \\
+ARMAX & 1428.361 & 1188.411 & 5.920 \\
+TF    & 1379.245 & 1147.646 & 6.017 \\
+FOPDT & 1323.261 & 1101.099 & 5.772 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Los costos computacionales de todos los modelos son compatibles con aplicaciones de
-control en tiempo real, por lo que este criterio no constituye un factor limitante para
-la selección del modelo.
+El tiempo de simulación en Simulink corresponde al tiempo total requerido para ejecutar la co-simulación dinámica completa del sistema bajo control MPC, incluyendo la resolución del problema de optimización, la actualización de las variables manipuladas y la integración dinámica de las columnas de destilación dentro del entorno Simulink. Esta métrica permite comparar la carga computacional global asociada a cada modelo subrogado durante todo el horizonte dinámico evaluado.
+
+Por otra parte, la métrica CPU/paso representa el tiempo computacional promedio requerido por el controlador para ejecutar una actualización del MPC en cada intervalo de muestreo. Esta métrica constituye el criterio más relevante para evaluar la factibilidad de implementación en tiempo real, dado que en aplicaciones MPC el tiempo requerido para calcular la acción de control debe ser menor que el tiempo de muestreo del controlador:
+
+\[t_{\mathrm{CPU/paso}} < T_s\]
+
+En este trabajo se utilizó un tiempo de muestreo de \(T_s = 5\ \mathrm{min}\) (\(300\ \mathrm{s}\)), mientras que los costos computacionales promedio por paso obtenidos fueron del orden de \(1.100\) a \(1.300\ \mathrm{ms}\). En consecuencia, todos los modelos evaluados cumplen ampliamente la condición de viabilidad computacional para aplicaciones MPC en tiempo real, ya que el tiempo requerido para resolver el problema de optimización es considerablemente menor que el intervalo disponible entre actualizaciones del controlador. Los resultados obtenidos evidencian que los modelos subrogados basados en identificación de sistemas presentan menores requerimientos de memoria en comparación con el modelo Space State, lo cual resulta consistente con la menor complejidad estructural de dichos modelos. En términos generales, los resultados demuestran que los modelos ARX, ARMAX, TF, FOPDT reducen significativamente el costo computacional global respecto al modelo Space State, manteniendo simultáneamente tiempos de cálculo por intervalo de control compatibles con aplicaciones MPC en columnas de destilación. 
+
 
 %% ─────────────────────────────────────────────────────────────
 \subsection{Criterios integrales de desempeño}
 
+Inicialmente, los criterios integrales de desempeño fueron evaluados considerando únicamente el horizonte completo de simulación. Sin embargo, este enfoque introducía un sesgo en la comparación entre modelos, debido a que incluía periodos en donde e la simulacion vovlaimos al punto de partida y el error de control continuaba representando en este peridodo lo que podria sesgar la capacidad del controlador para rechazar perturbaciones. Con el fin de obtener una comparación más representativa del desempeño dinámico del MPC, las métricas integrales se calcularon de manera independiente sobre las regiones transitorias asociadas a las perturbaciones introducidas en el sistema. De esta manera, los criterios IAE, ISE e ITAE fueron evaluados específicamente durante las ventanas temporales correspondientes a la respuesta dinámica de cada perturbación, permitiendo cuantificar de forma más precisa la capacidad de seguimiento y rechazo de perturbaciones de cada modelo subrogado. Las ventanas utilizadas fueron:
+
+\[P1: \; t = 5\text{ h} \rightarrow 20\text{ h}\]
+
+\[P2: \; t = 40\text{ h} \rightarrow 60\text{ h}\]
+
+donde \(P1\) corresponde a la respuesta transitoria generada por la perturbación positiva en el caudal de alimentación, mientras que \(P2\) representa la respuesta dinámica frente a la perturbación negativa en el solvente. Bajo este enfoque, las métricas integrales permiten evaluar directamente el comportamiento dinámico relevante del controlador durante los periodos de mayor exigencia operacional, evitando que los intervalos en los que la simulación retorna a la región de operación estacionaria dominen artificialmente los indicadores globales de desempeño.
+
 \begin{table}[htbp]
 \centering
-\caption{Criterios integrales de desempeño del controlador.}
-\label{tab:ControlIntegrales}
+\caption{Criterios integrales de desempeño del controlador durante la perturbación P1.}
+\label{tab:ControlIntegralesP1}
 \small
 \begin{tabular}{llccc}
 \toprule
 Columna & Modelo & IAE & ISE & ITAE \\
 \midrule
-T-101 & SS    & 27.5578 & 20.9545 & 1025.0644 \\
-T-101 & ARX   & 26.5185 & 19.2915 & 991.7413 \\
-T-101 & ARMAX & \textbf{26.3033} & \textbf{18.8767} & \textbf{985.9294} \\
-T-101 & TF    & 30.8227 & 25.4487 & 1134.2923 \\
+T-101 & SS     & 18.1000 & 24.7239 & 120.0463 \\
+T-101 & ARX    & 16.8292 & 22.6828 & 107.7224 \\
+T-101 & ARMAX  & \textbf{16.5155} & \textbf{22.0807} & \textbf{104.5858} \\
+T-101 & TF     & 20.5656 & 32.6839 & 131.5741 \\
+T-101 & FOPDT  & 18.7076 & 26.2708 & 125.1015 \\
 \midrule
-T-102 & SS    & \textbf{81.7076} & \textbf{334.8314} & \textbf{3548.2214} \\
-T-102 & ARX   & 86.4958 & 375.6526 & 3777.0928 \\
-T-102 & ARMAX & 91.2713 & 409.5911 & 4004.9308 \\
-T-102 & TF    & 140.9958 & 1014.5493 & 6222.5580 \\
+T-102 & SS     & 20.9149 & 158.4216 & 59.0310 \\
+T-102 & ARX    & 21.8780 & 223.5930 & 60.0760 \\
+T-102 & ARMAX  & 22.0188 & 225.6600 & \textbf{55.1203} \\
+T-102 & TF     & 44.6542 & 1050.2536 & 74.9766 \\
+T-102 & FOPDT  & \textbf{20.7053} & \textbf{153.2183} & 62.0400 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
+\begin{table}[htbp]
+\centering
+\caption{Criterios integrales de desempeño del controlador durante la perturbación P2.}
+\label{tab:ControlIntegralesP2}
+\small
+\begin{tabular}{llccc}
+\toprule
+Columna & Modelo & IAE & ISE & ITAE \\
+\midrule
+T-101 & SS     & 17.0926 & 14.8854 & 162.3119 \\
+T-101 & ARX    & 16.2154 & 13.5419 & 151.1818 \\
+T-101 & ARMAX  & \textbf{16.0023} & \textbf{13.2267} & \textbf{148.3574} \\
+T-101 & TF     & 18.3538 & 17.2229 & 172.0311 \\
+T-101 & FOPDT  & 17.4630 & 15.5124 & 166.5548 \\
+\midrule
+T-102 & SS     & 37.8201 & 151.3642 & \textbf{198.0105} \\
+T-102 & ARX    & 41.2758 & 168.5212 & 230.9104 \\
+T-102 & ARMAX  & 41.7543 & 177.5120 & 219.4193 \\
+T-102 & TF     & 60.8113 & 317.6746 & 342.7771 \\
+T-102 & FOPDT  & \textbf{37.2705} & \textbf{144.9297} & 204.0501 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Los resultados obtenidos muestran que los modelos ARX y ARMAX presentan el mejor desempeño dinámico para la columna T-101 en ambas perturbaciones, alcanzando los menores valores de IAE, ISE e ITAE. Esto indica una mejor capacidad de seguimiento del setpoint y una reducción tanto de la magnitud como de la duración del error dinámico frente a cambios en las condiciones de operación. Para la columna T-102, el modelo FOPDT presentó los menores valores de IAE e ISE en ambas perturbaciones, mientras que el modelo Space State obtuvo el menor ITAE durante la perturbación P2. En contraste, el modelo TF exhibió consistentemente los mayores errores integrales, particularmente en términos de ISE, evidenciando una menor capacidad para representar adecuadamente la dinámica transitoria de la columna bajo el esquema MPC implementado.
+
 %% ─────────────────────────────────────────────────────────────
 \subsection{Selección del modelo y propuesta de control híbrido}
 
-Los resultados obtenidos demuestran que el modelo óptimo depende de la dinámica
-particular de cada columna.
+La selección final de los modelos subrogados no se realizó únicamente con base en las métricas estadísticas de identificación, sino considerando simultáneamente el desempeño dinámico bajo control MPC y los costos computacionales asociados a la implementación del controlador. Este enfoque permitió evaluar de manera integral la capacidad de cada estructura para representar la dinámica del proceso y su comportamiento dentro de un esquema de control predictivo aplicado a columnas de destilación extractiva. Para la columna \(T\text{-}101\), los modelos ARX y ARMAX presentaron consistentemente los menores valores de IAE, ISE e ITAE durante ambas perturbaciones evaluadas. En particular, el modelo ARMAX obtuvo el mejor desempeño global en las métricas integrales, evidenciando una mayor capacidad para rechazar perturbaciones y mantener la variable controlada cercana al valor de referencia. Aunque el modelo Space State presentó un mejor ajuste estadístico durante la etapa de validación, su costo computacional resultó significativamente superior y no se tradujo en un mejor desempeño dinámico bajo MPC. Por esta razón, el modelo ARMAX fue seleccionado como la estructura más adecuada para representar la dinámica de la columna \(T\text{-}101\). En el caso de la columna \(T\text{-}102\), los resultados mostraron un comportamiento distinto. El modelo FOPDT presentó los menores valores de IAE e ISE en ambas perturbaciones, mientras que el modelo Space State obtuvo el menor ITAE durante la perturbación \(P2\). Estos resultados indican que, para esta columna, modelos de estructura más simple fueron capaces de capturar adecuadamente la dinámica dominante del proceso y ofrecer un desempeño competitivo dentro del esquema MPC. Adicionalmente, el modelo FOPDT presentó uno de los menores costos computacionales y requerimientos de memoria entre todos los modelos evaluados, lo cual representa una ventaja importante desde el punto de vista de implementación en tiempo real. A partir de estos resultados, se propone una estrategia de control híbrido en la cual cada columna emplea el modelo subrogado que presentó el mejor compromiso entre precisión dinámica, robustez frente a perturbaciones y eficiencia computacional. Bajo este criterio, la estrategia seleccionada consiste en:
 
-Para la columna $T\text{-}101$, el modelo \textbf{ARMAX} presenta el mejor desempeño
-integral, mientras que para la columna $T\text{-}102$, el modelo \textbf{SS} ofrece la
-mayor robustez dinámica.
+\[T\text{-}101 \rightarrow \text{ARMAX}\]
+\[T\text{-}102 \rightarrow \text{FOPDT}\]
 
-En consecuencia, se propone la implementación de un esquema de control híbrido en el que: El modelo ARMAX gobierne el controlador MPC de la columna $T\text{-}101$. El modelo SS gobierne el controlador MPC de la columna $T\text{-}102$.
-
-Esta arquitectura permite maximizar el desempeño global del sistema y refleja la
-naturaleza dinámica diferenciada de las dos columnas de destilación.
+La combinación propuesta permite aprovechar la mayor capacidad predictiva de los modelos ARMAX en sistemas con dinámicas más complejas, mientras que utiliza modelos FOPDT en procesos donde predominan dinámicas lentas y de menor complejidad estructural. De esta manera, el esquema híbrido reduce la carga computacional total del sistema de control sin comprometer el desempeño dinámico del MPC. 
