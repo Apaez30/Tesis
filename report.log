@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.5)  10 MAY 2026 23:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.5)  11 MAY 2026 00:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1156,7 +1156,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 145.
  (C:\Users\QUIET\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (sections/introduccion.tex) (sections/estado_del_arte.tex
-<figures/Andes.png, id=149, 612.03656pt x 235.37938pt>
+<figures/Andes.png, id=157, 612.03656pt x 235.37938pt>
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
 Package pdftex.def Info: figures/Andes.png  used on input line 4.
@@ -1166,7 +1166,7 @@ Package pdftex.def Info: figures/Andes.png  used on input line 4.
  <./figures/Andes.png>]
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 49.
+Package pdftex.def Info: figures/Andes.png  used on input line 39.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
  [2]
 File: figures/Andes.png Graphic file (type png)
@@ -1245,24 +1245,24 @@ Overfull \hbox (3.71393pt too wide) in paragraph at lines 103--157
 
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 166.
+Package pdftex.def Info: figures/Andes.png  used on input line 162.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
 [4]) (sections/metodologia.tex
-<figures/ProcesoControl.png, id=230, 722.7pt x 505.89pt>
-File: figures/ProcesoControl.png Graphic file (type png)
-<use figures/ProcesoControl.png>
-Package pdftex.def Info: figures/ProcesoControl.png  used on input line 15.
-(pdftex.def)             Requested size: 324.36473pt x 227.054pt.
+<figures/Metodología.png, id=238, 722.7pt x 345.29pt>
+File: figures/Metodología.png Graphic file (type png)
+<use figures/Metodología.png>
+Package pdftex.def Info: figures/Metodología.png  used on input line 15.
+(pdftex.def)             Requested size: 486.53883pt x 232.46005pt.
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 26.
+Package pdftex.def Info: figures/Andes.png  used on input line 25.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
  [5]
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
 Package pdftex.def Info: figures/Andes.png  used on input line 33.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
- [6 <./figures/ProcesoControl.png>]
+ [6 <./figures/Metodología.png>]
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
 Package pdftex.def Info: figures/Andes.png  used on input line 65.
@@ -1270,20 +1270,20 @@ Package pdftex.def Info: figures/Andes.png  used on input line 65.
  [7]
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 116.
+Package pdftex.def Info: figures/Andes.png  used on input line 109.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
  [8]
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 201.
+Package pdftex.def Info: figures/Andes.png  used on input line 198.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
  [9]) (sections/resultados_discusion.tex
-<figures/ModelosT101.png, id=295, 1040.688pt x 568.7649pt>
+<figures/ModelosT101.png, id=303, 1040.688pt x 568.7649pt>
 File: figures/ModelosT101.png Graphic file (type png)
 <use figures/ModelosT101.png>
 Package pdftex.def Info: figures/ModelosT101.png  used on input line 14.
 (pdftex.def)             Requested size: 270.3012pt x 147.72784pt.
-<figures/ModelosT102.png, id=296, 867.24pt x 433.62pt>
+<figures/ModelosT102.png, id=304, 867.24pt x 433.62pt>
 File: figures/ModelosT102.png Graphic file (type png)
 <use figures/ModelosT102.png>
 Package pdftex.def Info: figures/ModelosT102.png  used on input line 22.
@@ -1292,40 +1292,40 @@ File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
 Package pdftex.def Info: figures/Andes.png  used on input line 53.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
- [10 <./figures/ModelosT101.png>]
-<figures/ControlT101.png, id=312, 1221.81468pt x 313.17pt>
+ [10]
+File: figures/Andes.png Graphic file (type png)
+<use figures/Andes.png>
+Package pdftex.def Info: figures/Andes.png  used on input line 53.
+(pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
+ [11 <./figures/ModelosT101.png> <./figures/ModelosT102.png>]
+<figures/ControlT101.png, id=327, 1221.81468pt x 313.17pt>
 File: figures/ControlT101.png Graphic file (type png)
 <use figures/ControlT101.png>
-Package pdftex.def Info: figures/ControlT101.png  used on input line 65.
+Package pdftex.def Info: figures/ControlT101.png  used on input line 64.
 (pdftex.def)             Requested size: 540.60239pt x 138.56935pt.
-<figures/ControlT102.png, id=313, 1231.60126pt x 308.65312pt>
+<figures/ControlT102.png, id=328, 1231.60126pt x 308.65312pt>
 File: figures/ControlT102.png Graphic file (type png)
 <use figures/ControlT102.png>
-Package pdftex.def Info: figures/ControlT102.png  used on input line 73.
+Package pdftex.def Info: figures/ControlT102.png  used on input line 72.
 (pdftex.def)             Requested size: 540.60239pt x 135.48282pt.
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 79.
+Package pdftex.def Info: figures/Andes.png  used on input line 106.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
- [11 <./figures/ModelosT102.png> <./figures/ControlT101.png>]
+ [12 <./figures/ControlT101.png> <./figures/ControlT102.png>]
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 120.
-(pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
- [12 <./figures/ControlT102.png>]
-File: figures/Andes.png Graphic file (type png)
-<use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 179.
+Package pdftex.def Info: figures/Andes.png  used on input line 177.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
  [13]) (sections/conclusiones.tex
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 77.
+Package pdftex.def Info: figures/Andes.png  used on input line 11.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
  [14])
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 170.
+Package pdftex.def Info: figures/Andes.png  used on input line 177.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
  [15] (sections/Nomenclatura.tex
 File: figures/Andes.png Graphic file (type png)
@@ -1341,62 +1341,67 @@ File: figures/Andes.png Graphic file (type png)
 Package pdftex.def Info: figures/Andes.png  used on input line 347.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
  [17])
-Underfull \hbox (badness 10000) in paragraph at lines 435--178
+Underfull \hbox (badness 10000) in paragraph at lines 435--185
 
  []
 
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 178.
+Package pdftex.def Info: figures/Andes.png  used on input line 185.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
 [18]
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 178.
+Package pdftex.def Info: figures/Andes.png  used on input line 185.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
  [19] (sections/ANEXOS.tex
-<figures/PFD_Tesis_2.jpg, id=486, 790.51335pt x 558.6471pt>
+<figures/PFD_Tesis_2.jpg, id=495, 790.51335pt x 558.6471pt>
 File: figures/PFD_Tesis_2.jpg Graphic file (type jpg)
 <use figures/PFD_Tesis_2.jpg>
-Package pdftex.def Info: figures/PFD_Tesis_2.jpg  used on input line 8.
+Package pdftex.def Info: figures/PFD_Tesis_2.jpg  used on input line 82.
 (pdftex.def)             Requested size: 540.60239pt x 382.04015pt.
-<figures/Simulink.png, id=487, 763.35187pt x 557.83406pt>
+<figures/Simulink.png, id=496, 763.35187pt x 557.83406pt>
 File: figures/Simulink.png Graphic file (type png)
 <use figures/Simulink.png>
-Package pdftex.def Info: figures/Simulink.png  used on input line 15.
+Package pdftex.def Info: figures/Simulink.png  used on input line 89.
 (pdftex.def)             Requested size: 540.60239pt x 395.06906pt.
-<figures/SIMULINK2.0.png, id=488, 8222.72pt x 1761.58125pt>
+<figures/SIMULINK2.0.png, id=497, 8222.72pt x 1761.58125pt>
 File: figures/SIMULINK2.0.png Graphic file (type png)
 <use figures/SIMULINK2.0.png>
-Package pdftex.def Info: figures/SIMULINK2.0.png  used on input line 22.
+Package pdftex.def Info: figures/SIMULINK2.0.png  used on input line 96.
 (pdftex.def)             Requested size: 540.60239pt x 115.79701pt.
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 27.
+Package pdftex.def Info: figures/Andes.png  used on input line 101.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
  [20
 
- <./figures/PFD_Tesis_2.jpg> <./figures/SIMULINK2.0.png>]
+ <./figures/SIMULINK2.0.png>]
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 27.
+Package pdftex.def Info: figures/Andes.png  used on input line 101.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
- [21 <./figures/Simulink.png>]
-Overfull \hbox (9.91869pt too wide) in paragraph at lines 55--55
+ [21 <./figures/PFD_Tesis_2.jpg>]
+File: figures/Andes.png Graphic file (type png)
+<use figures/Andes.png>
+Package pdftex.def Info: figures/Andes.png  used on input line 101.
+(pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
+ [22 <./figures/Simulink.png>]
+Overfull \hbox (9.91869pt too wide) in paragraph at lines 129--129
 []|$\OML/cmm/m/it/8 A \OT1/cmr/m/n/8 = [1\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 000\OML/cmm/m/it/8 ; \OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 2\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 486\OML/cmm/m/it/8 ; \OT1/cmr/m/n/8 2\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 019\OML/cmm/m/it/8 ; \OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 616\OML/cmm/m/it/8 ; \OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 179\OML/cmm/m/it/8 ; \OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 051\OML/cmm/m/it/8 ; \OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 050\OML/cmm/m/it/8 ; \OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 013\OML/cmm/m/it/8 ; \OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 004\OML/cmm/m/it/8 ; \OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 015\OML/cmm/m/it/8 ; \OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 054\OML/cmm/m/it/8 ; \OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 021\OML/cmm/m/it/8 ; \OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 005\OML/cmm/m/it/8 ; \OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 002\OML/cmm/m/it/8 ; \OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 000]$| 
  []
 
 
-Overfull \hbox (3.74635pt too wide) in paragraph at lines 55--55
+Overfull \hbox (3.74635pt too wide) in paragraph at lines 129--129
 []|$\OML/cmm/m/it/8 B \OT1/cmr/m/n/8 = [0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 000\OML/cmm/m/it/8 ; \OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 164\OML/cmm/m/it/8 ; \OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 343\OML/cmm/m/it/8 ; \OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 199\OML/cmm/m/it/8 ; \OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 024\OML/cmm/m/it/8 ; \OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 014\OML/cmm/m/it/8 ; \OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 002\OML/cmm/m/it/8 ; \OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 006\OML/cmm/m/it/8 ; \OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 005\OML/cmm/m/it/8 ; \OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 008\OML/cmm/m/it/8 ; \OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 003\OML/cmm/m/it/8 ; \OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 007\OML/cmm/m/it/8 ; \OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 001\OML/cmm/m/it/8 ; \OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 001\OML/cmm/m/it/8 ; \OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 0\OML/cmm/m/it/8 :\OT1/cmr/m/n/8 001]$| 
  []
 
 )
 File: figures/Andes.png Graphic file (type png)
 <use figures/Andes.png>
-Package pdftex.def Info: figures/Andes.png  used on input line 184.
+Package pdftex.def Info: figures/Andes.png  used on input line 191.
 (pdftex.def)             Requested size: 133.16356pt x 51.21504pt.
- [22] 
+ [23] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (report.aux)
  ***********
@@ -1404,23 +1409,23 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-03-20>
  ***********
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 948854D416B489E58B02FE57045774E6;7077.
+(rerunfilecheck)             Checksum: 8814374229CAF30186089DC43E5073C8;7642.
 Package logreq Info: Writing requests to 'report.run.xml'.
 \openout1 = `report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 40479 strings out of 467691
- 834712 string characters out of 5414988
- 1694478 words of memory out of 5000000
- 68840 multiletter control sequences out of 15000+600000
+ 40490 strings out of 467691
+ 834844 string characters out of 5414988
+ 1694708 words of memory out of 5000000
+ 68845 multiletter control sequences out of 15000+600000
  640357 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 110i,18n,118p,3637b,1524s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 110i,18n,118p,3637b,1522s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\QUIET\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/QUIET/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/QUIET/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/QUIET/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/QUIET/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/QUIET/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/QUIET/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/QUIET/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/QUIET/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/QUIET/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/QUIET/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/QUIET/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/QUIET/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/QUIET/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/QUIET/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/QUIET/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/QUIET/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/QUIET/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/QUIET/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/QUIET/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/QUIET/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on report.pdf (22 pages, 2969920 bytes).
+Output written on report.pdf (23 pages, 2947291 bytes).
 PDF statistics:
- 625 PDF objects out of 1000 (max. 8388607)
- 119 named destinations out of 1000 (max. 500000)
- 322 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 643 PDF objects out of 1000 (max. 8388607)
+ 125 named destinations out of 1000 (max. 500000)
+ 338 words of extra memory for PDF output out of 10000 (max. 10000000)
 

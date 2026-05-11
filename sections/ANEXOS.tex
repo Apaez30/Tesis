@@ -1,7 +1,81 @@
 \FloatBarrier
 \section{Anexos}
 
-\subsection{Diagramas}
+\subsection{Tablas de parámetros}
+
+\begin{table}[H]
+\centering
+\caption{Condiciones de las corrientes de alimentación}
+\label{tab:alimentacion}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Parámetro} & \textbf{Corriente azeotrópica} & \textbf{Solvente} \\
+\midrule
+Flujo [kmol/h] & 100 & 150 \\
+Temperatura [$^\circ$C] & 47 & 47 \\
+Presión absoluta [bar] & 3 & 3 \\
+Composición molar & 0,5 -- 0,5 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{Condiciones de operación de las columnas}
+\label{tab:operacion}
+\begin{tabular}{lcc}
+\toprule
+\textbf{Parámetro} & \textbf{T-101} & \textbf{T-102} \\
+\midrule
+Presión absoluta [bar] & 1 & 1 \\
+Flujo de destilado [kmol/h] & 50 & 50,5 \\
+Razón de reflujo [mol/mol] & 1 & 0,5 \\
+Número de etapas & 37 & 17 \\
+Etapa de alimentación & 24 & 8 \\
+Etapa de alimentación del agente separador & 4 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\caption{Parámetros de sintonización de controladores PI}
+\label{tab:PI}
+\footnotesize
+\begin{tabularx}{\textwidth}{l *{6}{>{\centering\arraybackslash}X}}
+\toprule
+\textbf{Controlador} &
+\textbf{Nivel de Condensador T-101} &
+\textbf{Nivel de Rehervidor T-101} &
+\textbf{Presión T-101} &
+\textbf{Nivel de Condensador T-102} &
+\textbf{Nivel de Rehervidor T-102} &
+\textbf{Presión T-102} \\
+\midrule
+
+Ganancia (\%/\%) &
+4,145 &
+259,658 &
+1,108 &
+483,133 &
+758,406 &
+2,249 \\
+
+Constante de tiempo $\tau$ [min] &
+13,20 &
+5,28 &
+5,99 &
+3,96 &
+6,60 &
+2,00 \\
+
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Figuras adicionales}
 
 \begin{figure}[htbp]
     \centering
@@ -19,7 +93,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{figures/SIMULINK2.0.png}
+    \includegraphics[width=1.00\textwidth]{figures/SIMULINK2.0.png}
     \caption{Esquema general del controlador MPC.}
     \label{fig:Simulink2.0}
 \end{figure}

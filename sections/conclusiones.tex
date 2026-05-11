@@ -2,89 +2,18 @@
 \section{Conclusiones}
 % ============================================================
 
-Estos hallazgos sugieren que los modelos subrogados basados en identificación de sistemas pueden ofrecer una alternativa eficiente para la implementación de control predictivo en procesos industriales, al reducir la carga computacional sin comprometer la capacidad de modelado y control del sistema dinámico. 
+Del estado del arte se identificaron cinco técnicas de subrogación aplicables a control predictivo: ARX, ARMAX, FOPDT, función de transferencia (TF) y espacio de estados (SS). Sin embargo, el modelo Hammerstein-Wiener, también revisado en la literatura, no es compatible con esquemas de MPC lineal debido a su componente no lineal estático, por lo que solo cuatro familias de modelos resultan integrables de forma directa en el \textit{Model Predictive Control Toolbox}. Dentro de esas cuatro familias, ARX y ARMAX
+se implementaron como estructuras separadas, dando lugar a los cinco modelos evaluados en este trabajo.
 
-En términos generales, los resultados obtenidos demuestran que la selección de modelos para control predictivo no debe basarse exclusivamente en indicadores de ajuste estadístico como el RECM o el coeficiente \(R^2\), sino también en su desempeño operativo dentro del lazo de control. En particular, estructuras más complejas no necesariamente garantizan mejores resultados dinámicos, mientras que modelos más simples pueden ofrecer ventajas significativas en términos de robustez y eficiencia computacional para aplicaciones MPC en procesos de separación con dinámicas lentas.
+\vspace{0.25cm}
 
-En este trabajo se evaluaron cinco estructuras de modelos subrogados (ARX, ARMAX, SS, TF y FOPDT) como núcleo de un esquema de
-control predictivo basado en modelo (MPC) aplicado a un sistema de destilación extractiva
-de dos columnas acopladas ($T\text{-}101$ y $T\text{-}102$). La metodología abarcó
-desde la identificación de los modelos a partir de pruebas de escalón en Aspen Plus
-Dynamics hasta la evaluación de su desempeño de control mediante co-simulación con
-MATLAB\textregistered{}--Simulink\textregistered{}, considerando perturbaciones tipo
-escalón consistentes en un incremento del 5\,\% seguido de una reducción del 10\,\% en
-el caudal de alimentación sobre un horizonte total de simulación de 100 horas.
+La conclusión metodológica central del trabajo es que las métricas de ajuste en lazo abierto RECM y $R^2$ no son criterios válidos para la selección de modelos subrogados en aplicaciones de control predictivo. Estas métricas caracterizan la capacidad del modelo para reproducir trayectorias ya conocidas bajo condiciones de identificación, pero no capturan los requisitos que el MPC impone sobre el modelo: representar con fidelidad la dinámica dentro del horizonte de predicción, bajo retroalimentación continua y en  presencia de perturbaciones no contempladas en los datos de entrenamiento. La falta de correlación entre el ranking de ajuste estadístico y el ranking de desempeño en lazo cerrado no es un resultado aislado de este proceso, sino una consecuencia estructural de esa diferencia de objetivos; por lo tanto, la evaluación mediante co-simulación bajo perturbaciones representativas debe considerarse un paso obligatorio en cualquier metodología de subrogación orientada a control. Una segunda conclusión es que la dinámica de cada subsistema determina la arquitectura de modelo más adecuada, y que esta elección no puede generalizarse dentro del mismo proceso. La columna extractiva requiere representar perturbaciones de composición no medidas en la alimentación, lo que exige la capacidad de modelado de ruido correlacionado que aportan los modelos de la familia ARMAX. La columna de recuperación de solvente, en cambio, exhibe una dinámica dominada por efectos integrativos de masa y energía que solo quedan bien representados cuando el modelo incluye variables de estado internas. Imponer una única arquitectura a ambas columnas habría degradado necesariamente el desempeño de control en al menos una de ellas. La propuesta de control híbridodescentralizado un modelo distinto por subsistema no es una solución ad hoc, sino la consecuencia lógica de reconocer que la heterogeneidad dinámica del proceso no puede ser absorbida por una estructura uniforme.
 
-Los resultados de la etapa de subrogación mostraron que el orden de calidad del ajuste
-estadístico difiere entre columnas, lo que evidencia la naturaleza dinámica distinta de
-cada subsistema dentro del proceso de destilación extractiva. Para la columna
-$T\text{-}101$, el modelo de espacio de estados presentó el mejor coeficiente de
-determinación ($R^2 = 0.771$), mientras que para la columna $T\text{-}102$ el modelo
-ARMAX fue el más preciso ($R^2 = 0.645$). No obstante, el análisis posterior del
-desempeño dentro del esquema de control predictivo demostró que el mejor ajuste
-estadístico durante la identificación no garantiza necesariamente el mejor comportamiento
-dinámico del controlador. Este hallazgo confirma que la idoneidad de un modelo en
-aplicaciones de MPC debe evaluarse con base en su capacidad para representar la dinámica
-relevante dentro del horizonte de predicción, y no únicamente por la exactitud global
-sobre los datos de identificación.
+\vspace{0.25cm}
 
-En cuanto al desempeño de control, todos los modelos evaluados lograron estabilizar la
-variable controlada después de cada perturbación aplicada, manteniendo errores relativos
-inferiores al 1\,\%, lo que confirma la viabilidad general del uso de modelos subrogados
-lineales dentro de esquemas de control predictivo para sistemas de separación complejos.
-Sin embargo, las diferencias entre modelos son cuantitativamente significativas cuando
-se analizan los criterios integrales de desempeño sobre el horizonte completo de
-simulación.
+El trabajo también permite concluir que los modelos lineales identificados alrededor del punto nominal de operación son suficientes para garantizar el rechazo de perturbaciones en el rango operativo evaluado. Esto implica que la complejidad adicional de modelos no
+lineales no se justifica mientras el proceso opere cerca del punto de diseño, y que la estrategia de linealización local es una aproximación válida para esta clase de procesos de separación bajo las condiciones de perturbación consideradas.Respecto al modelo de función de transferencia, su desempeño inferior no responde a un ajuste estadístico deficiente, sino a una limitación estructural intrínseca: la representación continua en términosde polos y ceros no incorpora términosde memoria sobre salidas pasadas en tiempo discreto, que son precisamente los que permiten al optimizador anticipar y corregir desviaciones acumulativasde larga duración propiasde las dinámicas lentasde la destilación. Este hallazgo sugiere que la funciónde transferencia identificable, pese a su popularidady simplicidadde implementación, no esla estructura más adecuada para columnasde destilación cuando el objetivo es el rechazode perturbacionesbajo MPC.
 
-Para la columna $T\text{-}101$, el modelo ARMAX presentó el mejor desempeño integral,
-minimizando simultáneamente los tres indicadores evaluados (IAE\,=\,26.30\,
-ISE\,=\,18.88\, ITAE\,=\,985.93\,) y ofreciendo los menores tiempos
-de estabilización frente a perturbaciones en la alimentación. Este resultado sugiere que
-la estructura autorregresiva con media móvil proporciona una mayor flexibilidad para
-representar perturbaciones y dinámicas transitorias en la columna extractiva.
+\vspace{0.25cm}
 
-Para la columna $T\text{-}102$, el modelo de espacio de estados fue el más robusto desde
-el punto de vista dinámico, con un valor de IAE de 81.71\, y un ITAE de
-3548.22\, valores inferiores a los obtenidos con los demás modelos evaluados.
-Este comportamiento indica que una representación estructurada basada en variables de
-estado permite describir con mayor precisión las dinámicas más lentas y los efectos
-acumulativos característicos de la columna de recuperación de solvente.
-
-En ambas columnas, el modelo basado en función de transferencia presentó el peor
-desempeño integral, con diferencias especialmente pronunciadas en la columna
-$T\text{-}102$, donde los valores de error acumulado fueron significativamente mayores
-que los obtenidos con los modelos ARX, ARMAX y SS. Este resultado sugiere que una
-representación de parámetros reducidos puede ser insuficiente para capturar las dinámicas
-de baja frecuencia y los acoplamientos presentes en sistemas de destilación multietapa
-bajo condiciones de control predictivo.
-
-El análisis de los costos computacionales evidenció que todos los modelos evaluados
-presentan tiempos de simulación y requerimientos de memoria compatibles con aplicaciones
-de control en tiempo real. Aunque el modelo de espacio de estados mostró el mayor tiempo
-total de simulación, también presentó una eficiencia computacional adecuada por paso de
-control. En consecuencia, el desempeño dinámico del controlador se establece como el
-criterio principal para la selección del modelo dentro del contexto de este estudio,
-por encima de las diferencias en costo computacional.
-
-A partir de la evidencia experimental y numérica obtenida, se concluye que la estrategia
-de control más adecuada para el sistema analizado corresponde a un
-esquema de control híbrido descentralizado, en el cual el modelo ARMAX gobierna
-el controlador MPC de la columna $T\text{-}101$, mientras que el modelo de espacio de
-estados gobierna el controlador MPC de la columna $T\text{-}102$. Esta arquitectura
-permite explotar las fortalezas dinámicas específicas de cada estructura de modelo en
-función de las características particulares de cada subsistema, maximizando el desempeño
-global del sistema de destilación.
-
-Los resultados de este trabajo aportan evidencia cuantitativa sobre la importancia de
-evaluar los modelos subrogados directamente dentro del entorno de control, en lugar de
-seleccionarlos exclusivamente con base en métricas de ajuste estadístico. Este principio
-constituye una guía metodológica aplicable a sistemas de separación complejos y a
-procesos multivariables en general, en los cuales la selección del modelo debe basarse en
-criterios integrales de desempeño dinámico bajo condiciones operativas representativas.
-
-Finalmente, el estudio demuestra que la integración de técnicas de identificación de
-sistemas con estrategias de control predictivo permite implementar soluciones de control
-robustas y computacionalmente viables para procesos de destilación extractiva. Los
-resultados obtenidos proporcionan una base sólida para la implementación futura de
-estrategias avanzadas de control en procesos químicos industriales, orientadas a mejorar
-la estabilidad operativa, la eficiencia energética y el desempeño dinámico del sistema.
+Finalmente, se concluye que el costo computacional no debe ser el criterio de selección del modelo en este tipo de aplicaciones. Dado que todos los modelos evaluados resuelven el problema de optimización en tiempos \'o rdenes de magnitud menores que el intervalo de muestreo, la factibilidad en tiempo real está garantizada para cualquier estructura. Esta constatación tiene una implicación práctica importante: el ingeniero de control no enfrenta un compromiso real entre precisión din\'a mica y viabilidad computacional en procesos con din\'a micas del orden de horas, por lo que puede y debe seleccionar el modelo atendiendo exclusivamente a su desempe\~n o en lazo cerrado.
