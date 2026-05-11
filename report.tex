@@ -155,10 +155,34 @@ urlcolor=black
 % SECCIONES MODULARES
 % ================================================================
 
-\section{Resumen}.
+\section{Resumen}
+El presente trabajo evalúa diferentes técnicas de subrogación de modelos orientadas 
+al control predictivo basado en modelo (MPC) para un proceso de destilación extractiva 
+de una mezcla azeotrópica de metanol y acetona con dimetilsulfóxido (DMSO) como agente 
+separador. A partir de datos dinámicos obtenidos mediante simulación rigurosa en Aspen 
+Plus Dynamics, se identificaron cinco estructuras de modelo subrogado por columna: 
+espacio de estados (SS), autorregresivo con entradas exógenas (ARX), autorregresivo de 
+media móvil con entradas exógenas (ARMAX), función de transferencia identificable (TF) 
+y primer orden con tiempo muerto (FOPDT). Los modelos fueron evaluados tanto en términos 
+de ajuste estadístico en lazo abierto, mediante el coeficiente de determinación $R^{2}$ 
+y la raíz del error cuadrático medio (RECM), como en términos de desempeño dinámico en 
+lazo cerrado, mediante criterios integrales de error (IAE, ISE, ITAE) obtenidos a través 
+de una co-simulación entre MATLAB\textsuperscript{\textregistered}--Simulink\textsuperscript{\textregistered} 
+y Aspen Plus Dynamics. Los resultados demuestran que las métricas de ajuste en lazo 
+abierto no constituyen un criterio válido para la selección de modelos en aplicaciones 
+de control predictivo, dado que no existe correlación entre el \textit{ranking} 
+estadístico y el desempeño bajo retroalimentación continua con perturbaciones. Con base 
+en la evaluación integral, se propone una estrategia de control híbrido descentralizado 
+que asigna el modelo ARMAX a la columna extractiva T-101 y el modelo FOPDT a la columna 
+de recuperación de solvente T-102, logrando un mejor compromiso entre precisión dinámica, 
+robustez frente a perturbaciones y eficiencia computacional. Todos los modelos evaluados 
+cumplen los requerimientos de viabilidad en tiempo real, lo que confirma que la selección 
+del modelo subrogado debe atender exclusivamente al desempeño en lazo cerrado.
 
-\textbf{Palabras clave:} modelos subrogados, control predictivo basado en modelo (MPC), destilación extractiva, identificación de sistemas, Espacio de Estados, ARX, ARMAX, función de transferencia, FOPDT, co-simulación. 
-
+\medskip
+\noindent\textbf{Palabras clave:} modelos subrogados, control predictivo basado en 
+modelo (MPC), destilación extractiva, identificación de sistemas, Espacio de Estados, 
+ARX, ARMAX, función de transferencia, FOPDT, co-simulación.
 
 \input{sections/introduccion}
 

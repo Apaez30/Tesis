@@ -33,6 +33,9 @@ C(q) = 1 + c_1 q^{-1} + c_2 q^{-2} + \cdots + c_{n_c} q^{-n_c}
 \end{equation}
 
 Esta extensión mejora la capacidad predictiva del modelo al capturar correlaciones temporales en el ruido del sistema, lo que resulta especialmente útil en aplicaciones de control predictivo, donde la precisión del modelo influye directamente en el desempeño del controlador. Sin embargo, la inclusión del término de media móvil también incrementa la complejidad del proceso de identificación y puede requerir un mayor volumen de datos para obtener estimaciones confiables de los parámetros del modelo. En general, los modelos ARMAX pueden ofrecer un mejor desempeño en términos de precisión de predicción y robustez frente a perturbaciones, aunque su implementación puede ser más compleja que la de los modelos ARX, lo cual debe considerarse para encontrar un balance entre carga computacional y precision.
+
+\subsection{Modelos NLARX}
+Los modelos NLARX (NonLinear AutoRegressive with eXogenous inputs) constituyen una extensión de los modelos ARX que permiten capturar dinámicas no lineales mediante la incorporación de funciones no lineales en la relación entre las entradas y las salidas del sistema. Su estructura general consiste en los regresores de los modelos y una función de salida. Comenzando con los regresores, estos pueden ser tanto lineales; logrando representar un modelo ARX con los mismos parametros de polos ($n_a$), ceros ($n_b$) y retardos ($n_k$); o bien, pueden ser polinomiales o de otro tipo, lo que permite capturar algunas no linealidades desde la estructura inicial. La función de salida, por su parte, consiste en una función lineal, una no lineal y un offset que describen la relacion dinamica entre los regresores y la salida del modelo. La función de salida no lineal puede ser de diversos tipos, como redes neuronales, funciones de base radial o polinomios, lo que permite adaptar el modelo a las características específicas del proceso a modelar. Esta flexibilidad hace que los modelos NLARX sean adecuados para representar sistemas con dinámicas no lineales complejas, aunque su identificación puede requerir un mayor volumen de datos y un proceso de ajuste más complejo en comparación con los modelos lineales. Sin embargo, su implementación en esquemas de control predictivo se ve limitada por la necesidad de resolver problemas de optimización no lineales en tiempo real, lo que puede incrementar significativamente la carga computacional y dificultar su aplicación en procesos químicos complejos que requieren respuestas rápidas.
 \subsection{Modelo de primer orden con tiempo muerto (FOPDT)}
 
 Los modelos de primer orden con tiempo muerto (First-Order Plus Dead Time, FOPDT) representan dinámicamente un sistema mediante parámetros identificables, como la ganancia $K_p$, la constante de tiempo $\tau$ y el tiempo muerto $\theta$. Las ganancias proporcionales tienen una interpretación física directa al relacionar las unidades de cambio entre variables. Conjuntamente, la constante de tiempo se interpreta como la velocidad de respuesta del sistema, la cual, a su vez, se complementa con el tiempo muerto, que es el tiempo antes de que el sistema reaccione frente a un cambio. Estos parámetros juntos son una representación comúnmente utilizada en procesos de control por su interpretabilidad y simpleza, subrogando en diferentes casos problemas SISO (Single Input, Single Output) \cite{ref16}. La fórmula general del modelo es la siguiente:
@@ -131,16 +134,23 @@ Media &
 Directa &
 Identificación de sistemas y control multivariable
 \\
+NLARX &
+Híbrido lineal--no lineal &
+Alta &
+Media--alta &
+Compatible con MPC no lineal &
+Simulación de procesos no lineales
+\\
 FOPDT (First Order Plus Dead Time) &
 Lineal dinámico con parámetros físicos &
-Baja &
+Baja--media &
 Baja &
 Directa &
 Procesos térmicos, destilación, sistemas SISO/MISO
 \\
 Función de transferencia identificable &
 Lineal dinámico &
-Baja--media &
+Baja &
 Baja--media &
 Directa &
 Modelado empírico del proceso
