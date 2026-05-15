@@ -368,7 +368,6 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Subrogación de Modelos para Control y Optimización de Procesos}
-      \field{year}{2025}
     \endentry
     \entry{ref11}{article}{}{}
       \name{author}{2}{}{%
@@ -406,148 +405,354 @@
       \verb 10.1016/j.isatra.2021.05.030
       \endverb
     \endentry
-    \entry{ref12}{article}{}{}
-      \name{author}{6}{}{%
-        {{hash=32e563370422457790db030ab2c13183}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={H.},
-           giveni={H\bibinitperiod}}}%
-        {{hash=38241eaee18102cab15a125b0654c7da}{%
-           family={Chen},
-           familyi={C\bibinitperiod},
-           given={J.},
-           giveni={J\bibinitperiod}}}%
-        {{hash=52f9b5586b01731c8d73fc60c13dcc50}{%
-           family={Hua},
-           familyi={H\bibinitperiod},
-           given={C.},
-           giveni={C\bibinitperiod}}}%
-        {{hash=9cd726b07f8da41ac2c3cc788e4c6011}{%
-           family={Ding},
-           familyi={D\bibinitperiod},
-           given={Z.},
-           giveni={Z\bibinitperiod}}}%
-        {{hash=7105372b0f161d8a7f87fcad27e4fcc9}{%
-           family={Lu},
-           familyi={L\bibinitperiod},
-           given={P.},
-           giveni={P\bibinitperiod}}}%
-        {{hash=8a9ab49f0fe827e25142df0f1ec23209}{%
-           family={Yang},
-           familyi={Y\bibinitperiod},
-           given={C.},
-           giveni={C\bibinitperiod}}}%
+    \entry{ref16}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=0fd57873b392b04eafc5b7875a875ad7}{%
+           family={Wahid},
+           familyi={W\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=85b232903bb852980d8b588c60ed652b}{%
+           family={Maulana},
+           familyi={M\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
       }
-      \strng{namehash}{a7bdfe934c877ee9b78d04fed4e61189}
-      \strng{fullhash}{22ef3d1487417f37b6787188438d87a2}
-      \strng{fullhashraw}{22ef3d1487417f37b6787188438d87a2}
-      \strng{bibnamehash}{22ef3d1487417f37b6787188438d87a2}
-      \strng{authorbibnamehash}{22ef3d1487417f37b6787188438d87a2}
-      \strng{authornamehash}{a7bdfe934c877ee9b78d04fed4e61189}
-      \strng{authorfullhash}{22ef3d1487417f37b6787188438d87a2}
-      \strng{authorfullhashraw}{22ef3d1487417f37b6787188438d87a2}
+      \strng{namehash}{2f03c42c15d000bd64b8d7494c59f616}
+      \strng{fullhash}{2f03c42c15d000bd64b8d7494c59f616}
+      \strng{fullhashraw}{2f03c42c15d000bd64b8d7494c59f616}
+      \strng{bibnamehash}{2f03c42c15d000bd64b8d7494c59f616}
+      \strng{authorbibnamehash}{2f03c42c15d000bd64b8d7494c59f616}
+      \strng{authornamehash}{2f03c42c15d000bd64b8d7494c59f616}
+      \strng{authorfullhash}{2f03c42c15d000bd64b8d7494c59f616}
+      \strng{authorfullhashraw}{2f03c42c15d000bd64b8d7494c59f616}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{E3S Web of Conferences}
+      \field{month}{11}
+      \field{title}{Optimation of Depropanizer Unit using Turbo Expander and Its Controller using Model Predictive Control}
+      \field{year}{2018}
+      \verb{doi}
+      \verb 10.1051/e3sconf/20186703014
+      \endverb
+    \endentry
+    \entry{ref17}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=2d2b0d998977e6379aad61f1b56ac3c1}{%
+           family={{MathWorks}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \strng{fullhash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \strng{fullhashraw}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \strng{bibnamehash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \strng{authorbibnamehash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \strng{authornamehash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \strng{authorfullhash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \strng{authorfullhashraw}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: April 19, 2026}
+      \field{title}{Continuous-time process model with identifiable parameters}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://la.mathworks.com/help/ident/ref/idproc.html
+      \endverb
+      \verb{url}
+      \verb https://la.mathworks.com/help/ident/ref/idproc.html
+      \endverb
+    \endentry
+    \entry{ref18}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=9b20d7ae38289f73eb6ccc9238ff73c3}{%
+           family={Adjisetya},
+           familyi={A\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=0fd57873b392b04eafc5b7875a875ad7}{%
+           family={Wahid},
+           familyi={W\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{08eaab0f7d5846cde3f28178b4b11214}
+      \strng{fullhash}{08eaab0f7d5846cde3f28178b4b11214}
+      \strng{fullhashraw}{08eaab0f7d5846cde3f28178b4b11214}
+      \strng{bibnamehash}{08eaab0f7d5846cde3f28178b4b11214}
+      \strng{authorbibnamehash}{08eaab0f7d5846cde3f28178b4b11214}
+      \strng{authornamehash}{08eaab0f7d5846cde3f28178b4b11214}
+      \strng{authorfullhash}{08eaab0f7d5846cde3f28178b4b11214}
+      \strng{authorfullhashraw}{08eaab0f7d5846cde3f28178b4b11214}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ChemEngineering}
+      \field{month}{2}
+      \field{number}{1}
+      \field{title}{Multivariable Model Predictive Control to Control Bio-H2 Production from Biomass}
+      \field{volume}{7}
+      \field{year}{2023}
+      \verb{doi}
+      \verb 10.3390/chemengineering7010007
+      \endverb
+    \endentry
+    \entry{ref19}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=afcc3f9e7c4c99757aa9b2a465054b36}{%
+           family={Setiawan},
+           familyi={S\bibinitperiod},
+           given={V.\bibnamedelimi C.},
+           giveni={V\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=df864978f04f6cb7e173fb2e54a8b21a}{%
+           family={Alifah},
+           familyi={A\bibinitperiod},
+           given={I.\bibnamedelimi U.\bibnamedelimi A.},
+           giveni={I\bibinitperiod\bibinitdelim U\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=22cb25f888e761f05f24932137046b66}{%
+           family={Anugraha},
+           familyi={A\bibinitperiod},
+           given={R.\bibnamedelimi P.},
+           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=83a819ad833b0e810230a9d7d89c119f}{%
+           family={Juwari},
+           familyi={J\bibinitperiod}}}%
+        {{hash=444aab3056256439216d5f16c2bfe514}{%
+           family={Renanto},
+           familyi={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{9aebf6e18ef3e3f88a5511d6c7950237}
+      \strng{fullhash}{985bb370766b973834ab497f2e766f40}
+      \strng{fullhashraw}{985bb370766b973834ab497f2e766f40}
+      \strng{bibnamehash}{985bb370766b973834ab497f2e766f40}
+      \strng{authorbibnamehash}{985bb370766b973834ab497f2e766f40}
+      \strng{authornamehash}{9aebf6e18ef3e3f88a5511d6c7950237}
+      \strng{authorfullhash}{985bb370766b973834ab497f2e766f40}
+      \strng{authorfullhashraw}{985bb370766b973834ab497f2e766f40}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IOP Conference Series: Materials Science and Engineering}
+      \field{month}{2}
+      \field{number}{1}
+      \field{title}{Comparison of Model Predictive Controller and Neural Network Controller on Nonconventional Distillation System}
+      \field{volume}{1053}
+      \field{year}{2021}
+      \field{pages}{012108}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1088/1757-899x/1053/1/012108
+      \endverb
+    \endentry
+    \entry{ref20}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=2d2b0d998977e6379aad61f1b56ac3c1}{%
+           family={{MathWorks}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \strng{fullhash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \strng{fullhashraw}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \strng{bibnamehash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \strng{authorbibnamehash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \strng{authornamehash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \strng{authorfullhash}{2d2b0d998977e6379aad61f1b56ac3c1}
+      \strng{authorfullhashraw}{2d2b0d998977e6379aad61f1b56ac3c1}
       \field{extraname}{2}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Chemical Engineering and Processing}
-      \field{month}{2}
-      \field{title}{Proportional-Integral Control and ARX-based Model Predictive Control for Extractive Dividing Wall Column}
-      \field{volume}{196}
-      \field{year}{2024}
-      \verb{doi}
-      \verb 10.1016/j.cep.2023.109643
-      \endverb
-    \endentry
-    \entry{ref13}{article}{}{}
-      \name{author}{5}{}{%
-        {{hash=8ea30eea4310ecc172342720514776ac}{%
-           family={Jin},
-           familyi={J\bibinitperiod},
-           given={J.},
-           giveni={J\bibinitperiod}}}%
-        {{hash=d88ef0c0ed31e6984ffe52032bd04a62}{%
-           family={Wu},
-           familyi={W\bibinitperiod},
-           given={S.},
-           giveni={S\bibinitperiod}}}%
-        {{hash=0c630c68946c71d31875652b74fc8e68}{%
-           family={Nuerlan},
-           familyi={N\bibinitperiod},
-           given={A.},
-           giveni={A\bibinitperiod}}}%
-        {{hash=ce084360cc68e7db4fe6cae1287b3adf}{%
-           family={Liu},
-           familyi={L\bibinitperiod},
-           given={Y.},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=79f9342fff0afd22b7d5fe66f2f00cd0}{%
-           family={Wan},
-           familyi={W\bibinitperiod},
-           given={J.},
-           giveni={J\bibinitperiod}}}%
-      }
-      \strng{namehash}{a107b2a3eb45c37650869407ad9a2524}
-      \strng{fullhash}{6aaad071262ee965dbc8b6c42e211ac4}
-      \strng{fullhashraw}{6aaad071262ee965dbc8b6c42e211ac4}
-      \strng{bibnamehash}{6aaad071262ee965dbc8b6c42e211ac4}
-      \strng{authorbibnamehash}{6aaad071262ee965dbc8b6c42e211ac4}
-      \strng{authornamehash}{a107b2a3eb45c37650869407ad9a2524}
-      \strng{authorfullhash}{6aaad071262ee965dbc8b6c42e211ac4}
-      \strng{authorfullhashraw}{6aaad071262ee965dbc8b6c42e211ac4}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Annals of Nuclear Energy}
-      \field{month}{7}
-      \field{title}{Adaptive model predictive control of sodium-cooled fast reactor core based on ARX modeling and Kalman filtering}
-      \field{volume}{232}
+      \field{note}{Accessed: April 25, 2026}
+      \field{title}{Transfer function model with identifiable parameters}
       \field{year}{2026}
-      \field{pages}{112215}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.1016/j.anucene.2026.112215
+      \verb{urlraw}
+      \verb https://la.mathworks.com/help/ident/ref/idtf.html
       \endverb
-    \endentry
-    \entry{ref20}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=2d9d41c6a400fd7bbecda28ccde2b92b}{%
-           family={Barrios\bibnamedelima Sánchez},
-           familyi={B\bibinitperiod\bibinitdelim S\bibinitperiod},
-           given={J.\bibnamedelimi M.},
-           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-        {{hash=b5476b0c3fb6d18f9b74c496000cde3b}{%
-           family={Baeza\bibnamedelima Serrato},
-           familyi={B\bibinitperiod\bibinitdelim S\bibinitperiod},
-           given={R.},
-           giveni={R\bibinitperiod}}}%
-      }
-      \strng{namehash}{d5758ea6ab74d8310e5638509686247b}
-      \strng{fullhash}{d5758ea6ab74d8310e5638509686247b}
-      \strng{fullhashraw}{d5758ea6ab74d8310e5638509686247b}
-      \strng{bibnamehash}{d5758ea6ab74d8310e5638509686247b}
-      \strng{authorbibnamehash}{d5758ea6ab74d8310e5638509686247b}
-      \strng{authornamehash}{d5758ea6ab74d8310e5638509686247b}
-      \strng{authorfullhash}{d5758ea6ab74d8310e5638509686247b}
-      \strng{authorfullhashraw}{d5758ea6ab74d8310e5638509686247b}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Applied Sciences}
-      \field{month}{6}
-      \field{number}{12}
-      \field{title}{Design and Development of an Optimal Control Model in System Dynamics through State-Space Representation}
-      \field{volume}{13}
-      \field{year}{2023}
-      \verb{doi}
-      \verb 10.3390/app13127154
+      \verb{url}
+      \verb https://la.mathworks.com/help/ident/ref/idtf.html
       \endverb
     \endentry
     \entry{ref21}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=9c34a8de4981b96b5fa4b1791749fcd0}{%
+           family={Al-khamis},
+           familyi={A\bibinithyphendelim k\bibinitperiod},
+           given={O.\bibnamedelimi A.\bibnamedelimi A.},
+           giveni={O\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=62520b9eea48900bb2b2cf0a2c89ec80}{%
+           family={Gumus},
+           familyi={G\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{98049953958e1c82fba5db027fc02693}
+      \strng{fullhash}{98049953958e1c82fba5db027fc02693}
+      \strng{fullhashraw}{98049953958e1c82fba5db027fc02693}
+      \strng{bibnamehash}{98049953958e1c82fba5db027fc02693}
+      \strng{authorbibnamehash}{98049953958e1c82fba5db027fc02693}
+      \strng{authornamehash}{98049953958e1c82fba5db027fc02693}
+      \strng{authorfullhash}{98049953958e1c82fba5db027fc02693}
+      \strng{authorfullhashraw}{98049953958e1c82fba5db027fc02693}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Electrical Engineering and Technology}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{Comparison and Performance Analysis of Model Predictive Control Developed by Transfer Function Based Model and State Space Based Model}
+      \field{volume}{18}
+      \field{year}{2023}
+      \field{pages}{111\bibrangedash 121}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1007/s42835-022-01179-z
+      \endverb
+    \endentry
+    \entry{ref22}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=ef49c46818ad29b72631eb82007b2054}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=280dc4c18f682e47f79d502f0e89f614}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{b8e34926ef7a3d9c9524d5213a8cc13c}
+      \strng{fullhash}{b8e34926ef7a3d9c9524d5213a8cc13c}
+      \strng{fullhashraw}{b8e34926ef7a3d9c9524d5213a8cc13c}
+      \strng{bibnamehash}{b8e34926ef7a3d9c9524d5213a8cc13c}
+      \strng{authorbibnamehash}{b8e34926ef7a3d9c9524d5213a8cc13c}
+      \strng{authornamehash}{b8e34926ef7a3d9c9524d5213a8cc13c}
+      \strng{authorfullhash}{b8e34926ef7a3d9c9524d5213a8cc13c}
+      \strng{authorfullhashraw}{b8e34926ef7a3d9c9524d5213a8cc13c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computers \& Chemical Engineering}
+      \field{month}{3}
+      \field{title}{Fault isolation based on transfer-function models using an MPC algorithm}
+      \field{volume}{159}
+      \field{year}{2022}
+      \verb{doi}
+      \verb 10.1016/j.compchemeng.2022.107668
+      \endverb
+    \endentry
+    \entry{tyreus1992}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=76265850aca3d67deba41f2c50bbd198}{%
+           family={Tyreus},
+           familyi={T\bibinitperiod},
+           given={B.\bibnamedelimi D.},
+           giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=570b9c8f79a902593e490752d586cbc9}{%
+           family={Luyben},
+           familyi={L\bibinitperiod},
+           given={W.\bibnamedelimi L.},
+           giveni={W\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{e69198a019fe534a38b8c8513d38d9a1}
+      \strng{fullhash}{e69198a019fe534a38b8c8513d38d9a1}
+      \strng{fullhashraw}{e69198a019fe534a38b8c8513d38d9a1}
+      \strng{bibnamehash}{e69198a019fe534a38b8c8513d38d9a1}
+      \strng{authorbibnamehash}{e69198a019fe534a38b8c8513d38d9a1}
+      \strng{authornamehash}{e69198a019fe534a38b8c8513d38d9a1}
+      \strng{authorfullhash}{e69198a019fe534a38b8c8513d38d9a1}
+      \strng{authorfullhashraw}{e69198a019fe534a38b8c8513d38d9a1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Industrial \& Engineering Chemistry Research}
+      \field{number}{11}
+      \field{title}{Tuning PI Controllers for Integrator/Dead Time Processes}
+      \field{volume}{31}
+      \field{year}{1992}
+      \field{pages}{2625\bibrangedash 2628}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1021/ie00011a029
+      \endverb
+    \endentry
+    \entry{ljung1999}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=f7cffd38dd9d98d3fd91ec52f00c4c77}{%
+           family={Ljung},
+           familyi={L\bibinitperiod},
+           given={Lennart},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Upper Saddle River, NJ}%
+      }
+      \list{publisher}{1}{%
+        {Prentice Hall}%
+      }
+      \strng{namehash}{f7cffd38dd9d98d3fd91ec52f00c4c77}
+      \strng{fullhash}{f7cffd38dd9d98d3fd91ec52f00c4c77}
+      \strng{fullhashraw}{f7cffd38dd9d98d3fd91ec52f00c4c77}
+      \strng{bibnamehash}{f7cffd38dd9d98d3fd91ec52f00c4c77}
+      \strng{authorbibnamehash}{f7cffd38dd9d98d3fd91ec52f00c4c77}
+      \strng{authornamehash}{f7cffd38dd9d98d3fd91ec52f00c4c77}
+      \strng{authorfullhash}{f7cffd38dd9d98d3fd91ec52f00c4c77}
+      \strng{authorfullhashraw}{f7cffd38dd9d98d3fd91ec52f00c4c77}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{isbn}{978-0136566953}
+      \field{title}{System Identification: Theory for the User}
+      \field{year}{1999}
+    \endentry
+    \entry{soderstrom1989}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=3ec42a94cc710d944a544924cab371a3}{%
+           family={Söderström},
+           familyi={S\bibinitperiod},
+           given={Torbjörn},
+           giveni={T\bibinitperiod}}}%
+        {{hash=36fee71d3ae6d96d0ed40d1edb70559a}{%
+           family={Stoica},
+           familyi={S\bibinitperiod},
+           given={Petre},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Prentice Hall}%
+      }
+      \strng{namehash}{943c278a29e9178500f00a5b71aae6b4}
+      \strng{fullhash}{943c278a29e9178500f00a5b71aae6b4}
+      \strng{fullhashraw}{943c278a29e9178500f00a5b71aae6b4}
+      \strng{bibnamehash}{943c278a29e9178500f00a5b71aae6b4}
+      \strng{authorbibnamehash}{943c278a29e9178500f00a5b71aae6b4}
+      \strng{authornamehash}{943c278a29e9178500f00a5b71aae6b4}
+      \strng{authorfullhash}{943c278a29e9178500f00a5b71aae6b4}
+      \strng{authorfullhashraw}{943c278a29e9178500f00a5b71aae6b4}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0138816407}
+      \field{title}{System Identification}
+      \field{year}{1989}
+    \endentry
+    \entry{ref24}{article}{}{}
       \name{author}{2}{}{%
         {{hash=663d8e6f301e34bb3784c21127627254}{%
            family={Masti},
@@ -568,20 +773,20 @@
       \strng{authornamehash}{ad76c8583dc9eed84f800c89bf30888a}
       \strng{authorfullhash}{ad76c8583dc9eed84f800c89bf30888a}
       \strng{authorfullhashraw}{ad76c8583dc9eed84f800c89bf30888a}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Automatica}
       \field{month}{7}
-      \field{title}{Learning nonlinear state–space models using autoencoders}
+      \field{title}{Learning nonlinear state--space models using autoencoders}
       \field{volume}{129}
       \field{year}{2021}
       \verb{doi}
       \verb 10.1016/j.automatica.2021.109666
       \endverb
     \endentry
-    \entry{ref22}{article}{}{}
+    \entry{ref25}{article}{}{}
       \name{author}{4}{}{%
         {{hash=528b0708ec1bf9b1677b35261fac82bf}{%
            family={Zhang},
@@ -612,9 +817,9 @@
       \strng{authornamehash}{1d775eae6db02d895a6cce72f9cf615f}
       \strng{authorfullhash}{aa1bde37dc119ab44a9a784ea0c2524e}
       \strng{authorfullhashraw}{aa1bde37dc119ab44a9a784ea0c2524e}
-      \field{extraname}{3}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Process Control}
@@ -626,107 +831,6 @@
       \range{pages}{8}
       \verb{doi}
       \verb 10.1016/j.jprocont.2014.03.004
-      \endverb
-    \endentry
-    \entry{ref23}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=4ee418661567daccfa3b8aef57ea9e87}{%
-           family={Ławryńczuk},
-           familyi={Ł\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{4ee418661567daccfa3b8aef57ea9e87}
-      \strng{fullhash}{4ee418661567daccfa3b8aef57ea9e87}
-      \strng{fullhashraw}{4ee418661567daccfa3b8aef57ea9e87}
-      \strng{bibnamehash}{4ee418661567daccfa3b8aef57ea9e87}
-      \strng{authorbibnamehash}{4ee418661567daccfa3b8aef57ea9e87}
-      \strng{authornamehash}{4ee418661567daccfa3b8aef57ea9e87}
-      \strng{authorfullhash}{4ee418661567daccfa3b8aef57ea9e87}
-      \strng{authorfullhashraw}{4ee418661567daccfa3b8aef57ea9e87}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{ISA Transactions}
-      \field{month}{3}
-      \field{title}{Nonlinear predictive control for Hammerstein-Wiener systems}
-      \field{volume}{55}
-      \field{year}{2015}
-      \field{pages}{49\bibrangedash 62}
-      \range{pages}{14}
-      \verb{doi}
-      \verb 10.1016/j.isatra.2014.09.018
-      \endverb
-    \endentry
-    \entry{ref24}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=2d2b0d998977e6379aad61f1b56ac3c1}{%
-           family={{MathWorks}},
-           familyi={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{2d2b0d998977e6379aad61f1b56ac3c1}
-      \strng{fullhash}{2d2b0d998977e6379aad61f1b56ac3c1}
-      \strng{fullhashraw}{2d2b0d998977e6379aad61f1b56ac3c1}
-      \strng{bibnamehash}{2d2b0d998977e6379aad61f1b56ac3c1}
-      \strng{authorbibnamehash}{2d2b0d998977e6379aad61f1b56ac3c1}
-      \strng{authornamehash}{2d2b0d998977e6379aad61f1b56ac3c1}
-      \strng{authorfullhash}{2d2b0d998977e6379aad61f1b56ac3c1}
-      \strng{authorfullhashraw}{2d2b0d998977e6379aad61f1b56ac3c1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Accessed: March 9, 2026}
-      \field{title}{QP Optimization Problem for Linear MPC}
-      \field{year}{2026}
-      \verb{urlraw}
-      \verb https://la.mathworks.com/help/mpc/ug/optimization-problem.html
-      \endverb
-      \verb{url}
-      \verb https://la.mathworks.com/help/mpc/ug/optimization-problem.html
-      \endverb
-    \endentry
-    \entry{ref25}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=e1b877cb9dfdb8f8779e701144fba712}{%
-           family={Guna},
-           familyi={G\bibinitperiod},
-           given={G.},
-           giveni={G\bibinitperiod}}}%
-        {{hash=42791c34fdc7071675e0adaadd02c441}{%
-           family={Prabhakaran},
-           familyi={P\bibinitperiod},
-           given={D.},
-           giveni={D\bibinitperiod}}}%
-        {{hash=93f66b85a9c5ff67136512a16ece97ca}{%
-           family={Thirumarimurugan},
-           familyi={T\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{956bc99ce0f498bce152c91d19ea5380}
-      \strng{fullhash}{e73fbdb56d476b261678ed8b57c490a3}
-      \strng{fullhashraw}{e73fbdb56d476b261678ed8b57c490a3}
-      \strng{bibnamehash}{e73fbdb56d476b261678ed8b57c490a3}
-      \strng{authorbibnamehash}{e73fbdb56d476b261678ed8b57c490a3}
-      \strng{authornamehash}{956bc99ce0f498bce152c91d19ea5380}
-      \strng{authorfullhash}{e73fbdb56d476b261678ed8b57c490a3}
-      \strng{authorfullhashraw}{e73fbdb56d476b261678ed8b57c490a3}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Water Science and Technology}
-      \field{month}{11}
-      \field{number}{10--11}
-      \field{title}{Design, implementation, control and optimization of single stage pilot scale reverse osmosis process}
-      \field{volume}{84}
-      \field{year}{2021}
-      \field{pages}{2923\bibrangedash 2942}
-      \range{pages}{20}
-      \verb{doi}
-      \verb 10.2166/wst.2021.302
       \endverb
     \endentry
   \enddatalist
