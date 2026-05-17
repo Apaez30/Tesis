@@ -86,7 +86,7 @@ industrial.Las Figuras \ref{fig:ControlT101} y \ref{fig:ControlT102} presentan l
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=1\textwidth]{figures/ControlT101.png}
+\includegraphics[width=0.9\textwidth]{figures/ControlT101.png}
 \caption{Evolución temporal de la variable controlada de $T\text{-}101$
 bajo una perturbación del 10\,\% seguida de una perturbación del -10\,\%.}
 \label{fig:ControlT101}
@@ -94,7 +94,7 @@ bajo una perturbación del 10\,\% seguida de una perturbación del -10\,\%.}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=1\textwidth]{figures/ControlT102.png}
+\includegraphics[width=0.9\textwidth]{figures/ControlT102.png}
 \caption{Evolución temporal de la variable controlada de $T\text{-}102$
 bajo una perturbación del 10\,\% seguida de una perturbación del -10\,\%.}
 \label{fig:ControlT102}
@@ -114,16 +114,17 @@ durante la co-simulación:
 \small
 \begin{tabular}{lccc}
 \toprule
-Modelo & T.\ Simulink (s) & CPU/paso (ms) & RAM total (MB) \\
+Modelo & T. Simulink (s) & CPU/paso (ms) & RAM total (MB) \\
 \midrule
-SS    & 2360.028 & 1179.424 & 8.716 \\
-ARX   & 1310.123 & 1089.742 & 5.985 \\
-ARMAX & 1428.361 & 1188.411 & 5.920 \\
-TF    & 1379.245 & 1147.646 & 6.017 \\
-FOPDT & 1323.261 & 1101.099 & 5.772 \\
+SS     & 2245.7673 & 1122.3225 & 8.7162 \\
+ARX    & 1462.7764 & 1217.9654 & 5.9852 \\
+ARMAX  & 1462.3853 & 1217.6397 & 5.9203 \\
+TF     & 1461.2886 & 1216.7265 & 6.0173 \\
+IDPROC & 1457.9294 & 1213.9295 & 5.7724 \\
 \bottomrule
 \end{tabular}
 \end{table}
+
 
 El tiempo de simulación en Simulink corresponde al tiempo total requerido para ejecutar la co-simulación dinámica completa del sistema bajo control MPC, incluyendo la resolución del problema de optimización, la actualización de las variables manipuladas y la integración dinámica de las columnas de destilación dentro del entorno Simulink. Esta métrica permite comparar la carga computacional global asociada a cada modelo subrogado durante todo el horizonte dinámico evaluado.
 
@@ -137,13 +138,7 @@ En este trabajo se utilizó un tiempo de muestreo de \(T_s = 5\ \mathrm{min}\) (
 %% ─────────────────────────────────────────────────────────────
 \subsection{Criterios integrales de desempeño}
 
-Inicialmente, los criterios integrales de desempeño fueron evaluados considerando únicamente el horizonte completo de simulación. Sin embargo, este enfoque introducía un sesgo en la comparación entre modelos, debido a que incluía periodos en donde la simulacion volvia al punto de partida y el error de control continuaba acumulandose a lo largo de toda la simulación. Con el fin de obtener una comparación más representativa del desempeño dinámico del MPC, las métricas integrales se calcularon de manera independiente sobre las regiones transitorias asociadas a las perturbaciones introducidas en el sistema. De esta manera, los criterios IAE, ISE e ITAE fueron evaluados específicamente durante las ventanas temporales correspondientes a la respuesta dinámica de cada perturbación, permitiendo cuantificar de forma más precisa la capacidad de seguimiento y rechazo de perturbaciones de cada modelo subrogado. Las ventanas utilizadas fueron:
-
-\[P1: \; t = 5\text{ h} \rightarrow 20\text{ h}\]
-
-\[P2: \; t = 40\text{ h} \rightarrow 60\text{ h}\]
-
-donde \(P1\) corresponde a la respuesta transitoria generada por la perturbación positiva en el caudal de alimentación, mientras que \(P2\) representa la respuesta dinámica frente a la perturbación negativa del mismo flujo. Bajo este enfoque, las métricas integrales permiten evaluar directamente el comportamiento dinámico relevante del controlador durante los periodos de mayor exigencia operacional, evitando que los intervalos en los que la simulación retorna a la región de operación estacionaria dominen artificialmente los indicadores globales de desempeño.
+Inicialmente, los criterios integrales de desempeño fueron evaluados considerando únicamente el horizonte completo de simulación. Sin embargo, este enfoque introducía un sesgo en la comparación entre modelos, debido a que incluía periodos en donde la simulacion volvia al punto de partida y el error de control continuaba acumulandose a lo largo de toda la simulación. Con el fin de obtener una comparación más representativa del desempeño dinámico del MPC, las métricas integrales se calcularon de manera independiente sobre las regiones transitorias asociadas a las perturbaciones introducidas en el sistema. De esta manera, los criterios IAE, ISE e ITAE fueron evaluados específicamente durante las ventanas temporales correspondientes a la respuesta dinámica de cada perturbación, permitiendo cuantificar de forma más precisa la capacidad de seguimiento y rechazo de perturbaciones de cada modelo subrogado. Las ventanas utilizadas fueron: \(P1\), comprendida entre \(t=5\,\mathrm{h}\) y \(t=20\,\mathrm{h}\), y \(P2\), comprendida entre \(t=40\,\mathrm{h}\) y \(t=60\,\mathrm{h}\) donde \(P1\) corresponde a la respuesta transitoria generada por la perturbación positiva en el caudal de alimentación, mientras que \(P2\) representa la respuesta dinámica frente a la perturbación negativa del mismo flujo. Bajo este enfoque, las métricas integrales permiten evaluar directamente el comportamiento dinámico relevante del controlador durante los periodos de mayor exigencia operacional, evitando que los intervalos en los que la simulación retorna a la región de operación estacionaria dominen artificialmente los indicadores globales de desempeño.
 
 \begin{table}[htbp]
 \centering
@@ -198,9 +193,4 @@ Los resultados obtenidos muestran que los modelos ARX y ARMAX presentan el mejor
 %% ─────────────────────────────────────────────────────────────
 \subsection{Selección del modelo y propuesta de control híbrido}
 
-La selección final de los modelos subrogados no se realizó únicamente con base en las métricas estadísticas de identificación, sino considerando simultáneamente el desempeño dinámico bajo control MPC y los costos computacionales asociados a la implementación del controlador. Este enfoque permitió evaluar de manera integral la capacidad de cada estructura para representar la dinámica del proceso y su comportamiento dentro de un esquema de control predictivo aplicado a columnas de destilación extractiva. Para la columna \(T\text{-}101\), los modelos ARX y ARMAX presentaron consistentemente los menores valores de IAE, ISE e ITAE durante ambas perturbaciones evaluadas. En particular, el modelo ARMAX obtuvo el mejor desempeño global en las métricas integrales, evidenciando una mayor capacidad para rechazar perturbaciones y mantener la variable controlada cercana al valor de referencia. Aunque el modelo Space State presentó un mejor ajuste estadístico durante la etapa de validación, su costo computacional resultó significativamente superior y no se tradujo en un mejor desempeño dinámico bajo MPC. Por esta razón, el modelo ARMAX fue seleccionado como la estructura más adecuada para representar la dinámica de la columna \(T\text{-}101\). En el caso de la columna \(T\text{-}102\), los resultados mostraron un comportamiento distinto. El modelo FOPDT presentó los menores valores de IAE e ISE en ambas perturbaciones, mientras que el modelo Space State obtuvo el menor ITAE durante la perturbación \(P2\). Estos resultados indican que, para esta columna, modelos de estructura más simple fueron capaces de capturar adecuadamente la dinámica dominante del proceso y ofrecer un desempeño competitivo dentro del esquema MPC. Adicionalmente, el modelo FOPDT presentó uno de los menores costos computacionales y requerimientos de memoria entre todos los modelos evaluados, lo cual representa una ventaja importante desde el punto de vista de implementación en tiempo real. A partir de estos resultados, se propone una estrategia de control híbrido en la cual cada columna emplea el modelo subrogado que presentó el mejor compromiso entre precisión dinámica, robustez frente a perturbaciones y eficiencia computacional. Bajo este criterio, la estrategia seleccionada consiste en:
-
-\[T\text{-}101 \rightarrow \text{ARMAX}\]
-\[T\text{-}102 \rightarrow \text{FOPDT}\]
-
-La combinación propuesta permite aprovechar la mayor capacidad predictiva de los modelos ARMAX en sistemas con dinámicas más complejas, mientras que utiliza modelos FOPDT en procesos donde predominan dinámicas lentas y de menor complejidad estructural. De esta manera, el esquema híbrido reduce la carga computacional total del sistema de control sin comprometer el desempeño dinámico del MPC. 
+La selección final de los modelos subrogados no se realizó únicamente con base en las métricas estadísticas de identificación, sino considerando simultáneamente el desempeño dinámico bajo control MPC y los costos computacionales asociados a la implementación del controlador. Este enfoque permitió evaluar de manera integral la capacidad de cada estructura para representar la dinámica del proceso y su comportamiento dentro de un esquema de control predictivo aplicado a columnas de destilación extractiva. Para la columna \(T\text{-}101\), los modelos ARX y ARMAX presentaron consistentemente los menores valores de IAE, ISE e ITAE durante ambas perturbaciones evaluadas. En particular, el modelo ARMAX obtuvo el mejor desempeño global en las métricas integrales, evidenciando una mayor capacidad para rechazar perturbaciones y mantener la variable controlada cercana al valor de referencia. Aunque el modelo Space State presentó un mejor ajuste estadístico durante la etapa de validación, su costo computacional resultó significativamente superior y no se tradujo en un mejor desempeño dinámico bajo MPC. Por esta razón, el modelo ARMAX fue seleccionado como la estructura más adecuada para representar la dinámica de la columna \(T\text{-}101\). En el caso de la columna \(T\text{-}102\), los resultados mostraron un comportamiento distinto. El modelo FOPDT presentó los menores valores de IAE e ISE en ambas perturbaciones, mientras que el modelo Space State obtuvo el menor ITAE durante la perturbación \(P2\). Estos resultados indican que, para esta columna, modelos de estructura más simple fueron capaces de capturar adecuadamente la dinámica dominante del proceso y ofrecer un desempeño competitivo dentro del esquema MPC. Adicionalmente, el modelo FOPDT presentó uno de los menores costos computacionales y requerimientos de memoria entre todos los modelos evaluados, lo cual representa una ventaja importante desde el punto de vista de implementación en tiempo real. A partir de estos resultados, se propone una estrategia de control híbrido en la cual cada columna emplea el modelo subrogado que presentó el mejor compromiso entre precisión dinámica, robustez frente a perturbaciones y eficiencia computacional. Bajo este criterio, la estrategia seleccionada consiste en:  \(T\text{-}101\), asociado al modelo \(\mathrm{ARMAX}\), y \(T\text{-}102\), asociado al modelo \(\mathrm{FOPDT}\). La combinación propuesta permite aprovechar la mayor capacidad predictiva de los modelos ARMAX en sistemas con dinámicas más complejas, mientras que utiliza modelos FOPDT en procesos donde predominan dinámicas lentas y de menor complejidad estructural. De esta manera, el esquema híbrido reduce la carga computacional total del sistema de control sin comprometer el desempeño dinámico del MPC. 
